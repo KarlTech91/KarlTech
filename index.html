@@ -3,74 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KarlTech – Soutien Informatique</title>
+  <title>KarlTech - Soutien Informatique</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7f9;
       color: #333;
     }
     header {
+      background-color: #0057b8;
+      color: white;
+      padding: 30px 20px;
       text-align: center;
-      padding-bottom: 20px;
     }
-    h1 {
-      color: #0055a5;
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    nav {
+      background-color: #003e7e;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
     }
     section {
-      margin-bottom: 30px;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    section h2 {
+      color: #0057b8;
     }
     ul {
       padding-left: 20px;
     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #0057b8;
+      color: white;
+    }
     footer {
       text-align: center;
-      font-size: 0.9em;
-      color: #666;
-      border-top: 1px solid #ccc;
-      padding-top: 10px;
+      padding: 20px;
+      background-color: #eee;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Bienvenue chez KarlTech</h1>
-    <p>Votre expert en soutien informatique à Shawinigan et aux alentours</p>
+    <h1>KarlTech</h1>
+    <p>Votre expert en soutien informatique à Shawinigan et à distance</p>
   </header>
 
-  <section>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="services">
     <h2>Services offerts</h2>
     <ul>
-      <li>Formatage et réinstallation Windows</li>
+      <li>Formatage et réinstallation de Windows</li>
       <li>Suppression de virus et optimisation</li>
       <li>Installation de logiciels</li>
-      <li>Installation de pièces ou upgrade PC</li>
+      <li>Installation et remplacement de pièces</li>
       <li>Assemblage PC sur mesure (custom build)</li>
       <li>Sauvegarde et récupération de données</li>
     </ul>
   </section>
 
-  <section>
-    <h2>Zone desservie</h2>
-    <p>Shawinigan et les environs – Possibilité de service à domicile ou à distance avec frais de déplacement minimes.</p>
+  <section id="tarifs">
+    <h2>Tableau de prix</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Description</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Formatage Windows</td>
+          <td>Installation propre de Windows, pilotes, mises à jour</td>
+          <td>60 $</td>
+        </tr>
+        <tr>
+          <td>Suppression de virus</td>
+          <td>Nettoyage complet et optimisation du système</td>
+          <td>50 $</td>
+        </tr>
+        <tr>
+          <td>Installation de pièces</td>
+          <td>RAM, SSD, carte graphique, etc.</td>
+          <td>40 $</td>
+        </tr>
+        <tr>
+          <td>Custom PC</td>
+          <td>Montage sur mesure selon vos besoins</td>
+          <td>sur devis</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
-  <section>
+  <section id="contact">
     <h2>Contact</h2>
-    <p>📧 Courriel : <a href="mailto:info@karltech.ca">info@karltech.ca</a></p>
-    <p>📞 Téléphone : <a href="tel:8738879620">873-887-9620</a></p>
-  </section>
-
-  <section>
-    <h2>À propos</h2>
-    <p>Je m’appelle Karl, passionné d’informatique depuis plus de 10 ans. Mon objectif est d’offrir un service rapide, humain et accessible à tous.</p>
+    <p>📧 <a href="mailto:info@karltech.ca">info@karltech.ca</a></p>
+    <p>📞 <a href="tel:8738879620">873-887-9620</a></p>
+    <p>🌐 <a href="https://www.karltech.ca">www.karltech.ca</a></p>
   </section>
 
   <footer>
-    &copy; KarlTech – Tous droits réservés
+    &copy; 2025 KarlTech. Tous droits réservés.
   </footer>
 </body>
 </html>
