@@ -59,6 +59,25 @@
       background-color: #0057b8;
       color: white;
     }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px;
+      background-color: #0057b8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -77,6 +96,7 @@
     <a href="#services">Services</a>
     <a href="#tarifs">Tarifs</a>
     <a href="#contact">Contact</a>
+    <a href="#faq">FAQ</a>
   </nav>
 
   <section id="services">
@@ -131,6 +151,19 @@
     <p>📧 <a href="mailto:info@karltech.ca">info@karltech.ca</a></p>
     <p>📞 <a href="tel:8738879620">873-887-9620</a></p>
     <p>🌐 <a href="https://www.karltech.ca">www.karltech.ca</a></p>
+
+    <h3>Formulaire de contact</h3>
+    <form action="mailto:info@karltech.ca" method="post" enctype="text/plain">
+      <input type="text" name="nom" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ - Questions Fréquentes</h2>
+    <p>Cette section sera optimisée prochainement pour répondre à vos questions courantes.</p>
   </section>
 
   <footer>
