@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - KarlTech</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('support-informatique.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(25, 37, 52, 0.90);
+      z-index: -1;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(24, 36, 51, 0.85);
+      border-radius: 10px;
+    }
+    h1 {
+      text-align: center;
+      color: #66b2ff;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .faq-item h2 {
+      font-size: 1.1em;
+      color: #66b2ff;
+      cursor: pointer;
+    }
+    .faq-item p {
+      margin-top: 8px;
+      display: none;
+      color: #eee;
+    }
+    .faq-item.active p {
+      display: block;
+    }
+    a {
+      color: #66b2ff;
+      text-decoration: none;
+      display: inline-block;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FAQ – Foire aux questions</h1>
+
+    <div class="faq-item">
+      <h2>Quels sont les services offerts par KarlTech ?</h2>
+      <p>Plusieurs services sont offerts. Pour avoir une bonne vue d’ensemble, veuillez consulter la section « Services » du site Web.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Est-ce que vous vous déplacez à domicile ?</h2>
+      <p>Oui, je peux me déplacer dans Shawinigan et les environs pour un petit frais supplémentaire.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Puis-je vous confier mon ordinateur pour un diagnostic ?</h2>
+      <p>Bien sûr. Nous restons très professionnels et nous faisons des suivis réguliers.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Combien de temps prend un formatage complet ?</h2>
+      <p>Un formatage complet peut varier selon le matériel de votre ordinateur. En moyenne, cela prend entre 1 heure et 2 heures.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Est-ce que vous faites du support à distance ?</h2>
+      <p>Le support à distance est possible. Nous utilisons AnyDesk pour nous connecter sur l’ordinateur de nos utilisateurs.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Dois-je prendre un rendez-vous à l’avance ?</h2>
+      <p>Bien sûr. Par respect pour notre clientèle, nous demandons de prendre rendez-vous. Nous respectons l'ordre de priorité. Toutefois, une urgence reste une urgence — vous pouvez toujours nous contacter par téléphone au besoin.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Est-ce que mes fichiers seront supprimés pendant une réparation ?</h2>
+      <p>Tout dépend de la réparation à faire. Si cela implique un effacement de données, nous assurons la protection de vos documents en faisant un BackUP (sauvegarde) des données avant toute intervention.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Est-ce que vous montez des PC personnalisés ?</h2>
+      <p>Oui, nous montons des ordinateurs personnalisés. Deux méthodes s'appliquent :<br>
+        1. Vous apportez vos pièces, et nous faisons le montage.<br>
+        2. Nous vous préparons une soumission selon vos besoins. Si cela vous convient, nous achetons les pièces, puis procédons à l’assemblage pour un résultat adapté à vos attentes.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Quels sont vos modes de paiement acceptés ?</h2>
+      <p>Les modes de paiement acceptés sont : Débit, Crédit, Virement Interac et Argent comptant.</p>
+    </div>
+
+    <a href="index.html">← Retour au site</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-item h2').forEach(item => {
+      item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        parent.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
