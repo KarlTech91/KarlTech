@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KarlTech - Soutien Informatique</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8BQ6dM2v6j5vJf8kRAZP3w3ZXt87GXjG+5XkQ/29h6wxNRZ1qNhN/mI6Lg0j3UL2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -18,9 +17,7 @@
       opacity: 0;
       animation: fadeIn 1s ease-in forwards;
     }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+    @keyframes fadeIn { to { opacity: 1; } }
     body::before {
       content: "";
       position: fixed;
@@ -51,9 +48,7 @@
       text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover {
-      color: #66b2ff;
-    }
+    nav a:hover { color: #66b2ff; }
     section {
       max-width: 900px;
       margin: 30px auto;
@@ -62,15 +57,10 @@
       background-color: rgba(24, 36, 51, 0.85);
       border-radius: 10px;
     }
-    section:last-of-type {
-      border-bottom: none;
-    }
-    section h2 {
-      color: #66b2ff;
-    }
-    ul {
-      padding-left: 20px;
-    }
+    section:last-of-type { border-bottom: none; }
+    section h2 { color: #66b2ff; }
+    ul { padding-left: 0; }
+    ul li { margin-bottom: 10px; }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -82,10 +72,7 @@
       text-align: left;
       background-color: rgba(255, 255, 255, 0.05);
     }
-    th {
-      background-color: #192534;
-      color: white;
-    }
+    th { background-color: #192534; color: white; }
     form {
       display: flex;
       flex-direction: column;
@@ -111,9 +98,7 @@
       background-color: #66b2ff;
       color: #000;
     }
-    a {
-      color: #66b2ff;
-    }
+    a { color: #66b2ff; }
     footer {
       text-align: center;
       padding: 20px;
@@ -135,13 +120,10 @@
       font-weight: bold;
       z-index: 999;
     }
-    #backToTop:hover {
-      background-color: #4e9fe2;
-    }
+    #backToTop:hover { background-color: #4e9fe2; }
   </style>
 </head>
 <body>
-
   <header>
     <img src="logo_karltech.png" alt="Logo KarlTech" style="height: 80px; float: left; margin-right: 20px;">
     <div>
@@ -161,14 +143,19 @@
 
   <section id="services">
     <h2>Services offerts</h2>
-    <ul>
-      <li>Formatage et réinstallation de Windows</li>
-      <li>Suppression de virus et optimisation</li>
-      <li>Installation de logiciels</li>
-      <li>Installation et remplacement de pièces</li>
-      <li>Assemblage PC sur mesure (custom build)</li>
-      <li>Sauvegarde et récupération de données</li>
+    <p>Nous offrons un service professionnel, humain et adapté à vos besoins, que ce soit à domicile, à distance ou à notre atelier. Voici un aperçu de nos services les plus populaires :</p>
+    <ul style="list-style: none;">
+      <li><i class="fas fa-sync-alt"></i> <strong>Formatage et réinstallation de Windows</strong> – Installation propre, mises à jour, pilotes et configuration de base</li>
+      <li><i class="fas fa-shield-virus"></i> <strong>Suppression de virus et optimisation</strong> – Nettoyage complet, amélioration des performances</li>
+      <li><i class="fas fa-cogs"></i> <strong>Installation de logiciels</strong> – Antivirus, navigateurs, outils pro et plus</li>
+      <li><i class="fas fa-file-word"></i> <strong>Assistance avec Microsoft Office</strong> – Word, Excel, Outlook, activation et dépannage</li>
+      <li><i class="fas fa-headset"></i> <strong>Assistance à distance</strong> – Prise en main sécurisée via AnyDesk</li>
+      <li><i class="fas fa-microchip"></i> <strong>Installation et remplacement de pièces</strong> – RAM, disques SSD, GPU, etc.</li>
+      <li><i class="fas fa-tools"></i> <strong>Assemblage PC sur mesure</strong> – Monté selon vos besoins ou à partir de vos pièces</li>
+      <li><i class="fas fa-database"></i> <strong>Sauvegarde et récupération de données</strong> – Prévention ou récupération après erreur</li>
+      <li><i class="fas fa-envelope"></i> <strong>Création de courriels professionnels</strong> – Adresses personnalisées pour votre image</li>
     </ul>
+    <p>Vous avez un besoin spécifique ? <a href="#contact">Contactez-nous</a>. Nous sommes à l’écoute et flexibles.</p>
   </section>
 
   <section id="tarifs">
@@ -176,91 +163,3 @@
     <table>
       <thead>
         <tr>
-          <th>Service</th>
-          <th>Description</th>
-          <th>Prix</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Formatage Windows</td>
-          <td>Installation propre de Windows, pilotes, mises à jour</td>
-          <td>60 $</td>
-        </tr>
-        <tr>
-          <td>Suppression de virus</td>
-          <td>Nettoyage complet et optimisation du système</td>
-          <td>50 $</td>
-        </tr>
-        <tr>
-          <td>Installation de pièces</td>
-          <td>RAM, SSD, carte graphique, etc.</td>
-          <td>40 $</td>
-        </tr>
-        <tr>
-          <td>Custom PC</td>
-          <td>Montage sur mesure selon vos besoins</td>
-          <td>sur devis</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:info@karltech.ca">info@karltech.ca</a></p>
-    <p>📞 <a href="tel:8738879620">873-887-9620</a></p>
-    <p>🌐 <a href="https://www.karltech.ca">www.karltech.ca</a></p>
-
-    <h3>Formulaire de contact</h3>
-    <form action="https://formspree.io/f/mnnvdepz" method="POST">
-      <input type="text" name="nom" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre adresse e-mail" required>
-      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-      <button type="submit">Envoyer</button>
-      <p id="confirmation" style="display:none; color: #66b2ff; margin-top:10px;">
-        ✅ Merci ! Votre message a bien été envoyé.
-      </p>
-    </form>
-  </section>
-
-  <section id="apropos">
-    <h2>À propos</h2>
-    <p>Nous sommes une équipe passionnée de technologie et de dépannage informatique depuis plus de 10 ans. Avec KarlTech, notre objectif est simple : offrir un service humain, rapide et de qualité pour vous aider à retrouver un ordinateur performant, que ce soit à la maison, à distance ou sur place.</p>
-    <p>Notre approche est personnalisée, sans jargon compliqué, et toujours adaptée à vos besoins. Que vous soyez un particulier ou un travailleur autonome, nous sommes là pour vous simplifier la vie numérique.</p>
-  </section>
-
-  <footer>
-    &copy; 2025 KarlTech. Tous droits réservés.
-  </footer>
-
-  <button id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Haut de page</button>
-
-  <script>
-    const btn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-
-    const form = document.querySelector("form");
-    const confirmation = document.getElementById("confirmation");
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          confirmation.style.display = "block";
-          form.reset();
-        } else {
-          alert("Une erreur est survenue. Essayez à nouveau.");
-        }
-      });
-    });
-  </script>
-
-</body>
-</html>
