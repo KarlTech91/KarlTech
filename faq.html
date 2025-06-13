@@ -3,85 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ - KarlTech</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: url('support-informatique.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #f0f0f0;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(25, 37, 52, 0.90);
-      z-index: -1;
-    }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: rgba(24, 36, 51, 0.85);
-      border-radius: 10px;
-    }
-    h1 {
-      text-align: center;
-      color: #66b2ff;
-    }
-    h2 {
-      color: #66b2ff;
-      font-size: 1.1em;
-      margin-top: 25px;
-    }
-    p {
-      margin-bottom: 15px;
-    }
-    a {
-      color: #66b2ff;
-      text-decoration: none;
-      display: inline-block;
-      margin: 20px;
-    }
-  </style>
+  <title>FAQ – KarlTech</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>FAQ – Foire aux questions</h1>
+  <header>
+    <img src="logo_karltech.png" alt="Logo KarlTech" style="height: 80px; float: left; margin-right: 20px;">
+    <div>
+      <h1>KarlTech</h1>
+      <p>Votre expert en soutien informatique à Shawinigan et environs</p>
+    </div>
+    <div style="clear: both;"></div>
+  </header>
 
-    <h2>1. Quels sont les services offerts par KarlTech ?</h2>
-    <p>Plusieurs services sont offerts. Pour avoir une bonne vue d'ensemble, veuillez consulter la section « Services » du site Web.</p>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="services_tarifs.html">Services et Tarifs</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <h2>2. Est-ce que vous vous déplacez à domicile ?</h2>
-<p>Oui, nous nous déplaçons dans Shawinigan et les environs pour un petit frais supplémentaire.</p>
+  <section id="faq">
+    <h2>FAQ – Questions Fréquentes</h2>
 
-    <h2>3. Puis-je vous confier mon ordinateur pour un diagnostic ?</h2>
-    <p>Bien sûr. Nous restons très professionnels et nous faisons des suivis réguliers.</p>
+    <h3>1. Quels sont les services offerts par KarlTech ?</h3>
+    <p>Plusieurs services sont offerts. Veuillez consulter la section “Services et Tarifs” du site pour un aperçu détaillé.</p>
 
-    <h2>4. Combien de temps prend un formatage complet ?</h2>
-    <p>Un formatage complet peut varier selon le matériel de votre ordinateur. En moyenne, cela prend entre 1 heure et 2 heures.</p>
+    <h3>2. Est-ce que vous vous déplacez à domicile ?</h3>
+    <p>Oui, nous nous déplaçons dans Shawinigan et les environs pour un petit frais supplémentaire.</p>
 
-    <h2>5. Est-ce que vous faites du support à distance ?</h2>
-    <p>Le support à distance est possible. Nous utilisons AnyDesk pour nous connecter sur l’ordinateur de nos utilisateurs.</p>
+    <h3>3. Est-ce un service professionnel ?</h3>
+    <p>Bien sûr, nous restons très professionnels et nous faisons des suivis réguliers.</p>
 
-    <h2>6. Dois-je prendre un rendez-vous à l’avance ?</h2>
-    <p>Bien sûr. Par respect pour notre clientèle, nous demandons de prendre rendez-vous. Nous respectons l'ordre de priorité. Toutefois, une urgence reste une urgence — vous pouvez toujours nous contacter par téléphone au besoin.</p>
+    <h3>4. Combien de temps dure un formatage complet ?</h3>
+    <p>Un formatage complet peut varier selon le matériel, mais en moyenne, cela prend entre 1 h et 2 h.</p>
 
-    <h2>7. Est-ce que mes fichiers seront supprimés pendant une réparation ?</h2>
-    <p>Tout dépend de la réparation à faire. Si cela implique un effacement de données, nous assurons la protection de vos documents en faisant un BackUP (sauvegarde) des données avant toute intervention.</p>
+    <h3>5. Offrez-vous du support à distance ?</h3>
+    <p>Oui, nous utilisons AnyDesk pour se connecter rapidement sur l’ordinateur de nos clients.</p>
 
-    <h2>8. Est-ce que vous montez des PC personnalisés ?</h2>
-    <p>Oui, nous montons des ordinateurs personnalisés. Deux méthodes s'appliquent :<br>
-    1. Vous apportez vos pièces, et nous faisons le montage.<br>
-    2. Nous vous préparons une soumission selon vos besoins. Si cela vous convient, nous achetons les pièces, puis procédons à l’assemblage pour un résultat adapté à vos attentes.</p>
+    <h3>6. Faut-il prendre rendez-vous ?</h3>
+    <p>Oui, nous demandons un rendez-vous pour respecter l’ordre de priorité. En cas d’urgence, n’hésitez pas à nous téléphoner.</p>
 
-    <h2>9. Quels sont vos modes de paiement acceptés ?</h2>
-    <p>Les modes de paiement acceptés sont : Débit, Crédit, Virement Interac et Argent comptant.</p>
+    <h3>7. Est-ce que mes données seront perdues ?</h3>
+    <p>Nous effectuons une sauvegarde (backup) de vos données avant toute intervention critique, lorsque nécessaire.</p>
 
-    <a href="index.html">← Retour au site</a>
-  </div>
+    <h3>8. Faites-vous des PC personnalisés ?</h3>
+    <p>Oui, deux options : vous fournissez les pièces et nous faisons le montage, ou nous faisons une soumission et nous commandons les pièces pour vous.</p>
+
+    <h3>9. Quels modes de paiement acceptez-vous ?</h3>
+    <p>Nous acceptons les paiements par débit, crédit, virement Interac et argent comptant.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 KarlTech. Tous droits réservés.
+  </footer>
 </body>
 </html>
