@@ -145,7 +145,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Puces cachées par défaut */
+/* Puces cachées par défaut (fade-in on scroll) */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -158,3 +158,63 @@ footer a:hover {
   transform: translateY(0);
 }
 
+/* === Styles pour le carousel “Pourquoi choisir KarlTech” === */
+
+/* Conteneur global */
+#why {
+  position: relative;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  background: none;
+}
+
+/* Zone des slides */
+.why-slider {
+  position: relative;
+  min-height: 100px; /* Ajuste selon ton contenu */
+}
+
+/* Chaque slide, empilée */
+.why-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+/* Slide active */
+.why-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Navigation par puces à droite */
+.why-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.why-nav li {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #66b2ff;
+  border-radius: 50%;
+  margin: 8px 0;
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.why-nav li.active {
+  background: #66b2ff;
+}
