@@ -11,17 +11,17 @@ body::before {
   content: "";
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(47, 47, 47, 0.85); /* voile foncé semi-transparent */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(47, 47, 47, 0.85); /* voile sombre pour lisibilité */
   z-index: -1;
 }
-
 
 header {
   color: white;
   padding: 30px 20px;
   text-align: left;
-  background: transparent !important;
+  background: none !important;
   box-shadow: none !important;
 }
 
@@ -31,15 +31,21 @@ header h1 {
 }
 
 nav {
+  background: none !important;
   background-color: transparent !important;
   box-shadow: none !important;
   border: none !important;
-  color: white;
+  color: white !important;
   text-align: center;
-  padding: 10px;
+  padding: 10px !important;
+}
+
+nav * {
+  background: none !important;
 }
 
 nav a {
+  background: none !important;
   color: white !important;
   margin: 0 15px;
   text-decoration: none;
@@ -50,6 +56,7 @@ section {
   max-width: 900px;
   margin: 30px auto;
   padding: 20px;
+  background: none !important;
   background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -106,3 +113,21 @@ button {
   color: white;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1c1c2e;
+}
+
+a {
+  color: #99c0ff;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1e1e1e;
+  margin-top: 40px;
+  color: #aaa;
+}
