@@ -46,7 +46,7 @@ section {
   margin: 30px auto;
   padding: 20px;
   border-bottom: 2px solid #444;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.35); /* ➜ transparence augmentée ici */
   border-radius: 10px;
 }
 
@@ -72,11 +72,11 @@ th, td {
   border: 1px solid #666;
   padding: 12px;
   text-align: left;
-  background-color: rgba(255, 255, 255, 0.15); /* + transparence */
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 th {
-  background-color: rgba(28, 28, 46, 0.85); /* titre un peu plus opaque */
+  background-color: rgba(28, 28, 46, 0.85);
   color: white;
 }
 
