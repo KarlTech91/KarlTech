@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KarlTech - Soutien Informatique</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* masquer la section Services tant qu’on n’a pas atteint la dernière puce */
+    #servicesSection {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.5s ease, max-height 0.5s ease;
+    }
+    #servicesSection.visible {
+      opacity: 1;
+      max-height: 2000px; /* assez grand pour tout afficher */
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -31,19 +44,19 @@
           <p><strong>Service à domicile ou à distance</strong> – Nous nous adaptons à votre emploi du temps et à votre confort. Que vous préfériez un technicien sur place ou un dépannage en ligne via AnyDesk, nous garantissons une intervention rapide et sécurisée. Chaque session à distance est chiffrée, et toutes vos données restent privées.</p>
         </div>
         <div class="why-slide" data-index="1">
-          <p><strong>Disponibilité en soirée</strong> – Vous travaillez en journée ? Pas de souci ! Nos plages horaires s’étendent jusqu’à 21 h en semaine, pour que vous puissiez profiter de votre ordinateur sans interruption. Planifiez votre rendez-vous quand cela vous convient, sans sacrifier vos heures de travail.</p>
+          <p><strong>Disponibilité en soirée</strong> – Vous travaillez en journée ? Pas de souci ! Nos plages horaires s’étendent jusqu’à 21 h en semaine, pour que vous puissiez profiter de votre ordinateur sans interruption. Planifiez votre rendez-vous quand cela vous convient, sans sacrifier vos obligations.</p>
         </div>
         <div class="why-slide" data-index="2">
-          <p><strong>Transparence totale</strong> – Avant chaque intervention, nous détaillons clairement les coûts et les étapes. Aucun supplément caché : vous savez exactement ce que vous payez. Nous vous envoyons un devis écrit et validons chaque action avant de l’appliquer.</p>
+          <p><strong>Transparence totale</strong> – Avant chaque intervention, nous détaillons clairement les coûts et les étapes. Aucun supplément caché : vous savez exactement ce que vous payez. Vous recevez toujours un devis écrit et validé avant tout travail.</p>
         </div>
         <div class="why-slide" data-index="3">
-          <p><strong>Conseils clairs et adaptés</strong> – Plus de jargon technique incompréhensible ! Nous expliquons chaque solution en termes simples, pour que vous puissiez prendre des décisions éclairées. Vous recevez des astuces personnalisées pour garder votre système performant.</p>
+          <p><strong>Conseils clairs et adaptés</strong> – Fini le jargon technique incompréhensible ! Nous expliquons chaque étape en termes simples, pour que vous preniez des décisions éclairées et appreniez à garder votre système performant sur le long terme.</p>
         </div>
         <div class="why-slide" data-index="4">
-          <p><strong>Expérience concrète</strong> – Avec plus de 10 ans à résoudre des problèmes Windows, optimiser des PC et installer des périphériques variés, notre savoir-faire couvre tous les scénarios. Chaque intervention est effectuée selon les meilleures pratiques recommandées par les fabricants.</p>
+          <p><strong>Expérience concrète</strong> – Forts de plus de 10 ans d’expertise en dépannage Windows, optimisation de PC et installation de périphériques, nous maîtrisons tous les scénarios, des plus courants aux plus complexes, avec rigueur et efficacité.</p>
         </div>
         <div class="why-slide" data-index="5">
-          <p><strong>Flexibilité et proximité</strong> – Implantés à Shawinigan, nous intervenons rapidement chez vous ou à distance dans la région. En plus des soirées, nous sommes disponibles les fins de semaine pour répondre à vos urgences et assurer un suivi régulier de vos installations.</p>
+          <p><strong>Flexibilité et proximité</strong> – Basés à Shawinigan, nous intervenons rapidement chez vous ou à distance dans la région. En plus du soir en semaine, nous sommes disponibles les fins de semaine pour vos urgences et assurons un suivi régulier de vos installations.</p>
         </div>
       </div>
       <ul class="why-nav">
@@ -56,7 +69,8 @@
       </ul>
     </section>
 
-    <section>
+    <!-- Section visible seulement après la dernière puce -->
+    <section id="servicesSection">
       <h2>Nos services populaires</h2>
       <h3>Formatage et réinstallation système</h3>
       <p>Optimisez un ordinateur lent ou infecté : effacement propre, réinstallation de Windows, mises à jour et pilotes.</p>
@@ -85,17 +99,26 @@
   </footer>
 
   <script>
-    // Clic sur puce
-    const dots = document.querySelectorAll('.why-nav li');
-    const slides = document.querySelectorAll('.why-slide');
+    const dots    = document.querySelectorAll('.why-nav li');
+    const slides  = document.querySelectorAll('.why-slide');
+    const services = document.getElementById('servicesSection');
+
     function setActive(idx) {
+      // slides & puces
       slides.forEach(sl => sl.classList.toggle('active', sl.dataset.index === idx));
-      dots.forEach(d => d.classList.toggle('active', d.dataset.index === idx));
+      dots.forEach(d  =>  d.classList.toggle('active', d.dataset.index === idx));
+      // n'affiche Services qu'à la dernière puce (index '5')
+      if (idx === '5') {
+        services.classList.add('visible');
+      } else {
+        services.classList.remove('visible');
+      }
     }
+
     dots.forEach(dot => {
       dot.addEventListener('click', () => setActive(dot.dataset.index));
     });
-    // Roulette de souris
+
     document.getElementById('why').addEventListener('wheel', e => {
       e.preventDefault();
       let current = Array.from(dots).findIndex(d => d.classList.contains('active'));
