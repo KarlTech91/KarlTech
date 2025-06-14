@@ -46,7 +46,7 @@ section {
   margin: 30px auto;
   padding: 20px;
   border-bottom: 2px solid #444;
-  background-color: rgba(0, 0, 0, 0.35); /* ➜ transparence augmentée ici */
+  background-color: rgba(0, 0, 0, 0.15); /* très transparent = 85% de transparence */
   border-radius: 10px;
 }
 
