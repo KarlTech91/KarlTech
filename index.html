@@ -6,19 +6,11 @@
   <title>KarlTech - Soutien Informatique</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Masquer les sections Services et À propos par défaut */
-    #servicesSection,
-    #aproposSection {
-      opacity: 0;
-      max-height: 0;
+    /* On force #why à occuper tout l'écran pour masquer ce qui suit */
+    #why {
+      height: 100vh;
       overflow: hidden;
-      transition: opacity 0.5s ease, max-height 0.5s ease;
-    }
-    /* Les rendre visibles quand .visible est appliqué */
-    #servicesSection.visible,
-    #aproposSection.visible {
-      opacity: 1;
-      max-height: 2000px; /* assez grand pour tout le contenu */
+      position: relative;
     }
   </style>
 </head>
@@ -39,7 +31,7 @@
   </nav>
 
   <main>
-    <!-- Carousel “Pourquoi choisir KarlTech ?” -->
+    <!-- Carousel plein écran -->
     <section id="why">
       <h2>Pourquoi choisir KarlTech ?</h2>
       <div class="why-slider">
@@ -59,7 +51,7 @@
           <p><strong>Expérience concrète</strong> – Avec plus de 10 ans d’expertise en dépannage Windows, optimisation de PC et installation de périphériques, nous maîtrisons tous les scénarios, des plus courants aux plus complexes, avec rigueur et efficacité.</p>
         </div>
         <div class="why-slide" data-index="5">
-          <p><strong>Flexibilité et proximité</strong> – Basés à Shawinigan, nous intervenons rapidement chez vous ou à distance dans la région. En plus du soir en semaine, nous sommes disponibles les fins de semaine pour vos urgences et assurons un suivi régulier de vos installations.</p>
+          <p><strong>Flexibilité et proximité</strong> – Basés à Shawinigan, nous intervenons rapidement chez vous ou à distance dans la région. En plus des soirées en semaine, nous sommes disponibles les fins de semaine pour vos urgences et assurons un suivi régulier de vos installations.</p>
         </div>
       </div>
       <ul class="why-nav">
@@ -72,7 +64,7 @@
       </ul>
     </section>
 
-    <!-- Nos services populaires, masqué jusqu'à la dernière puce -->
+    <!-- Ces sections sont **toujours** dans le flux normal, mais masquées sous #why -->
     <section id="servicesSection">
       <h2>Nos services populaires</h2>
       <h3>Formatage et réinstallation système</h3>
@@ -90,8 +82,7 @@
       <p><a href="services_tarifs.html">→ Voir tous les services et tarifs</a></p>
     </section>
 
-    <!-- À propos, masqué jusqu'à la dernière puce -->
-    <section id="aproposSection">
+    <section id="apropos">
       <h2>À propos</h2>
       <p>Nous sommes une équipe passionnée de technologie et de dépannage informatique depuis plus de 10 ans. Avec KarlTech, notre objectif est simple : offrir un service humain, rapide et de qualité pour vous aider à retrouver un ordinateur performant, que ce soit à la maison, à distance ou sur place.</p>
       <p>Notre approche est personnalisée, sans jargon compliqué, et toujours adaptée à vos besoins. Que vous soyez un particulier ou un travailleur autonome, nous sommes là pour vous simplifier la vie numérique.</p>
@@ -103,36 +94,33 @@
   </footer>
 
   <script>
-    const dots     = document.querySelectorAll('.why-nav li');
-    const slides   = document.querySelectorAll('.why-slide');
-    const services = document.getElementById('servicesSection');
-    const apropos  = document.getElementById('aproposSection');
+    const dots   = document.querySelectorAll('.why-nav li');
+    const slides = document.querySelectorAll('.why-slide');
 
     function setActive(idx) {
-      // Met à jour slides et puces
       slides.forEach(sl => sl.classList.toggle('active', sl.dataset.index === idx));
-      dots.forEach(d  =>  d.classList.toggle('active', d.dataset.index === idx));
-      // Quand on est sur la dernière puce (index '5'), on révèle les 2 sections
-      if (idx === '5') {
-        services.classList.add('visible');
-        apropos.classList.add('visible');
-      } else {
-        services.classList.remove('visible');
-        apropos.classList.remove('visible');
-      }
+      dots.forEach(d  => d.classList.toggle('active', d.dataset.index === idx));
     }
 
     dots.forEach(dot => {
       dot.addEventListener('click', () => setActive(dot.dataset.index));
     });
 
-    document.getElementById('why').addEventListener('wheel', e => {
-      e.preventDefault();
-      let current = Array.from(dots).findIndex(d => d.classList.contains('active'));
-      let next    = current + (e.deltaY > 0 ? 1 : -1);
-      if (next < 0) next = dots.length - 1;
-      if (next >= dots.length) next = 0;
-      setActive(String(next));
+    // Tant que on n'est pas sur la dernière puce (5), on gère le carousel.
+    // Dès qu'on atteint la puce 5 et qu'on scroll vers le bas,
+    // on retire l'interception pour laisser défiler la page.
+    const whySection = document.getElementById('why');
+    whySection.addEventListener('wheel', e => {
+      const current = Array.from(dots).findIndex(d => d.classList.contains('active'));
+      if (current < 5) {
+        // on reste dans le carousel
+        e.preventDefault();
+        let next = current + (e.deltaY > 0 ? 1 : -1);
+        if (next < 0) next = dots.length - 1;
+        if (next >= dots.length) next = 0;
+        setActive(String(next));
+      }
+      // si current === 5 et deltaY > 0, on ne fait rien : la page défile normalement
     }, { passive: false });
   </script>
 </body>
