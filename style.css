@@ -1,4 +1,4 @@
-/* Structure générale */
+/* Structure de base */
 html, body {
   height: 100%;
   margin: 0;
@@ -11,63 +11,63 @@ html, body {
   flex-direction: column;
 }
 
-main {
-  flex: 1;
-}
-
-/* Superposition sombre du fond */
+/* Superposition sombre uniforme */
 body::before {
   content: "";
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(30, 30, 30, 0.85);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.85); /* 85% d'opacité */
   z-index: -1;
 }
 
 /* En-tête */
 header {
   padding: 30px 20px;
-  display: flex;
-  align-items: center;
-  background: none;
+  text-align: center;
 }
 
 header img {
   height: 60px;
+  float: left;
   margin-right: 20px;
 }
 
 header h1 {
   margin: 0;
   font-size: 2em;
-  color: #ffffff;
 }
 
 header p {
-  margin: 0;
-  color: #ddd;
+  margin: 5px 0 0 0;
 }
 
-/* Navigation */
+/* Barre de navigation */
 nav {
   text-align: center;
-  padding: 12px 0;
-  background: none;
+  padding: 10px 0;
+  font-weight: bold;
 }
 
 nav a {
   color: white;
   margin: 0 15px;
   text-decoration: none;
-  font-weight: bold;
 }
 
-/* Sections */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sections générales */
 section {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.85); /* fond semi-transparent */
+  border-radius: 10px;
 }
 
 /* Titres */
@@ -75,40 +75,26 @@ h2 {
   color: #66b2ff;
 }
 
-h3 {
-  color: #f0f0f0;
-  margin-top: 20px;
-}
-
-/* Listes */
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-/* Tableau */
+/* Tableaux */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 th, td {
   border: 1px solid #666;
   padding: 12px;
   text-align: left;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 th {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #1c1c2e;
   color: white;
 }
 
-/* Formulaire */
+/* Formulaires */
 form {
   display: flex;
   flex-direction: column;
@@ -139,11 +125,7 @@ button:hover {
 
 /* Liens */
 a {
-  color: #66b2ff;
-}
-
-a:hover {
-  text-decoration: underline;
+  color: #99c0ff;
 }
 
 /* Pied de page */
@@ -151,5 +133,15 @@ footer {
   text-align: center;
   padding: 20px;
   background-color: #1e1e1e;
+  margin-top: auto;
   color: #aaa;
+}
+
+footer a {
+  color: #99c0ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
