@@ -28,7 +28,7 @@ header h1 {
 }
 
 nav {
-  background-color: #2d2d44;
+  background-color: transparent; /* supprimé */
   color: white;
   text-align: center;
   padding: 10px;
@@ -46,7 +46,7 @@ section {
   margin: 30px auto;
   padding: 20px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(0, 0, 0, 0.05); /* très très transparent */
+  background-color: transparent; /* supprimé */
   border-radius: 10px;
 }
 
