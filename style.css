@@ -7,13 +7,9 @@ body {
   color: #f0f0f0;
 }
 
+/* FOND SUPPRIMÉ */
 body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(47, 47, 47, 0.85);
-  z-index: -1;
+  display: none;
 }
 
 header {
@@ -28,7 +24,7 @@ header h1 {
 }
 
 nav {
-  background-color: transparent; /* supprimé */
+  background-color: transparent !important;
   color: white;
   text-align: center;
   padding: 10px;
@@ -46,7 +42,7 @@ section {
   margin: 30px auto;
   padding: 20px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-  background-color: transparent; /* supprimé */
+  background-color: transparent !important;
   border-radius: 10px;
 }
 
