@@ -85,19 +85,33 @@
   </footer>
 
   <script>
-    // Navigation carousel “Pourquoi choisir KarlTech ?”
-    document.querySelectorAll('.why-nav li').forEach(dot => {
+    // Initialisation
+    const dots = document.querySelectorAll('.why-nav li');
+    const slides = document.querySelectorAll('.why-slide');
+
+    function setActive(idx) {
+      // Met à jour slides
+      slides.forEach(sl => sl.classList.toggle('active', sl.dataset.index === idx));
+      // Met à jour puces
+      dots.forEach(d => d.classList.toggle('active', d.dataset.index === idx));
+    }
+
+    // Clic sur puce
+    dots.forEach(dot => {
       dot.addEventListener('click', () => {
-        const idx = dot.dataset.index;
-        // Met à jour les puces
-        document.querySelectorAll('.why-nav li').forEach(d => d.classList.remove('active'));
-        dot.classList.add('active');
-        // Affiche la slide correspondante
-        document.querySelectorAll('.why-slide').forEach(slide => {
-          slide.classList.toggle('active', slide.dataset.index === idx);
-        });
+        setActive(dot.dataset.index);
       });
     });
+
+    // Scroll roulette
+    document.getElementById('why').addEventListener('wheel', e => {
+      e.preventDefault();
+      let current = Array.from(dots).findIndex(d => d.classList.contains('active'));
+      let next = current + (e.deltaY > 0 ? 1 : -1);
+      if (next < 0) next = dots.length - 1;
+      if (next >= dots.length) next = 0;
+      setActive(String(next));
+    }, { passive: false });
   </script>
 </body>
 </html>
