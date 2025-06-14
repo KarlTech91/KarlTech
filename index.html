@@ -1,106 +1,74 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KarlTech - Soutien Informatique</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8BQ6dM2v6j5vJf8kRAZP3w3ZXt87GXjG+5XkQ/29h6wxNRZ1qNhN/mI6Lg0j3UL2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
   <header>
-    <img src="logo_karltech.png" alt="Logo KarlTech" style="height: 80px; float: left; margin-right: 20px;">
-    <div>
+    <div class="container">
+      <img src="logo.png" alt="Logo KarlTech" class="logo" />
       <h1>KarlTech</h1>
-      <p>Votre expert en soutien informatique à Shawinigan et environs</p>
+      <p>Soutien informatique personnalisé à Shawinigan et environs</p>
     </div>
-    <div style="clear: both;"></div>
   </header>
 
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="services_tarifs.html">Services et Tarifs</a>
-    <a href="faq.html">FAQ</a>
-    <a href="#contact">Contact</a>
-    <a href="#apropos">À propos</a>
-  </nav>
-
-  <section>
-    <h2>Pourquoi choisir KarlTech ?</h2>
-    <ul>
-      <li><i class="fas fa-check-circle"></i> Plus de 10 ans d'expérience en dépannage informatique</li>
-      <li><i class="fas fa-users"></i> Service personnalisé et humain</li>
-      <li><i class="fas fa-bolt"></i> Interventions rapides, sur place ou à distance</li>
-      <li><i class="fas fa-dollar-sign"></i> Tarifs transparents et compétitifs</li>
-    </ul>
+  <section id="pourquoi">
+    <div class="container">
+      <h2>Pourquoi choisir KarlTech ?</h2>
+      <p>Chez <strong>KarlTech</strong>, nous croyons que chaque client mérite un service informatique à la fois <strong>fiable</strong>, <strong>personnalisé</strong> et <strong>abordable</strong>. Que vous soyez un particulier ou une petite entreprise, nous offrons une assistance rapide et adaptée à vos besoins.</p>
+      <ul>
+        <li>✅ <strong>Service à domicile ou à distance</strong> – selon votre préférence et votre confort</li>
+        <li>✅ <strong>Transparence totale</strong> sur les tarifs et les interventions</li>
+        <li>✅ <strong>Conseils clairs, honnêtes et adaptés</strong> à votre niveau de connaissance</li>
+        <li>✅ <strong>Expérience concrète</strong> avec les systèmes Windows, les logiciels courants, les périphériques, et bien plus</li>
+        <li>✅ <strong>Flexibilité et disponibilité</strong> dans la région de Shawinigan et ses environs</li>
+      </ul>
+      <p>Notre approche humaine et professionnelle fait la différence : nous <strong>privilégions la clarté, la pédagogie, et la satisfaction à long terme</strong> de nos clients.</p>
+    </div>
   </section>
 
-  <section>
-    <h2>Nos services populaires</h2>
-    <ul>
-      <li><i class="fas fa-laptop"></i> Formatage complet de votre PC – Windows remis à neuf</li>
-      <li><i class="fas fa-virus-slash"></i> Suppression de virus – Nettoyage en profondeur et optimisation</li>
-      <li><i class="fas fa-headset"></i> Assistance à distance – Intervention rapide via AnyDesk</li>
-    </ul>
-    <p><a href="services_tarifs.html" style="color:#66b2ff; font-weight:bold;">→ Voir tous les services et tarifs</a></p>
-  </section>
-
-  
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:info@karltech.ca">info@karltech.ca</a></p>
-    <p>📞 <a href="tel:8738879620">873-887-9620</a></p>
-    <p>🌐 <a href="https://www.karltech.ca">www.karltech.ca</a></p>
-
-    <h3>Formulaire de contact</h3>
-    <form action="https://formspree.io/f/mnnvdepz" method="POST">
-      <input type="text" name="nom" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre adresse e-mail" required>
-      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-      <button type="submit">Envoyer</button>
-      <p id="confirmation" style="display:none; color: #66b2ff; margin-top:10px;">
-        ✅ Merci ! Votre message a bien été envoyé.
-      </p>
-    </form>
-  </section>
-
-  <section id="apropos">
-    <h2>À propos</h2>
-    <p>Nous sommes une équipe passionnée de technologie et de dépannage informatique depuis plus de 10 ans. Avec KarlTech, notre objectif est simple : offrir un service humain, rapide et de qualité pour vous aider à retrouver un ordinateur performant, que ce soit à la maison, à distance ou sur place.</p>
-    <p>Notre approche est personnalisée, sans jargon compliqué, et toujours adaptée à vos besoins. Que vous soyez un particulier ou un travailleur autonome, nous sommes là pour vous simplifier la vie numérique.</p>
+  <section id="services">
+    <div class="container">
+      <h2>Nos services populaires</h2>
+      <ul>
+        <li>
+          <h3>🔧 Formatage et réinstallation système</h3>
+          <p>Optimisez un ordinateur lent ou infecté : effacement propre, réinstallation de Windows, mises à jour et pilotes.</p>
+        </li>
+        <li>
+          <h3>🛡️ Suppression de virus et sécurisation</h3>
+          <p>Nettoyage complet, installation d’antivirus, et conseils pour mieux protéger votre appareil.</p>
+        </li>
+        <li>
+          <h3>💾 Sauvegarde et récupération de données</h3>
+          <p>Vous avez perdu des fichiers ? On vous aide à les récupérer et à mettre en place une stratégie de sauvegarde efficace.</p>
+        </li>
+        <li>
+          <h3>💡 Installation de logiciels et configuration personnalisée</h3>
+          <p>Bureautique, multimédia, logiciels spécialisés : on installe, configure, et vous explique.</p>
+        </li>
+        <li>
+          <h3>🖥️ Montage et optimisation d’ordinateurs sur mesure</h3>
+          <p>Pour le travail, le gaming ou la maison : on vous guide dans le choix des pièces, on assemble, on teste.</p>
+        </li>
+        <li>
+          <h3>🧰 Diagnostic complet avec recommandation</h3>
+          <p>Votre ordinateur pose problème ? On fait un bilan technique, on vous explique le souci et on propose des solutions claires.</p>
+        </li>
+      </ul>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 KarlTech. Tous droits réservés.
+    <div class="container">
+      <p>&copy; 2025 KarlTech. Tous droits réservés.</p>
+    </div>
   </footer>
-
-  <button id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Haut de page</button>
-
-  <script>
-    const btn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-
-    const form = document.querySelector("form");
-    const confirmation = document.getElementById("confirmation");
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          confirmation.style.display = "block";
-          form.reset();
-        } else {
-          alert("Une erreur est survenue. Essayez à nouveau.");
-        }
-      });
-    });
-  </script>
 </body>
+
 </html>
