@@ -6,16 +6,19 @@
   <title>KarlTech - Soutien Informatique</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* masquer la section Services tant qu’on n’a pas atteint la dernière puce */
-    #servicesSection {
+    /* Masquer les sections Services et À propos par défaut */
+    #servicesSection,
+    #aproposSection {
       opacity: 0;
       max-height: 0;
       overflow: hidden;
       transition: opacity 0.5s ease, max-height 0.5s ease;
     }
-    #servicesSection.visible {
+    /* Les rendre visibles quand .visible est appliqué */
+    #servicesSection.visible,
+    #aproposSection.visible {
       opacity: 1;
-      max-height: 2000px; /* assez grand pour tout afficher */
+      max-height: 2000px; /* assez grand pour tout le contenu */
     }
   </style>
 </head>
@@ -53,7 +56,7 @@
           <p><strong>Conseils clairs et adaptés</strong> – Fini le jargon technique incompréhensible ! Nous expliquons chaque étape en termes simples, pour que vous preniez des décisions éclairées et appreniez à garder votre système performant sur le long terme.</p>
         </div>
         <div class="why-slide" data-index="4">
-          <p><strong>Expérience concrète</strong> – Forts de plus de 10 ans d’expertise en dépannage Windows, optimisation de PC et installation de périphériques, nous maîtrisons tous les scénarios, des plus courants aux plus complexes, avec rigueur et efficacité.</p>
+          <p><strong>Expérience concrète</strong> – Avec plus de 10 ans d’expertise en dépannage Windows, optimisation de PC et installation de périphériques, nous maîtrisons tous les scénarios, des plus courants aux plus complexes, avec rigueur et efficacité.</p>
         </div>
         <div class="why-slide" data-index="5">
           <p><strong>Flexibilité et proximité</strong> – Basés à Shawinigan, nous intervenons rapidement chez vous ou à distance dans la région. En plus du soir en semaine, nous sommes disponibles les fins de semaine pour vos urgences et assurons un suivi régulier de vos installations.</p>
@@ -69,7 +72,7 @@
       </ul>
     </section>
 
-    <!-- Section visible seulement après la dernière puce -->
+    <!-- Nos services populaires, masqué jusqu'à la dernière puce -->
     <section id="servicesSection">
       <h2>Nos services populaires</h2>
       <h3>Formatage et réinstallation système</h3>
@@ -87,7 +90,8 @@
       <p><a href="services_tarifs.html">→ Voir tous les services et tarifs</a></p>
     </section>
 
-    <section id="apropos">
+    <!-- À propos, masqué jusqu'à la dernière puce -->
+    <section id="aproposSection">
       <h2>À propos</h2>
       <p>Nous sommes une équipe passionnée de technologie et de dépannage informatique depuis plus de 10 ans. Avec KarlTech, notre objectif est simple : offrir un service humain, rapide et de qualité pour vous aider à retrouver un ordinateur performant, que ce soit à la maison, à distance ou sur place.</p>
       <p>Notre approche est personnalisée, sans jargon compliqué, et toujours adaptée à vos besoins. Que vous soyez un particulier ou un travailleur autonome, nous sommes là pour vous simplifier la vie numérique.</p>
@@ -99,19 +103,22 @@
   </footer>
 
   <script>
-    const dots    = document.querySelectorAll('.why-nav li');
-    const slides  = document.querySelectorAll('.why-slide');
+    const dots     = document.querySelectorAll('.why-nav li');
+    const slides   = document.querySelectorAll('.why-slide');
     const services = document.getElementById('servicesSection');
+    const apropos  = document.getElementById('aproposSection');
 
     function setActive(idx) {
-      // slides & puces
+      // Met à jour slides et puces
       slides.forEach(sl => sl.classList.toggle('active', sl.dataset.index === idx));
       dots.forEach(d  =>  d.classList.toggle('active', d.dataset.index === idx));
-      // n'affiche Services qu'à la dernière puce (index '5')
+      // Quand on est sur la dernière puce (index '5'), on révèle les 2 sections
       if (idx === '5') {
         services.classList.add('visible');
+        apropos.classList.add('visible');
       } else {
         services.classList.remove('visible');
+        apropos.classList.remove('visible');
       }
     }
 
@@ -122,7 +129,7 @@
     document.getElementById('why').addEventListener('wheel', e => {
       e.preventDefault();
       let current = Array.from(dots).findIndex(d => d.classList.contains('active'));
-      let next = current + (e.deltaY > 0 ? 1 : -1);
+      let next    = current + (e.deltaY > 0 ? 1 : -1);
       if (next < 0) next = dots.length - 1;
       if (next >= dots.length) next = 0;
       setActive(String(next));
