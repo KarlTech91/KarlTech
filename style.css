@@ -1,86 +1,99 @@
-body {
-  position: relative; /* ← c'est la clé */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Structure générale */
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  background: url('support-informatique.jpg') no-repeat center center fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
 }
 
+main {
+  flex: 1;
+}
+
+/* Superposition sombre du fond */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(47, 47, 47, 0.85);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(30, 30, 30, 0.85);
   z-index: -1;
 }
 
-
+/* En-tête */
 header {
-  color: white;
   padding: 30px 20px;
-  text-align: left;
-  background: none !important;
-  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  background: none;
+}
+
+header img {
+  height: 60px;
+  margin-right: 20px;
 }
 
 header h1 {
   margin: 0;
   font-size: 2em;
+  color: #ffffff;
 }
 
+header p {
+  margin: 0;
+  color: #ddd;
+}
+
+/* Navigation */
 nav {
-  background: none !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  color: white !important;
   text-align: center;
-  padding: 10px !important;
-}
-
-nav * {
-  background: none !important;
+  padding: 12px 0;
+  background: none;
 }
 
 nav a {
-  background: none !important;
-  color: white !important;
+  color: white;
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
 }
 
+/* Sections */
 section {
-  max-width: 900px;
-  margin: 30px auto;
+  max-width: 1000px;
+  margin: 40px auto;
   padding: 20px;
-  background: none !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
 }
 
-section:last-of-type {
-  border-bottom: none;
+/* Titres */
+h2 {
+  color: #66b2ff;
 }
 
-section h2 {
-  color: #99c0ff;
+h3 {
+  color: #f0f0f0;
+  margin-top: 20px;
 }
 
+/* Listes */
 ul {
   padding-left: 20px;
 }
 
+li {
+  margin-bottom: 8px;
+}
+
+/* Tableau */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 th, td {
@@ -91,10 +104,11 @@ th, td {
 }
 
 th {
-  background-color: rgba(28, 28, 46, 0.85);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
 
+/* Formulaire */
 form {
   display: flex;
   flex-direction: column;
@@ -123,14 +137,19 @@ button:hover {
   background-color: #1c1c2e;
 }
 
+/* Liens */
 a {
-  color: #99c0ff;
+  color: #66b2ff;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+/* Pied de page */
 footer {
   text-align: center;
   padding: 20px;
   background-color: #1e1e1e;
-  margin-top: 40px;
   color: #aaa;
 }
