@@ -28,22 +28,22 @@
       <h2>Pourquoi choisir KarlTech ?</h2>
       <div class="why-slider">
         <div class="why-slide active" data-index="0">
-          <p><strong>Service à domicile ou à distance</strong> – selon votre préférence et votre confort</p>
+          <p><strong>Service à domicile ou à distance</strong> – Nous nous adaptons à votre emploi du temps et à votre confort. Que vous préfériez un technicien sur place ou un dépannage en ligne via AnyDesk, nous garantissons une intervention rapide et sécurisée. Chaque session à distance est chiffrée, et toutes vos données restent privées.</p>
         </div>
         <div class="why-slide" data-index="1">
-          <p><strong>Disponibilité en soirée</strong> – idéal pour les clients qui travaillent le jour et souhaitent un dépannage après les heures normales</p>
+          <p><strong>Disponibilité en soirée</strong> – Vous travaillez en journée ? Pas de souci ! Nos plages horaires s’étendent jusqu’à 21 h en semaine, pour que vous puissiez profiter de votre ordinateur sans interruption. Planifiez votre rendez-vous quand cela vous convient, sans sacrifier vos heures de travail.</p>
         </div>
         <div class="why-slide" data-index="2">
-          <p><strong>Transparence totale</strong> sur les tarifs et les interventions</p>
+          <p><strong>Transparence totale</strong> – Avant chaque intervention, nous détaillons clairement les coûts et les étapes. Aucun supplément caché : vous savez exactement ce que vous payez. Nous vous envoyons un devis écrit et validons chaque action avant de l’appliquer.</p>
         </div>
         <div class="why-slide" data-index="3">
-          <p><strong>Conseils clairs, honnêtes et adaptés</strong> à votre niveau de connaissance</p>
+          <p><strong>Conseils clairs et adaptés</strong> – Plus de jargon technique incompréhensible ! Nous expliquons chaque solution en termes simples, pour que vous puissiez prendre des décisions éclairées. Vous recevez des astuces personnalisées pour garder votre système performant.</p>
         </div>
         <div class="why-slide" data-index="4">
-          <p><strong>Expérience concrète</strong> avec les systèmes Windows, les logiciels courants, les périphériques, etc.</p>
+          <p><strong>Expérience concrète</strong> – Avec plus de 10 ans à résoudre des problèmes Windows, optimiser des PC et installer des périphériques variés, notre savoir-faire couvre tous les scénarios. Chaque intervention est effectuée selon les meilleures pratiques recommandées par les fabricants.</p>
         </div>
         <div class="why-slide" data-index="5">
-          <p><strong>Flexibilité et disponibilité</strong> dans la région de Shawinigan et ses environs</p>
+          <p><strong>Flexibilité et proximité</strong> – Implantés à Shawinigan, nous intervenons rapidement chez vous ou à distance dans la région. En plus des soirées, nous sommes disponibles les fins de semaine pour répondre à vos urgences et assurer un suivi régulier de vos installations.</p>
         </div>
       </div>
       <ul class="why-nav">
@@ -85,25 +85,17 @@
   </footer>
 
   <script>
-    // Initialisation
+    // Clic sur puce
     const dots = document.querySelectorAll('.why-nav li');
     const slides = document.querySelectorAll('.why-slide');
-
     function setActive(idx) {
-      // Met à jour slides
       slides.forEach(sl => sl.classList.toggle('active', sl.dataset.index === idx));
-      // Met à jour puces
       dots.forEach(d => d.classList.toggle('active', d.dataset.index === idx));
     }
-
-    // Clic sur puce
     dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        setActive(dot.dataset.index);
-      });
+      dot.addEventListener('click', () => setActive(dot.dataset.index));
     });
-
-    // Scroll roulette
+    // Roulette de souris
     document.getElementById('why').addEventListener('wheel', e => {
       e.preventDefault();
       let current = Array.from(dots).findIndex(d => d.classList.contains('active'));
