@@ -61,8 +61,8 @@ main {
 #why {
   position: relative;
   width: 100%;
-  /* Hauteur = 90vh - 144px (10% de moins pour voir la bordure) */
-  height: calc(90vh - 144px);
+  /* Hauteur = 90vh - hauteur header (160px) */
+  height: calc(90vh - 160px);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -82,7 +82,6 @@ main {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  padding: 60px;
   box-sizing: border-box;
   opacity: 0;
   transform: translateY(20px);
@@ -91,11 +90,15 @@ main {
   color: white;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;   /* ⬅️ étirement total (stretch) */
+  background-size: 100% 100%;
   border: 4px solid rgba(102, 178, 255, 0.7);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+
+  display: flex;            /* pour centrer le contenu */
+  align-items: center;      /* verticalement */
+  padding-left: 10%;        /* marge à gauche pour le texte */
 }
 
 /* Overlay sombre pour contraste */
@@ -108,9 +111,23 @@ main {
   background: rgba(0,0,0,0.4);
   z-index: 0;
 }
+
+/* Texte des slides */
 .why-slide p {
   position: relative;
   z-index: 1;
+  max-width: 50%;           /* largeur de ligne optimisée */
+  font-size: 1.4rem;        /* texte plus gros */
+  line-height: 1.5;
+  margin: 0;
+  color: white;
+}
+
+/* Titre en gras dans le paragraphe */
+.why-slide p strong {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.5em;
 }
 
 /* Slide active */
@@ -123,7 +140,8 @@ main {
 /* Puces fixes à droite */
 .why-nav {
   position: absolute;
-  top: calc(45vh + 72px); /* ajuste si nécessaire */
+  /* centrer verticalement dans #why */
+  top: calc(45vh + 80px);   /* 90vh/2 + header/2 */
   right: 2%;
   transform: translateY(-50%);
   list-style: none;
@@ -227,7 +245,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* === Backgrounds spécifiques pour chaque slide === */
+/* Backgrounds spécifiques pour chaque slide */
 .why-slide[data-index="0"] { background-image: url('Service_domicile_distance.png'); }
 .why-slide[data-index="1"] { background-image: url('Service_soiree.png'); }
 .why-slide[data-index="2"] { background-image: url('Service_transparence.png'); }
