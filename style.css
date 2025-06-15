@@ -18,12 +18,13 @@ html, body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
-  background: linear-gradient(var(--background-color), url('support-informatique.jpg') no-repeat center center fixed);
+  background: linear-gradient(var(--background-color), url('support-informatique.jpg') no-repeat center center fixed); /* Assurez-vous que le chemin est correct ici */
   background-size: cover;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
 }
+
 
 header {
   display: flex;
