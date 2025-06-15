@@ -123,10 +123,10 @@ main {
   color: white;
 }
 
-/* Titre en gras dans le paragraphe – augmentée */
+/* Titre en gras dans le paragraphe – taille augmentée */
 .why-slide p strong {
   display: block;
-  font-size: 2rem;        /* agrandi par rapport à 1.6rem */
+  font-size: 2.6rem;       /* augmenté de 2rem à 2.6rem */
   margin-bottom: 0.5em;
 }
 
