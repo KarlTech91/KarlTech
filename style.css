@@ -23,7 +23,7 @@ html, body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
-  background: url('/mnt/data/41671c3d-cc84-4c21-8409-f1412665b1ff.png') no-repeat center center fixed; /* Ton image de fond */
+  background: url('support-informatique.jpg') no-repeat center center fixed; /* Ton image de fond */
   background-size: cover;  /* S'assurer que l'image occupe tout l'écran */
   display: flex;
   flex-direction: column;
