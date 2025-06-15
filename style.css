@@ -11,7 +11,7 @@ html, body {
   color: #f0f0f0;
   display: flex;
   flex-direction: column;
-  /* On laisse le scroll normal sur le body */
+  overflow-x: hidden;
 }
 
 /* En-tête */
@@ -61,8 +61,8 @@ main {
 #why {
   position: relative;
   width: 100%;
-  /* hauteur = 100% viewport - hauteur header (160px) */
-  height: calc(100vh - 160px);
+  /* Hauteur = 90vh - 144px (10% de moins) */
+  height: calc(90vh - 144px);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -92,6 +92,10 @@ main {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 4px solid rgba(102, 178, 255, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
 /* Overlay sombre pour contraste */
@@ -119,8 +123,9 @@ main {
 /* Puces fixes à droite */
 .why-nav {
   position: absolute;
-  /* centrer verticalement dans #why */
-  top: calc(160px + (100vh - 160px)/2);
+  /* centrer verticalement dans #why réduit :
+     90vh/2 = 45vh, 144px/2 = 72px → top = 45vh + 72px */
+  top: calc(45vh + 72px);
   right: 2%;
   transform: translateY(-50%);
   list-style: none;
@@ -231,11 +236,3 @@ footer a:hover {
 .why-slide[data-index="3"] { background-image: url('Service_conseils.png'); }
 .why-slide[data-index="4"] { background-image: url('Service_experience.png'); }
 .why-slide[data-index="5"] { background-image: url('Service_flexibilite.png'); }
-
-/* Bordure moderne + ombre sur les slides */
-.why-slide {
-  border: 4px solid rgba(102, 178, 255, 0.7);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  overflow: hidden;  /* pour que le contenu reste dans les coins arrondis */
-}
