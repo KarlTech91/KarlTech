@@ -186,18 +186,16 @@ p {
    ==================================================== */
 #contact .contact-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;  /* Centrer les éléments horizontalement */
   gap: 40px;
+  margin-top: 40px;  /* Ajout de l'espace au-dessus */
 }
 
-#contact .col.infos {
-  flex: 1;
-  padding-right: 20px;
-}
-
+#contact .col.infos,
 #contact .col.formu {
-  flex: 2;
-  padding-left: 20px;
+  flex: 1;
+  max-width: 500px;  /* Limiter la largeur des colonnes */
+  padding: 20px;
 }
 
 form {
@@ -209,6 +207,7 @@ form {
 form input,
 form textarea {
   width: 100%;
+  max-width: 100%;  /* Pour s'assurer que les champs prennent toute la largeur disponible */
   padding: 10px;
   border: 1px solid #66b2ff;
   border-radius: 4px;
@@ -224,10 +223,36 @@ form button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
 }
 
 form button:hover {
   background-color: #3399ff;
+}
+
+/* ====================================================
+   Informations de contact et formulaire
+   ==================================================== */
+#contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #66b2ff;
+}
+
+#contact .col.infos p {
+  margin: 10px 0;
+  text-align: center;
+}
+
+#contact .col.infos ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+#contact .col.infos ul li {
+  margin-bottom: 5px;
 }
 
 /* ====================================================
