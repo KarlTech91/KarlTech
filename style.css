@@ -40,7 +40,7 @@ header img {
 /* ---------- Navigation ---------- */
 nav {
   text-align: center;
-  background: rgba(0,0,0,0.5);
+  /* fond supprimé pour totale transparence */
   padding: 10px 0;
 }
 nav a {
@@ -76,23 +76,22 @@ main {
 .why-slide {
   position: absolute;
   top: 0; left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 10%;
-  background: none;               /* plus d’images de fond */
+  background: none;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity .6s ease, transform .6s ease;
-  border: 4px solid #66b2ff;      /* Bordure bleue */
+  border: 4px solid #66b2ff;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
-/* voile sombre interne */
 .why-slide::before {
   content: "";
   position: absolute;
@@ -100,7 +99,6 @@ main {
   background: rgba(0,0,0,0.4);
   z-index: 0;
 }
-/* contenu texte centré */
 .why-slide p {
   position: relative;
   z-index: 1;
@@ -128,7 +126,7 @@ main {
   right: 2%;
   transform: translateY(-50%);
   list-style: none;
-  margin: 0; 
+  margin: 0;
   padding: 0;
 }
 .why-nav li {
