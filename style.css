@@ -339,16 +339,17 @@ footer a {
   display: none; /* Cacher les slides au début */
   width: 80%;  /* Largeur des slides */
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Fond noir pour plus de contraste */
+  background: rgba(0, 0, 0, 0); /* Fond transparent */
   padding: 0 20px;
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Ombre autour des slides */
+  box-shadow: none; /* Retirer l'ombre */
   color: white;
   text-align: center;
   font-size: 1.5rem;
   transition: opacity 0.6s ease-in-out;
   opacity: 0;
 }
+
 
 .why-slide.active {
   display: block; /* Afficher le slide actif */
