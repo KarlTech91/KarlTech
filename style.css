@@ -404,3 +404,29 @@ footer a {
     margin-top: 20px;
   }
 }
+
+/* Titre de la section "À propos" */
+#aproposSection .section-title {
+  color: var(--primary-color);  /* Couleur bleu */
+  text-align: center;  /* Centrer le titre */
+  font-size: 2rem;  /* Taille du titre */
+  margin-bottom: 20px;  /* Espacement en dessous du titre */
+}
+
+/* Centrer le contenu de la section */
+#aproposSection {
+  padding: 40px 20px;
+  text-align: center;  /* Centrer tout le contenu */
+  width: 80%;  /* Limiter la largeur */
+  margin: 0 auto;  /* Centrer la section dans la page */
+  background-color: rgba(0, 0, 0, 0.5); /* Optionnel : fond pour contraster avec l'image */
+  border-radius: 10px;  /* Bordure arrondie */
+}
+
+#aproposSection p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;  /* Espacement entre les paragraphes */
+}
+
