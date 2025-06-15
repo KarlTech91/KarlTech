@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KarlTech – Accueil</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- En-tête -->
   <header>
-    <img src="logo_karltech.png" alt="Logo KarlTech" />
-    <div>
+    <img src="logo_karltech.png" alt="Logo KarlTech">
+    <div class="header-text">
       <h1>KarlTech</h1>
       <p>Soutien informatique personnalisé à Shawinigan et environs</p>
     </div>
@@ -28,26 +28,32 @@
   <!-- Contenu principal -->
   <main>
 
-    <!-- Slider “Pourquoi choisir KarlTech ?” -->
+    <!-- Slider “Pourquoi choisir KarlTech” -->
     <section id="why">
       <div class="why-slider">
         <div class="why-slide active" data-index="0">
-          <p><strong>Service à domicile ou à distance</strong> – Nous nous adaptons à votre emploi du temps et à votre confort...</p>
+          <p><strong>Service à domicile ou à distance</strong><br>
+          Nous nous adaptons à votre emploi du temps et à votre confort : dépannage sur place ou en ligne via AnyDesk, intervention rapide, données toujours chiffrées.</p>
         </div>
         <div class="why-slide" data-index="1">
-          <p><strong>Disponibilité en soirée</strong> – Vous travaillez en journée ? Pas de souci ! Nos plages horaires s’étendent jusqu’à 21h...</p>
+          <p><strong>Disponibilité en soirée</strong><br>
+          Vous travaillez la journée ? Pas de souci ! Nos plages horaires s’étendent jusqu’à 21 h en semaine pour que votre PC ne vous freine plus.</p>
         </div>
         <div class="why-slide" data-index="2">
-          <p><strong>Transparence totale</strong> – Avant chaque intervention, nous détaillons clairement les coûts...</p>
+          <p><strong>Transparence totale</strong><br>
+          Devis clair et gratuit avant chaque intervention : aucun supplément caché, vous connaissez toujours le coût exact.</p>
         </div>
         <div class="why-slide" data-index="3">
-          <p><strong>Conseils clairs et adaptés</strong> – Fini le jargon technique ! Nous expliquons chaque étape en termes simples...</p>
+          <p><strong>Conseils clairs et adaptés</strong><br>
+          Fini le jargon technique : nous expliquons chaque étape simplement pour vous donner les clés de votre système.</p>
         </div>
         <div class="why-slide" data-index="4">
-          <p><strong>Expérience concrète</strong> – Forts de plus de 10 ans d’expertise, nous maîtrisons tous les scénarios...</p>
+          <p><strong>Expérience concrète</strong><br>
+          Plus de 10 ans d’expertise en Windows, optimisation PC et matériel, pour des solutions efficaces et durables.</p>
         </div>
         <div class="why-slide" data-index="5">
-          <p><strong>Flexibilité et proximité</strong> – Basés à Shawinigan, nous intervenons rapidement chez vous...</p>
+          <p><strong>Flexibilité et proximité</strong><br>
+          Basés à Shawinigan, nous intervenons chez vous ou à distance, semaine ou fin de semaine, pour un suivi régulier.</p>
         </div>
       </div>
       <ul class="why-nav">
@@ -64,28 +70,27 @@
     <section id="servicesSection">
       <h2>Nos services populaires</h2>
       <h3>Formatage et réinstallation système</h3>
-      <p>Optimisez un ordinateur lent ou infecté : effacement propre, réinstallation de Windows...</p>
+      <p>Restauration propre de Windows, pilotes et mises à jour.</p>
       <h3>Suppression de virus et sécurisation</h3>
-      <p>Nettoyage complet avec suppression des logiciels malveillants et optimisation des performances.</p>
+      <p>Nettoyage complet contre les malwares et optimisation.</p>
       <h3>Assistance à distance</h3>
-      <p>Intervention rapide via AnyDesk, sans déplacement.</p>
+      <p>Prise en main rapide via AnyDesk, sans déplacement.</p>
       <h3>Installation de pièces ou logiciels</h3>
-      <p>Mise à niveau de votre PC ou ajout de logiciels essentiels.</p>
+      <p>Ajout de RAM, SSD, logiciels Office, antivirus, etc.</p>
       <p><a href="services_tarifs.html">→ Voir tous les services et tarifs</a></p>
     </section>
 
     <!-- À propos -->
     <section id="aproposSection">
       <h2>À propos</h2>
-      <p>Nous sommes une équipe passionnée de technologie et de dépannage...</p>
-      <p>Notre approche est personnalisée, sans jargon compliqué...</p>
+      <p>Équipe passionnée et expérimentée depuis 10 ans, KarlTech propose un service humain et rapide pour rendre votre expérience numérique fluide.</p>
     </section>
 
   </main>
 
   <!-- Pied de page -->
   <footer>
-    &larr; <a href="index.html">Retour à l’accueil</a><br />
+    &larr; <a href="index.html">Retour à l’accueil</a><br>
     &copy; 2025 KarlTech. Tous droits réservés.
   </footer>
 
@@ -95,22 +100,20 @@
       const slides = document.querySelectorAll('.why-slide');
       const dots   = document.querySelectorAll('.why-nav li');
       let idx = 0;
-      function show(i){
+      function show(i) {
         slides.forEach(s=>s.classList.remove('active'));
         dots.forEach(d=>d.classList.remove('active'));
         slides[i].classList.add('active');
         dots[i].classList.add('active');
         idx = i;
       }
-      dots.forEach(d=> d.onclick = ()=> show(+d.dataset.index));
-      document.getElementById('why')
-        .addEventListener('wheel', e=>{
-          e.preventDefault();
-          let next = (idx + (e.deltaY>0?1:-1) + slides.length) % slides.length;
-          show(next);
-        });
+      dots.forEach(d=> d.addEventListener('click', ()=> show(+d.dataset.index)));
+      document.getElementById('why').addEventListener('wheel', e=>{
+        e.preventDefault();
+        const dir = e.deltaY > 0 ? 1 : -1;
+        show((idx + dir + slides.length) % slides.length);
+      });
     })();
   </script>
-
 </body>
 </html>
