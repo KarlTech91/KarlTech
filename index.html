@@ -105,25 +105,25 @@
   </footer>
 
   <!-- Script du slider -->
-  <script>
+ <script>
     (function(){
       const slides = document.querySelectorAll('.why-slide');
-      const dots = document.querySelectorAll('.why-nav li');
+      const dots   = document.querySelectorAll('.why-nav li');
       let idx = 0;
-
-      function show(i) {
-        slides.forEach(s=> s.classList.remove('active'));
-        dots.forEach(d=> d.classList.remove('active'));
+      function show(i){
+        slides.forEach(s=>s.classList.remove('active'));
+        dots.forEach(d=>d.classList.remove('active'));
         slides[i].classList.add('active');
         dots[i].classList.add('active');
         idx = i;
       }
-
-      dots.forEach(d=> d.addEventListener('click', ()=> show(+d.dataset.index)));
-
-      setInterval(() => {
-        show((idx + 1) % slides.length);
-      }, 5000); // Change every 5 seconds
+      dots.forEach(d=> d.onclick = ()=> show(+d.dataset.index));
+      document.getElementById('why')
+        .addEventListener('wheel', e=>{
+          e.preventDefault();
+          let next = (idx + (e.deltaY>0?1:-1) + slides.length) % slides.length;
+          show(next);
+        });
     })();
   </script>
 </body>
