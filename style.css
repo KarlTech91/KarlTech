@@ -76,22 +76,23 @@ main {
 
 #contact h2 {
   color: #66b2ff;
-  margin-bottom: 20px;
+  margin-bottom: 10px;  /* Réduire l'espacement sous le titre */
   text-align: left;
+  width: 100%;
 }
 
 #contact .contact-container {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  gap: 20px;  /* Réduire l'écart entre les deux colonnes */
   width: 100%;
-  max-width: 1200px; /* Limiter la largeur globale */
+  max-width: 1000px; /* Limiter la largeur des colonnes */
 }
 
 #contact .col.infos,
 #contact .col.formu {
   flex: 1;
-  max-width: 500px;  /* Limiter la largeur des colonnes */
+  max-width: 450px;  /* Limiter la largeur des colonnes pour réduire l'espace */
   padding: 20px;
 }
 
@@ -111,11 +112,12 @@ main {
   margin-bottom: 5px;
 }
 
+/* Formulaire */
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 30px;  /* Ajouter un peu d'espacement */
+  margin-top: 20px;  /* Ajouter un peu d'espacement */
 }
 
 form input,
