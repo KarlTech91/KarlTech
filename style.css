@@ -99,7 +99,7 @@ nav.main-nav a.active {
   height: 100%;
   display: flex;
   justify-content: center; /* Centrer horizontalement */
-  align-items: flex-start; /* Alignement vertical : ici il est aligné en haut */
+  align-items: center; /* Centrer verticalement */
   padding: var(--slider-padding);  /* Espacement interne du slider */
   text-align: center; /* Centrer le texte dans chaque slide */
 }
@@ -112,7 +112,7 @@ nav.main-nav a.active {
   height: 100%;
   display: flex;
   justify-content: center; /* Centrer horizontalement */
-  align-items: flex-start; /* Centrer verticalement en haut */
+  align-items: center; /* Centrer verticalement */
   padding: var(--slider-padding);  /* Espacement interne du slider */
   opacity: 0;
   transform: translateY(20px);
@@ -137,6 +137,7 @@ nav.main-nav a.active {
   color: var(--slider-text-color);
   line-height: 1.5;
   padding: var(--slider-padding-vertical) 0; /* Espacement vertical pour bien centrer le texte */
+  text-align: center; /* S'assurer que le texte est bien centré */
 }
 
 .why-slide p strong {
