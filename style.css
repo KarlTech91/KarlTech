@@ -61,7 +61,7 @@ main {
 #why {
   position: relative;
   width: 100%;
-  /* Hauteur = 90vh - 144px (10% de moins) */
+  /* Hauteur = 90vh - 144px (10% de moins pour voir la bordure) */
   height: calc(90vh - 144px);
   overflow: hidden;
   display: flex;
@@ -91,7 +91,7 @@ main {
   color: white;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;   /* ⬅️ étirement total (stretch) */
   border: 4px solid rgba(102, 178, 255, 0.7);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -123,9 +123,7 @@ main {
 /* Puces fixes à droite */
 .why-nav {
   position: absolute;
-  /* centrer verticalement dans #why réduit :
-     90vh/2 = 45vh, 144px/2 = 72px → top = 45vh + 72px */
-  top: calc(45vh + 72px);
+  top: calc(45vh + 72px); /* ajuste si nécessaire */
   right: 2%;
   transform: translateY(-50%);
   list-style: none;
