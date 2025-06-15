@@ -198,6 +198,29 @@ p {
   padding: 20px;
 }
 
+#contact h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #66b2ff;
+  margin-left: 20px; /* Aligner avec les informations */
+}
+
+#contact .col.infos p,
+#contact .col.infos ul {
+  text-align: left;  /* Aligner les informations à gauche */
+  margin-left: 20px; /* Aligner avec le titre */
+  margin-bottom: 15px; /* Espacement entre les informations */
+}
+
+#contact .col.infos ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#contact .col.infos ul li {
+  margin-bottom: 5px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -229,31 +252,6 @@ form button {
 
 form button:hover {
   background-color: #3399ff;
-}
-
-/* ====================================================
-   Informations de contact et formulaire
-   ==================================================== */
-#contact h2 {
-  text-align: left;
-  margin-bottom: 20px;
-  color: #66b2ff;
-  margin-left: 20px; /* Aligner avec les informations */
-}
-
-#contact .col.infos p,
-#contact .col.infos ul {
-  text-align: left;  /* Aligner le texte à gauche */
-  margin-left: 20px; /* Aligner avec le titre */
-}
-
-#contact .col.infos ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#contact .col.infos ul li {
-  margin-bottom: 5px;
 }
 
 /* ====================================================
