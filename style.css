@@ -1,7 +1,71 @@
 /* ====================================================
-   Styles spécifiques à la page Contact
+   KarlTech – Styles globaux
    ==================================================== */
 
+/* ---------- Structure générale ---------- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+  background:
+    linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)),
+    url('support-informatique.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ---------- En-tête ---------- */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+header img {
+  height: 100px;
+  margin-right: 20px;
+}
+.header-text h1 {
+  margin: 0;
+  font-size: 2em;
+}
+.header-text p {
+  margin: 0;
+  color: #ccc;
+}
+
+/* ---------- Navigation ---------- */
+nav.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 15px 0;
+  font-weight: bold;
+}
+
+nav.main-nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a.active {
+  text-decoration: underline;
+  color: #66b2ff;
+}
+
+/* ---------- Main ---------- */
+main {
+  flex: 1;
+}
+
+/* ====================================================
+   Section Contact – Nous joindre
+   ==================================================== */
 #contact {
   display: flex;
   flex-direction: column;
@@ -95,83 +159,78 @@ form button:hover {
 }
 
 /* ====================================================
-   Styles globaux pour les autres pages
+   Section FAQ – Questions Fréquentes
    ==================================================== */
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #f0f0f0;
-  background:
-    linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)),
-    url('support-informatique.jpg') no-repeat center center fixed;
-  background-size: cover;
+#faq {
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
-}
-
-header {
-  display: flex;
   align-items: center;
-  padding: 20px;
 }
 
-header img {
-  height: 100px;
-  margin-right: 20px;
-}
-
-.header-text h1 {
-  margin: 0;
-  font-size: 2em;
-}
-
-.header-text p {
-  margin: 0;
-  color: #ccc;
-}
-
-nav.main-nav {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 15px 0;
-  font-weight: bold;
-}
-
-nav.main-nav a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-nav.main-nav a:hover,
-nav.main-nav a.active {
-  text-decoration: underline;
+#faq h2 {
   color: #66b2ff;
+  text-align: center;  /* Centrer le titre de la page */
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
-main {
-  flex: 1;
+.faq-container {
+  max-width: 1000px;  /* Limiter la largeur du contenu */
+  width: 100%;
+  margin-top: 20px;
 }
 
+.faq-container h3 {
+  color: #66b2ff;
+  font-size: 1.4rem;  /* Taille de police cohérente */
+  margin-bottom: 10px;  /* Espacement entre les questions */
+}
+
+.faq-container p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* ====================================================
+   Styles de réponse aux questions
+   ==================================================== */
+.faq-container h3,
+.faq-container p {
+  text-align: left;  /* Aligner à gauche pour plus de lisibilité */
+  margin-left: 20px; /* Garder un bon espacement */
+}
+
+/* ====================================================
+   Styles de lien dans la FAQ
+   ==================================================== */
+.faq-container a {
+  color: #66b2ff;
+  text-decoration: none;
+}
+
+.faq-container a:hover {
+  text-decoration: underline;
+}
+
+/* ====================================================
+   Pied de page
+   ==================================================== */
 footer {
   text-align: center;
   padding: 20px;
   background: rgba(0,0,0,0.6);
   font-size: 0.9rem;
 }
-
 footer a {
   color: #66b2ff;
   text-decoration: none;
 }
 
 /* ====================================================
-   Responsive (max-width: 768px) - s'adapte aux autres pages
+   Responsive (max-width: 768px) - pour les appareils mobiles
    ==================================================== */
 @media (max-width: 768px) {
   header {
@@ -184,7 +243,31 @@ footer a {
   nav {
     font-size: 0.9rem;
   }
-  main {
-    padding: 20px;
+  #faq {
+    padding: 20px 10px;
+  }
+
+  #faq h2 {
+    font-size: 1.5rem;
+  }
+
+  .faq-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .faq-container p {
+    font-size: 1rem;
+  }
+
+  #contact .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .col.infos, .col.formu {
+    max-width: 100%;
+    padding: 10px;
+  }
+  form {
+    margin-top: 20px;
   }
 }
