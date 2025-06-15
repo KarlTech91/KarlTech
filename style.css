@@ -218,3 +218,17 @@ footer a {
     font-size: 1rem;
   }
 }
+
+#servicesSection table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+#servicesSection th,
+#servicesSection td {
+  border: 1px solid #66b2ff;
+  padding: 8px;
+}
+#servicesSection th {
+  background: rgba(102,178,255,0.2);
+}
