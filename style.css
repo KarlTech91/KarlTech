@@ -68,15 +68,16 @@ main {
    ==================================================== */
 #contact {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;  /* Centrer le contenu horizontalement */
   padding: 40px 20px;
-  flex-wrap: wrap;
 }
 
 #contact h2 {
   color: #66b2ff;
-  margin-left: 20px; /* Aligner avec les informations */
   margin-bottom: 20px;
+  text-align: left;
 }
 
 #contact .contact-container {
@@ -90,7 +91,7 @@ main {
 #contact .col.infos,
 #contact .col.formu {
   flex: 1;
-  max-width: 500px;
+  max-width: 500px;  /* Limiter la largeur des colonnes */
   padding: 20px;
 }
 
@@ -110,11 +111,11 @@ main {
   margin-bottom: 5px;
 }
 
-/* Formulaire */
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-top: 30px;  /* Ajouter un peu d'espacement */
 }
 
 form input,
@@ -171,10 +172,6 @@ footer a {
   nav {
     font-size: 0.9rem;
   }
-  #contact {
-    flex-direction: column;
-    align-items: center;
-  }
   #contact .contact-container {
     flex-direction: column;
     align-items: center;
@@ -182,5 +179,8 @@ footer a {
   .col.infos, .col.formu {
     max-width: 100%;
     padding: 10px;
+  }
+  form {
+    margin-top: 20px;
   }
 }
