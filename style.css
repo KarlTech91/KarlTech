@@ -1,144 +1,183 @@
-/* ================================================== */
-/*                  FICHIER style.css                  */
-/*            KarlTech – Styles Globaux               */
-/* ================================================== */
+/* ====================================================
+   KarlTech – Styles globaux
+   ==================================================== */
 
-/* ---------------------- */
-/*  Structure générale    */
-/* ---------------------- */
+/* ---------- Structure générale ---------- */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
   background:
-    linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.85)),
+    linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)),
     url('support-informatique.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #f0f0f0;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
 }
 
-/* ---------------------- */
-/*        En-tête         */
-/* ---------------------- */
+/* ---------- En-tête ---------- */
 header {
   display: flex;
   align-items: center;
-  padding: 30px 20px;
-  background: transparent;
+  padding: 20px;
 }
 header img {
   height: 100px;
   margin-right: 20px;
 }
-header h1 {
+.header-text h1 {
   margin: 0;
   font-size: 2em;
 }
-header p {
+.header-text p {
   margin: 0;
-  font-size: 1em;
   color: #ccc;
 }
 
-/* ---------------------- */
-/*    Barre de navigation */
-/* ---------------------- */
+/* ---------- Navigation ---------- */
 nav {
   text-align: center;
+  background: rgba(0,0,0,0.5);
   padding: 10px 0;
-  font-weight: bold;
 }
 nav a {
-  color: white;
+  color: #fff;
   margin: 0 15px;
   text-decoration: none;
+  font-weight: bold;
 }
-nav a:hover,
-nav a.active {
+nav a.active,
+nav a:hover {
   text-decoration: underline;
 }
 
-/* ---------------------- */
-/*         Main           */
-/* ---------------------- */
+/* ---------- Main ---------- */
 main {
   flex: 1;
+}
+
+/* ====================================================
+   Slider “Pourquoi choisir KarlTech ?”
+   ==================================================== */
+#why {
+  position: relative;
+  height: calc(90vh - 160px);
+  overflow: hidden;
+  margin: 20px;
+}
+.why-slider {
+  position: relative;
   width: 100%;
+  height: 100%;
+}
+.why-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s, transform .6s;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.why-slide[data-index="0"] { background-image:url('Service_domicile_distance.png'); }
+.why-slide[data-index="1"] { background-image:url('Disponibilite_soir.png'); }
+.why-slide[data-index="2"] { background-image:url('Prix_fixe.png'); }
+.why-slide[data-index="3"] { background-image:url('Conseil_clair.png'); }
+.why-slide[data-index="4"] { background-image:url('Experience_diplome.png'); }
+.why-slide[data-index="5"] { background-image:url('voyage_distance.png'); }
+.why-slide::before {
+  content:""; position:absolute; inset:0;
+  background:rgba(0,0,0,0.4);
+}
+.why-slide p {
+  position: relative;
+  z-index: 1;
+  max-width: 50%;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+.why-slide p strong {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 0.5em;
+}
+.why-slide.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ================================================== */
-/*      Section “Pourquoi choisir” (Slider)           */
-/* ================================================== */
-/* … (inchangé) … */
-
-/* ================================================== */
-/*      Sections “Services” et “À propos”             */
-/* ================================================== */
-/* … (inchangé) … */
-
-/* ================================================== */
-/*             Section Contact / “Nous joindre”       */
-/* ================================================== */
-/* … (inchangé) … */
-
-/* ================================================== */
-/*        Section FAQ – Questions Fréquentes          */
-/* ================================================== */
-#faq {
-  padding: 60px 30px;       /* espace haut/bas + un peu de latéral */
-  background: none;
-  text-align: center;       /* titre centré */
+/* Puces de navigation */
+.why-nav {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  list-style: none;
+  padding: 0; margin: 0;
 }
-#faq h2 {
-  margin-bottom: 1em;
-  font-size: 2rem;
+.why-nav li {
+  width: 14px; height: 14px;
+  border: 2px solid #66b2ff;
+  border-radius: 50%;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: background .3s;
+}
+.why-nav li.active {
+  background: #66b2ff;
 }
 
-/* Conteneur de la FAQ */
-.faq-container {
-  max-width: 800px;         /* largeur de lecture optimale */
-  margin: 0 auto;           /* centre horizontalement */
-  text-align: left;         /* paragraphe aligné à gauche à l’intérieur */
+/* ====================================================
+   Sections Services & À propos
+   ==================================================== */
+#servicesSection,
+#aproposSection {
+  padding: 40px 20px;
 }
-
-/* Titres de questions */
-.faq-container h3 {
-  margin-top: 1.5em;
-  font-size: 1.4rem;
+h2 {
   color: #66b2ff;
+  font-size: 1.8rem;
+}
+h3 {
+  margin-top: 1em;
+  font-size: 1.2rem;
 }
 
-/* Texte de réponse */
-.faq-container p {
-  margin: 0.5em 0 1em;
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-/* ---------------------- */
-/*         Pied de page    */
-/* ---------------------- */
+/* ====================================================
+   Pied de page
+   ==================================================== */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #1e1e1e;
-  margin-top: auto;
-  color: #aaa;
+  background: rgba(0,0,0,0.6);
   font-size: 0.9rem;
 }
 footer a {
-  color: #99c0ff;
+  color: #66b2ff;
   text-decoration: none;
 }
-footer a:hover {
-  text-decoration: underline;
-}
 
-/* ================================================== */
-/*        Responsive (mobiles / tablettes)            */
-/* ================================================== */
-/* … (inchangé) … */
+/* ====================================================
+   Responsive (max-width 768px)
+   ==================================================== */
+@media (max-width:768px) {
+  header { flex-direction: column; text-align: center; }
+  header img { margin-bottom: 10px; }
+  nav { font-size: 0.9rem; }
+  #why { height: calc(70vh - 120px); margin: 10px; }
+  .why-slide p { max-width: 80%; font-size: 1rem; }
+  .why-slide p strong { font-size: 1.4rem; }
+  .why-nav { right: 50%; bottom: 10px; top: auto; transform: translateX(50%); flex-direction: row; }
+  .why-nav li { margin: 0 6px; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1rem; }
+}
