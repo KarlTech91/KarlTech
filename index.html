@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KarlTech - Soutien Informatique</title>
+  <title>KarlTech – Accueil</title>
+  <!-- FEUILLE DE STYLE GLOBALE -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- ==================== En-tête ==================== -->
   <header>
     <img src="logo_karltech.png" alt="Logo KarlTech">
     <div>
@@ -15,6 +17,7 @@
     </div>
   </header>
 
+  <!-- ==================== Navigation ==================== -->
   <nav>
     <a href="index.html" class="active">Accueil</a>
     <a href="services_tarifs.html">Services et Tarifs</a>
@@ -22,37 +25,39 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- ==================== Contenu principal ==================== -->
   <main>
-    <!-- Section “Pourquoi choisir KarlTech ?” -->
+
+    <!-- == Section “Pourquoi choisir KarlTech ?” == -->
     <section id="why">
       <div class="why-slider">
-        <div class="why-slide active" data-index="0"
-             style="background-image:url('Service_domicile_distance.png')">
-          <p><strong>Service à domicile ou à distance</strong> – Nous nous adaptons à votre emploi du temps et à votre confort. Que vous préfériez un technicien sur place ou un dépannage en ligne via AnyDesk, nous garantissons une intervention rapide et sécurisée. Chaque session à distance est chiffrée, et toutes vos données restent privées.</p>
+        <!-- Slide 1 -->
+        <div class="why-slide active" data-index="0">
+          <p><strong>Service à domicile ou à distance</strong> – Nous nous adaptons à votre emploi du temps et à votre confort. Que vous préfériez un technicien sur place ou un dépannage en ligne via AnyDesk, nous garantissons une intervention rapide et sécurisée. Chaque session à distance est chiffrée et toutes vos données restent privées.</p>
         </div>
-        <div class="why-slide" data-index="1"
-             style="background-image:url('Disponibilite_soir.png')">
-          <p>
-    <strong>Disponibilité en soirée</strong> – Vous travaillez en journée ? Pas de soucis ! Nos plages horaires s’étendent jusqu’à 21h en semaine pour que vous puissiez profiter de votre ordinateur sans interruption. Planifiez votre rendez-vous quand cela vous convient, sans sacrifier vos obligations.
-  </p>
+        <!-- Slide 2 -->
+        <div class="why-slide" data-index="1">
+          <p><strong>Disponibilité en soirée</strong> – Vous travaillez en journée&nbsp;? Pas de souci&nbsp;! Nos plages horaires s’étendent jusqu’à 21 h en semaine pour que vous puissiez profiter de votre ordinateur sans interruption. Planifiez votre rendez-vous quand cela vous convient, sans sacrifier vos obligations.</p>
         </div>
-        <div class="why-slide" data-index="2"
-             style="background-image:url('Prix_fixe.png')">
+        <!-- Slide 3 -->
+        <div class="why-slide" data-index="2">
           <p><strong>Transparence totale</strong> – Avant chaque intervention, nous détaillons clairement les coûts et les étapes. Aucun supplément caché : vous savez exactement ce que vous payez. Vous recevez toujours un devis écrit et validé avant tout travail.</p>
         </div>
-        <div class="why-slide" data-index="3"
-             style="background-image:url('Conseil_clair.png')">
+        <!-- Slide 4 -->
+        <div class="why-slide" data-index="3">
           <p><strong>Conseils clairs et adaptés</strong> – Fini le jargon technique incompréhensible ! Nous expliquons chaque étape en termes simples, pour que vous preniez des décisions éclairées et appreniez à garder votre système performant sur le long terme.</p>
         </div>
-        <div class="why-slide" data-index="4"
-             style="background-image:url('Experience_diplome.png')">
+        <!-- Slide 5 -->
+        <div class="why-slide" data-index="4">
           <p><strong>Expérience concrète</strong> – Avec plus de 10 ans d’expertise en dépannage Windows, optimisation de PC et installation de périphériques, nous maîtrisons tous les scénarios, des plus courants aux plus complexes, avec rigueur et efficacité.</p>
         </div>
-        <div class="why-slide" data-index="5"
-             style="background-image:url('voyage_distance.png')">
+        <!-- Slide 6 -->
+        <div class="why-slide" data-index="5">
           <p><strong>Flexibilité et proximité</strong> – Basés à Shawinigan, nous intervenons rapidement chez vous ou à distance dans la région. En plus des soirées en semaine, nous sommes disponibles les fins de semaine pour vos urgences et assurons un suivi régulier de vos installations.</p>
         </div>
       </div>
+
+      <!-- Puces de navigation -->
       <ul class="why-nav">
         <li class="active" data-index="0"></li>
         <li data-index="1"></li>
@@ -63,63 +68,58 @@
       </ul>
     </section>
 
-    <!-- Sections suivantes -->
+    <!-- == Section “Nos services populaires” == -->
     <section id="servicesSection">
       <h2>Nos services populaires</h2>
+
       <h3>Formatage et réinstallation système</h3>
       <p>Optimisez un ordinateur lent ou infecté : effacement propre, réinstallation de Windows, mises à jour et pilotes.</p>
+
       <h3>Suppression de virus et sécurisation</h3>
       <p>Nettoyage complet de votre système avec suppression des logiciels malveillants et amélioration des performances.</p>
+
       <h3>Assistance à distance</h3>
       <p>Intervention rapide via AnyDesk, sans déplacement, pour une solution simple et efficace.</p>
+
       <h3>Installation de pièces ou logiciels</h3>
-      <p>Mise à niveau de votre PC ou ajout de logiciels essentiels pour votre productivité et confort d’utilisation.</p>
+      <p>Mise à niveau de votre PC ou ajout de logiciels essentiels pour votre productivité et confort d'utilisation.</p>
+
       <p><a href="services_tarifs.html">→ Voir tous les services et tarifs</a></p>
     </section>
 
+    <!-- == Section « À propos » == -->
     <section id="aproposSection">
       <h2>À propos</h2>
       <p>Nous sommes une équipe passionnée de technologie et de dépannage informatique depuis plus de 10 ans. Avec KarlTech, notre objectif est simple : offrir un service humain, rapide et de qualité pour vous aider à retrouver un ordinateur performant, que ce soit à la maison, à distance ou sur place.</p>
       <p>Notre approche est personnalisée, sans jargon compliqué, et toujours adaptée à vos besoins. Que vous soyez un particulier ou un travailleur autonome, nous sommes là pour vous simplifier la vie numérique.</p>
     </section>
+
   </main>
 
+  <!-- ==================== Pied de page ==================== -->
   <footer>
+    &larr; <a href="index.html">Retour à l’accueil</a><br>
     &copy; 2025 KarlTech. Tous droits réservés.
   </footer>
 
+  <!-- ==================== Script Slider ==================== -->
   <script>
-    const dots   = document.querySelectorAll('.why-nav li');
-    const slides = document.querySelectorAll('.why-slide');
-    const why    = document.getElementById('why');
+    // IntersectionObserver + navigation par puce
+    document.addEventListener("DOMContentLoaded", () => {
+      const slides = document.querySelectorAll(".why-slide");
+      const dots   = document.querySelectorAll(".why-nav li");
 
-    function setActive(idx) {
-      slides.forEach(s => s.classList.toggle('active', s.dataset.index === idx));
-      dots.forEach(d   => d.classList.toggle('active', d.dataset.index === idx));
-    }
-
-    dots.forEach(d => d.addEventListener('click', () => setActive(d.dataset.index)));
-
-    why.addEventListener('wheel', e => {
-      e.preventDefault();
-      let curr = Array.from(dots).findIndex(d => d.classList.contains('active'));
-      const up   = e.deltaY < 0;
-      const down = e.deltaY > 0;
-
-      if (curr < 5) {
-        let next = curr + (down ? 1 : -1);
-        if (next < 0) next = 0;
-        if (next > 5) next = 5;
-        setActive(String(next));
-      } else {
-        if (up) {
-          setActive('4');
-        } else if (down) {
-          document.documentElement.style.overflow = 'auto';
-          document.body.style.overflow = 'auto';
-        }
+      function showSlide(idx) {
+        slides.forEach(s => s.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
+        slides[idx].classList.add("active");
+        dots[idx].classList.add("active");
       }
-    }, { passive: false });
+
+      dots.forEach(dot => {
+        dot.addEventListener("click", () => showSlide(dot.dataset.index));
+      });
+    });
   </script>
 </body>
 </html>
