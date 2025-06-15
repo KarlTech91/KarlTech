@@ -2,11 +2,11 @@
    KarlTech – Variables Globales
    ==================================================== */
 :root {
-  --primary-color: #66b2ff;  /* Couleur principale */
-  --secondary-color: #3399ff; /* Couleur secondaire */
-  --text-color: #f0f0f0;      /* Couleur du texte */
-  --link-color: #66b2ff;     /* Couleur des liens */
-  --hover-link-color: #3399ff; /* Couleur des liens au survol */
+  --primary-color: #66b2ff;
+  --secondary-color: #3399ff;
+  --text-color: #f0f0f0;
+  --background-color: #1e1e1e;
+  --link-color: #66b2ff;
 }
 
 /* ====================================================
@@ -25,47 +25,44 @@ html, body {
   overflow-x: hidden;
 }
 
-
+/* ---------- En-tête ---------- */
 header {
   display: flex;
   align-items: center;
   padding: 20px;
 }
-
 header img {
   height: 100px;
   margin-right: 20px;
 }
-
 .header-text h1 {
   margin: 0;
   font-size: 2em;
 }
-
 .header-text p {
   margin: 0;
   color: #ccc;
 }
 
+/* ---------- Navigation ---------- */
 nav.main-nav {
   display: flex;
   justify-content: center;
   gap: 40px;
   padding: 15px 0;
   font-weight: bold;
+  font-size: 1.2em;
 }
-
 nav.main-nav a {
-  color: var(--text-color);
   text-decoration: none;
+  color: var(--link-color);
 }
-
-nav.main-nav a.active,
-nav.main-nav a:hover {
+nav.main-nav a:hover,
+nav.main-nav a.active {
   text-decoration: underline;
-  color: var(--hover-link-color);
 }
 
+/* ---------- Main ---------- */
 main {
   flex: 1;
 }
@@ -74,7 +71,10 @@ main {
    Section Services & Tarifs
    ==================================================== */
 #servicesSection {
-  padding: 40px 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #servicesSection table {
@@ -82,131 +82,76 @@ main {
   margin: 0 auto;
   border-collapse: collapse;
 }
-
-#servicesSection th, #servicesSection td {
-  padding: 8px;
-  border: 1px solid var(--primary-color);
-}
-
-#servicesSection th {
-  background-color: rgba(102, 178, 255, 0.2);
-}
-
+#servicesSection th,
 #servicesSection td {
-  background-color: rgba(102, 178, 255, 0.1);
+  border: 1px solid var(--primary-color);
+  padding: 8px;
 }
-
-#servicesSection h2 {
-  color: var(--primary-color);
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 2rem;
-}
-
-#servicesSection p {
-  text-align: center;
+#servicesSection th {
+  background: rgba(102, 178, 255, 0.2);
 }
 
 /* ====================================================
-   Section FAQ – Questions Fréquentes
+   Section FAQ – Questions fréquentes
    ==================================================== */
-#faq {
-  padding: 40px 20px;
-}
-
-#faq h2 {
-  color: var(--primary-color);
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#faq h3 {
-  color: var(--primary-color);
-  font-size: 1.5rem;
-  margin-top: 15px;
-}
-
 .faq-container {
+  max-width: 1000px;
+  width: 100%;
   margin-top: 20px;
 }
 
 .faq-container h3 {
-  font-size: 1.2rem;
+  color: var(--primary-color);
+  font-size: 1.7em;
+  margin-bottom: 20px;
 }
 
 .faq-container p {
-  line-height: 1.5;
-  font-size: 1rem;
-}
-
-.faq-container p strong {
   font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 /* ====================================================
-   Section Contact
+   Section Contact – Nous joindre
    ==================================================== */
 #contact {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-}
-
-#contact .contact-container {
-  display: flex;
   justify-content: space-between;
-  gap: 20px;
-  width: 100%;
-  max-width: 1000px;
+  gap: 40px;
+  margin-top: 40px;
 }
 
 #contact .col {
-  width: 48%;
+  width: 45%;
 }
 
-#contact .col.infos {
-  text-align: left;
-  font-size: 1.1rem;
-  line-height: 1.8;
+#contact .col.infos p {
+  font-size: 1.2rem;
 }
 
 #contact .col.formu {
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
-#contact .col.infos ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#contact .col.infos a {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-#contact .col.infos a:hover {
-  text-decoration: underline;
-}
-
-#contact .col.formu input, #contact .col.formu textarea {
+form input,
+form textarea {
+  width: 100%;
   padding: 10px;
+  margin-bottom: 20px;
   border-radius: 4px;
   border: 1px solid var(--primary-color);
-  font-size: 1rem;
-  width: 100%;
+  font-size: 1.1rem;
 }
 
-#contact .col.formu button {
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  background-color: var(--secondary-color);
-  color: #fff;
+form button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px;
+  font-size: 1.2rem;
   border: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 /* ====================================================
@@ -217,161 +162,25 @@ main {
     flex-direction: column;
     text-align: center;
   }
-
   header img {
     margin-bottom: 10px;
   }
-
-  nav {
+  nav.main-nav {
     font-size: 0.9rem;
+    flex-direction: column;
   }
-
-  #why {
-    height: calc(70vh - 120px);
-    margin: 10px;
+  #servicesSection {
+    padding: 20px;
+    align-items: flex-start;
   }
-
-  .why-slide p {
-    max-width: 80%;
-    font-size: 1.4rem;
-  }
-
-  .why-slide p strong {
-    font-size: 2.5rem;
-  }
-
-  .why-nav {
-    top: auto;
-    bottom: 10px;
-    right: 50%;
-    transform: translateX(50%);
-    flex-direction: row;
-  }
-
-  .why-nav li {
-    margin: 0 6px;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  h3 {
-    font-size: 1rem;
-  }
-
-  #contact .contact-container {
+  #contact {
     flex-direction: column;
     align-items: center;
   }
-
   #contact .col {
     width: 100%;
   }
-}
-
-/* ====================================================
-   Footer
-   ==================================================== */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.6);
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-/* ====================================================
-   Slider
-   ==================================================== */
-#why {
-  position: relative;
-  height: calc(90vh - 160px);
-  margin: 20px;
-  overflow: hidden;
-}
-
-.why-slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.why-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 10%;
-  background: none;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .6s ease, transform .6s ease;
-  border: 4px solid var(--primary-color);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-}
-
-.why-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 0;
-}
-
-.why-slide p {
-  position: relative;
-  z-index: 1;
-  max-width: 60%;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.6rem;
-  line-height: 1.5;
-  color: #fff;
-}
-
-.why-slide p strong {
-  display: block;
-  font-size: 3rem;
-  margin-bottom: 0.5em;
-}
-
-.why-slide.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.why-nav {
-  position: absolute;
-  top: 50%;
-  right: 2%;
-  transform: translateY(-50%);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.why-nav li {
-  width: 14px;
-  height: 14px;
-  border: 2px solid var(--primary-color);
-  border-radius: 50%;
-  margin: 8px 0;
-  cursor: pointer;
-  transition: background .3s;
-}
-
-.why-nav li.active {
-  background: var(--primary-color);
+  #contact .col.formu {
+    margin-top: 20px;
+  }
 }
