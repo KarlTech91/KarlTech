@@ -88,6 +88,8 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+/*
 .why-slide[data-index="0"] { background-image:url('Service_domicile_distance.png'); }
 .why-slide[data-index="1"] { background-image:url('Disponibilite_soir.png'); }
 .why-slide[data-index="2"] { background-image:url('Prix_fixe.png'); }
@@ -98,6 +100,8 @@ main {
   content:""; position:absolute; inset:0;
   background:rgba(0,0,0,0.4);
 }
+*/
+
 .why-slide p {
   position: relative;
   z-index: 1;
