@@ -11,14 +11,13 @@
   --slider-text-color: #ffffff;  /* Couleur du texte dans le slider */
   --slider-font-size: 2rem;   /* Taille du texte dans le slider */
   --slider-padding: 5%;      /* Espacement interne du slider */
-  --slider-height: 50vh;     /* Hauteur du slider */
+  --slider-height: 60vh;     /* Hauteur du slider */
+  --slider-padding-vertical: 15%; /* Espacement vertical du texte */
 }
 
 /* ====================================================
-   KarlTech – Styles globaux
+   Structure générale
    ==================================================== */
-
-/* ---------- Structure générale ---------- */
 html, body {
   height: 100%;
   margin: 0;
@@ -32,7 +31,9 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ---------- En-tête ---------- */
+/* ====================================================
+   En-tête
+   ==================================================== */
 header {
   display: flex;
   align-items: center;
@@ -54,7 +55,9 @@ header img {
   color: #ccc;
 }
 
-/* ---------- Navigation ---------- */
+/* ====================================================
+   Navigation
+   ==================================================== */
 nav.main-nav {
   display: flex;
   justify-content: center;
@@ -75,17 +78,19 @@ nav.main-nav a.active {
   color: var(--primary-color);
 }
 
-/* ---------- Main ---------- */
+/* ====================================================
+   Main (Contenu principal)
+   ==================================================== */
 main {
   flex: 1;
 }
 
 /* ====================================================
-   Slider – Section Pourquoi Choisir KarlTech
+   Section Pourquoi Choisir KarlTech (Slider)
    ==================================================== */
 #why {
   position: relative;
-  height: var(--slider-height); /* Hauteur définie à 50% de l'écran */
+  height: var(--slider-height); /* Hauteur définie à 60% de l'écran */
   margin: 20px;
   overflow: hidden;
   border-radius: 20px; /* Bordure arrondie pour tout le slider */
@@ -99,6 +104,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: var(--slider-padding);  /* Espacement interne du slider */
 }
 
 .why-slide {
@@ -134,6 +140,7 @@ main {
   font-size: var(--slider-font-size);
   line-height: 1.5;
   color: var(--slider-text-color);
+  padding: var(--slider-padding-vertical) 0; /* Espacement vertical pour bien centrer le texte */
 }
 
 .why-slide p strong {
