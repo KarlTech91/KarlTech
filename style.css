@@ -1,71 +1,7 @@
 /* ====================================================
-   KarlTech – Styles globaux
+   Styles spécifiques à la page Contact
    ==================================================== */
 
-/* ---------- Structure générale ---------- */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #f0f0f0;
-  background:
-    linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)),
-    url('support-informatique.jpg') no-repeat center center fixed;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
-/* ---------- En-tête ---------- */
-header {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-}
-header img {
-  height: 100px;
-  margin-right: 20px;
-}
-.header-text h1 {
-  margin: 0;
-  font-size: 2em;
-}
-.header-text p {
-  margin: 0;
-  color: #ccc;
-}
-
-/* ---------- Navigation ---------- */
-nav.main-nav {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 15px 0;
-  font-weight: bold;
-}
-
-nav.main-nav a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-nav.main-nav a:hover,
-nav.main-nav a.active {
-  text-decoration: underline;
-  color: #66b2ff;
-}
-
-/* ---------- Main ---------- */
-main {
-  flex: 1;
-}
-
-/* ====================================================
-   Section Contact – Nous joindre
-   ==================================================== */
 #contact {
   display: flex;
   flex-direction: column;
@@ -112,7 +48,6 @@ main {
   margin-bottom: 5px;
 }
 
-/* Formulaire */
 form {
   display: flex;
   flex-direction: column;
@@ -147,21 +82,7 @@ form button:hover {
 }
 
 /* ====================================================
-   Pied de page
-   ==================================================== */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(0,0,0,0.6);
-  font-size: 0.9rem;
-}
-footer a {
-  color: #66b2ff;
-  text-decoration: none;
-}
-
-/* ====================================================
-   Section Contact – Nous joindre
+   Couleur des liens dans la page Contact
    ==================================================== */
 #contact .col.infos a {
   color: white;  /* Changer la couleur des liens en blanc */
@@ -173,9 +94,97 @@ footer a {
   color: #66b2ff;  /* Ajouter une couleur de survol */
 }
 
+/* ====================================================
+   Styles globaux pour les autres pages
+   ==================================================== */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+  background:
+    linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)),
+    url('support-informatique.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+header img {
+  height: 100px;
+  margin-right: 20px;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.header-text p {
+  margin: 0;
+  color: #ccc;
+}
+
+nav.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 15px 0;
+  font-weight: bold;
+}
+
+nav.main-nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a.active {
+  text-decoration: underline;
+  color: #66b2ff;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #66b2ff;
+  text-decoration: none;
+}
 
 /* ====================================================
-   Responsive (max-width: 768px)
-   ==========================
-
-
+   Responsive (max-width: 768px) - s'adapte aux autres pages
+   ==================================================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  header img {
+    margin-bottom: 10px;
+  }
+  nav {
+    font-size: 0.9rem;
+  }
+  main {
+    padding: 20px;
+  }
+}
