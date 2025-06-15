@@ -161,5 +161,21 @@ footer a {
 }
 
 /* ====================================================
+   Section Contact – Nous joindre
+   ==================================================== */
+#contact .col.infos a {
+  color: white;  /* Changer la couleur des liens en blanc */
+  text-decoration: none;  /* Enlever le soulignement */
+}
+
+#contact .col.infos a:hover {
+  text-decoration: underline;  /* Souligner le lien au survol */
+  color: #66b2ff;  /* Ajouter une couleur de survol */
+}
+
+
+/* ====================================================
    Responsive (max-width: 768px)
    ==========================
+
+
