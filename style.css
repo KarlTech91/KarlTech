@@ -14,7 +14,6 @@
   --slider-padding-vertical: 10%; /* Espacement vertical du texte */
   --slider-max-width: 75%;   /* Largeur du slider ajustée à 75% */
   --slider-border-radius: 20px; /* Bordure arrondie pour le slider */
-  --slider-text-align: center;  /* Alignement du texte */
 }
 
 /* ====================================================
@@ -34,12 +33,62 @@ html, body {
 }
 
 /* ====================================================
+   En-tête
+   ==================================================== */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+header img {
+  height: 80px;  /* Ajuster la taille du logo */
+  max-width: 100%;  /* S'assurer qu'il ne dépasse pas la largeur de son container */
+  object-fit: contain;  /* Conserver les proportions du logo */
+  margin-right: 20px;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.header-text p {
+  margin: 0;
+  color: #ccc;
+}
+
+/* ====================================================
+   Navigation
+   ==================================================== */
+nav.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 15px 0;
+  font-weight: bold;
+}
+
+nav.main-nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a.active {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+/* ====================================================
    Slider – Pourquoi Choisir KarlTech
    ==================================================== */
 #why {
   position: relative;
   height: var(--slider-height); /* Hauteur du slider */
   width: var(--slider-max-width);
+  max-width: 100%;  /* S'assurer que le slider ne dépasse pas 100% de la largeur */
   margin: 0 auto;
   overflow: hidden;
   border-radius: var(--slider-border-radius); /* Bordure arrondie pour tout le slider */
@@ -55,7 +104,7 @@ html, body {
   align-items: center;
   justify-content: center;
   padding: var(--slider-padding);  /* Espacement interne du slider */
-  text-align: var(--slider-text-align);
+  text-align: center;
 }
 
 .why-slide {
@@ -73,6 +122,14 @@ html, body {
   transition: opacity 0.6s ease, transform 0.6s ease;
   border-radius: 16px; /* Bordure arrondie des slides */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* Ombre légère pour un effet moderne */
+}
+
+.why-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: none;  /* PAS de fond noir ou coloré */
+  z-index: 0;
 }
 
 .why-slide p {
