@@ -90,11 +90,12 @@ main {
   color: white;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% 100%;       /* stretch par défaut */
   border: 4px solid rgba(102, 178, 255, 0.7);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+
   display: flex;
   align-items: center;
   padding-left: 10%;
@@ -250,7 +251,6 @@ footer a:hover {
 /* Responsive (mobiles / tablettes) */
 /* ============================= */
 @media screen and (max-width: 768px) {
-
   /* Header & nav */
   header {
     flex-direction: column;
@@ -270,6 +270,7 @@ footer a:hover {
   }
   .why-slide {
     padding-left: 5%;
+    background-size: cover;     /* ← on passe à cover pour mobile */
   }
   .why-slide p {
     max-width: 80%;
@@ -301,7 +302,7 @@ footer a:hover {
     font-size: 1.5rem;
   }
 
-  /* Tableaux, formulaires, footer, etc. */
+  /* Tableaux, formulaires, footer */
   table, th, td {
     font-size: 0.8rem;
   }
