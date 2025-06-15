@@ -188,7 +188,7 @@ p {
   display: flex;
   justify-content: center;  /* Centrer les éléments horizontalement */
   gap: 40px;
-  margin-top: 40px;  /* Ajout de l'espace au-dessus */
+  margin-top: 40px;
 }
 
 #contact .col.infos,
@@ -235,20 +235,21 @@ form button:hover {
    Informations de contact et formulaire
    ==================================================== */
 #contact h2 {
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
   color: #66b2ff;
+  margin-left: 20px; /* Aligner avec les informations */
 }
 
-#contact .col.infos p {
-  margin: 10px 0;
-  text-align: center;
+#contact .col.infos p,
+#contact .col.infos ul {
+  text-align: left;  /* Aligner le texte à gauche */
+  margin-left: 20px; /* Aligner avec le titre */
 }
 
 #contact .col.infos ul {
   list-style-type: none;
   padding: 0;
-  text-align: center;
 }
 
 #contact .col.infos ul li {
