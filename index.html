@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KarlTech - Soutien Informatique</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* 1) On masque le scroll de la page entière au départ */
+    html, body {
+      overflow: hidden;
+    }
+    /* 2) Section “Pourquoi choisir KarlTech ?” en plein écran */
+    #why {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -58,6 +73,7 @@
       </div>
     </section>
 
+    <!-- Ces sections sont placées sous #why, mais inaccessibles tant que body overflow:hidden -->
     <section id="servicesSection">
       <h2>Nos services populaires</h2>
       <h3>Formatage et réinstallation système</h3>
@@ -70,7 +86,7 @@
       <p>Intervention rapide via AnyDesk, sans déplacement, pour une solution simple et efficace.</p>
 
       <h3>Installation de pièces ou logiciels</h3>
-      <p>Mise à niveau de votre PC ou ajout de logiciels essentiels pour votre productivité et confort d'utilisation.</p>
+      <p>Mise à niveau de votre PC ou ajout de logiciels essentiels pour votre productivité et confort d’utilisation.</p>
 
       <p><a href="services_tarifs.html">→ Voir tous les services et tarifs</a></p>
     </section>
@@ -96,17 +112,24 @@
       dots.forEach(d  => d.classList.toggle('active', d.dataset.index === idx));
     }
 
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => setActive(dot.dataset.index));
-    });
+    // Clic sur puce
+    dots.forEach(dot => dot.addEventListener('click', () => setActive(dot.dataset.index)));
 
+    // Roulette de souris sur #why
     whySect.addEventListener('wheel', e => {
       e.preventDefault();
-      const current = Array.from(dots).findIndex(d => d.classList.contains('active'));
-      let next = current + (e.deltaY > 0 ? 1 : -1);
-      if (next < 0) next = dots.length - 1;
-      if (next >= dots.length) next = 0;
-      setActive(String(next));
+      let current = Array.from(dots).findIndex(d => d.classList.contains('active'));
+      // Si on n'est pas encore à la dernière puce, on fait défiler le carousel
+      if (current < 5) {
+        let next = current + (e.deltaY > 0 ? 1 : -1);
+        if (next < 0) next = dots.length - 1;
+        if (next >= dots.length) next = 0;
+        setActive(String(next));
+      } else if (e.deltaY > 0) {
+        // Sur la dernière puce + scroll vers le bas => on libère le scroll global
+        document.documentElement.style.overflow = 'auto';
+        document.body.style.overflow = 'auto';
+      }
     }, { passive: false });
   </script>
 </body>
