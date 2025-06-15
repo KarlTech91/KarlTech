@@ -64,152 +64,41 @@ main {
 }
 
 /* ====================================================
-   Slider “Pourquoi choisir KarlTech ?”
+   Section Contact – Nous joindre
    ==================================================== */
-#why {
-  position: relative;
-  height: calc(90vh - 160px);
-  margin: 20px;
-  overflow: hidden;
-}
-.why-slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.why-slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
+#contact {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 0 10%;
-  background: none;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .6s ease, transform .6s ease;
-  border: 4px solid #66b2ff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-}
-.why-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 0;
-}
-.why-slide p {
-  position: relative;
-  z-index: 1;
-  max-width: 60%;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.6rem;
-  line-height: 1.5;
-  color: #fff;
-}
-.why-slide p strong {
-  display: block;
-  font-size: 3rem;
-  margin-bottom: 0.5em;
-}
-.why-slide.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Puces de navigation */
-.why-nav {
-  position: absolute;
-  top: 50%;
-  right: 2%;
-  transform: translateY(-50%);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.why-nav li {
-  width: 14px; 
-  height: 14px;
-  border: 2px solid #66b2ff;
-  border-radius: 50%;
-  margin: 8px 0;
-  cursor: pointer;
-  transition: background .3s;
-}
-.why-nav li.active {
-  background: #66b2ff;
-}
-
-/* ====================================================
-   Sections Services & À propos
-   ==================================================== */
-#servicesSection,
-#aproposSection {
   padding: 40px 20px;
+  flex-wrap: wrap;
 }
-h2 {
+
+#contact h2 {
   color: #66b2ff;
-  font-size: 1.8rem;
-}
-h3 {
-  margin-top: 1em;
-  font-size: 1.2rem;
-}
-p {
-  margin-top: 0.5em;
-  line-height: 1.5;
+  margin-left: 20px; /* Aligner avec les informations */
+  margin-bottom: 20px;
 }
 
-/* Tableau Services & Tarifs */
-#servicesSection table {
-  width: 80%;
-  margin: 0 auto;          /* centrage horizontal */
-  border-collapse: collapse;
-}
-#servicesSection th,
-#servicesSection td {
-  border: 1px solid #66b2ff;
-  padding: 8px;
-}
-#servicesSection th {
-  background: rgba(102,178,255,0.2);
-}
-
-/* ====================================================
-   Formulaire de contact
-   ==================================================== */
 #contact .contact-container {
   display: flex;
-  justify-content: center;  /* Centrer les éléments horizontalement */
+  justify-content: space-between;
   gap: 40px;
-  margin-top: 40px;
+  width: 100%;
+  max-width: 1200px; /* Limiter la largeur globale */
 }
 
 #contact .col.infos,
 #contact .col.formu {
   flex: 1;
-  max-width: 500px;  /* Limiter la largeur des colonnes */
+  max-width: 500px;
   padding: 20px;
-}
-
-#contact h2 {
-  text-align: left;
-  margin-bottom: 20px;
-  color: #66b2ff;
-  margin-left: 20px; /* Aligner avec les informations */
 }
 
 #contact .col.infos p,
 #contact .col.infos ul {
-  text-align: left;  /* Aligner les informations à gauche */
-  margin-left: 20px; /* Aligner avec le titre */
-  margin-bottom: 15px; /* Espacement entre les informations */
+  text-align: left;
+  margin-left: 0;
+  margin-bottom: 15px; /* Espacement uniforme */
 }
 
 #contact .col.infos ul {
@@ -221,6 +110,7 @@ p {
   margin-bottom: 5px;
 }
 
+/* Formulaire */
 form {
   display: flex;
   flex-direction: column;
@@ -230,7 +120,6 @@ form {
 form input,
 form textarea {
   width: 100%;
-  max-width: 100%;  /* Pour s'assurer que les champs prennent toute la largeur disponible */
   padding: 10px;
   border: 1px solid #66b2ff;
   border-radius: 4px;
@@ -282,31 +171,16 @@ footer a {
   nav {
     font-size: 0.9rem;
   }
-  #why {
-    height: calc(70vh - 120px);
-    margin: 10px;
+  #contact {
+    flex-direction: column;
+    align-items: center;
   }
-  .why-slide p {
-    max-width: 80%;
-    font-size: 1.4rem;
+  #contact .contact-container {
+    flex-direction: column;
+    align-items: center;
   }
-  .why-slide p strong {
-    font-size: 2.5rem;
-  }
-  .why-nav {
-    top: auto;
-    bottom: 10px;
-    right: 50%;
-    transform: translateX(50%);
-    flex-direction: row;
-  }
-  .why-nav li {
-    margin: 0 6px;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  h3 {
-    font-size: 1rem;
+  .col.infos, .col.formu {
+    max-width: 100%;
+    padding: 10px;
   }
 }
