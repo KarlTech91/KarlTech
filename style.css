@@ -81,7 +81,7 @@ main {
    ==================================================== */
 #why {
   position: relative;
-  height: calc(90vh - 160px);
+  height: 75vh; /* Réduit la hauteur du slider à 75% de l'écran */
   margin: 20px;
   overflow: hidden;
 }
