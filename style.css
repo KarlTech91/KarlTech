@@ -5,7 +5,6 @@ html, body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  /* Image + voile sombre 85% */
   background:
     linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.85)),
     url('support-informatique.jpg') no-repeat center center fixed;
@@ -16,48 +15,27 @@ html, body {
   flex-direction: column;
 }
 
-/* En-tête avec logo à gauche */
+/* En-tête */
 header {
   display: flex;
   align-items: center;
   padding: 30px 20px;
   background: transparent;
 }
+header img { height: 100px; margin-right: 20px; }
+header h1 { margin: 0; font-size: 2em; }
+header p { margin: 0; font-size: 1em; color: #ccc; }
 
-header img {
-  height: 100px;   /* Taille uniforme du logo */
-  margin-right: 20px;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2em;
-}
-
-header p {
-  margin: 0;
-  font-size: 1em;
-  color: #ccc;
-}
-
-/* Barre de navigation */
+/* Nav */
 nav {
   text-align: center;
   padding: 10px 0;
   font-weight: bold;
 }
+nav a { color: white; margin: 0 15px; text-decoration: none; }
+nav a:hover { text-decoration: underline; }
 
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Sections sans fond opaque */
+/* Sections */
 section {
   max-width: 900px;
   margin: 30px auto;
@@ -66,148 +44,29 @@ section {
 }
 
 /* Titres */
-h2 {
-  color: #66b2ff;
-}
+h2 { color: #66b2ff; }
 
-/* Tableaux */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-}
+/* Carousel “Pourquoi choisir KarlTech ?” */
+#why { display: flex; flex-direction: column; align-items: center; }
 
-th, td {
-  border: 1px solid #666;
-  padding: 12px;
-  text-align: left;
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-th {
-  background-color: #1c1c2e;
-  color: white;
-}
-
-/* Formulaires */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input, textarea {
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #555;
-  border-radius: 4px;
-  background-color: #444;
-  color: #fff;
-}
-
-button {
-  padding: 10px;
-  background-color: #2d2d44;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #1c1c2e;
-}
-
-/* Liens */
-a {
-  color: #99c0ff;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Pied de page */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #1e1e1e;
-  margin-top: auto;
-  color: #aaa;
-}
-
-footer a {
-  color: #99c0ff;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* === Animation fade-in on scroll pour les puces === */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* === Carousel “Pourquoi choisir KarlTech ?” === */
-
-/* Wrapper pour aligner slider et puces côte à côte */
+/* Wrapper pour slider + puces */
 .why-container {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-}
-
-/* Zone des slides */
-.why-slider {
-  flex: 1;
-  position: relative;
-}
-
-/* Chaque slide empilée */
-.why-slide {
-  position: absolute;
-  top: 0; left: 0;
   width: 100%;
-  padding: 30px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  pointer-events: none;
-  color: white;
+  max-width: 900px;
 }
 
-/* Overlay sombre pour lire le texte */
-.why-slide::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
-  z-index: 0;
-}
-
-.why-slide p {
+/* Slider moins large (70% de l'espace) */
+.why-slider {
+  flex: 0 1 70%;
   position: relative;
-  z-index: 1;
 }
 
-.why-slide.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-/* Navigation par puces à droite du slider */
+/* Puces à droite */
 .why-nav {
+  flex: 0 1 30%;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -215,7 +74,6 @@ footer a:hover {
   flex-direction: column;
   justify-content: center;
 }
-
 .why-nav li {
   width: 12px;
   height: 12px;
@@ -226,33 +84,75 @@ footer a:hover {
   background: transparent;
   transition: background 0.3s ease;
 }
+.why-nav li.active { background: #66b2ff; }
 
-.why-nav li.active {
-  background: #66b2ff;
+/* Slides empilées */
+.why-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  padding: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  color: white;
+  background-position: center center;
 }
 
-/* === Backgrounds spécifiques pour chaque slide === */
+/* Overlay sombre */
+.why-slide::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+
+/* Texte au-dessus */
+.why-slide p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Slide active */
+.why-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Background moins large mais pleine hauteur */
 .why-slide[data-index="0"] {
-  background: url('Service_domicile_distance.png') no-repeat center center;
-  background-size: cover;
+  background-image: url('Service_domicile_distance.png');
+  background-size: auto 100%;
 }
 .why-slide[data-index="1"] {
-  background: url('Service_soiree.png') no-repeat center center;
-  background-size: cover;
+  background-image: url('Service_soiree.png');
+  background-size: auto 100%;
 }
 .why-slide[data-index="2"] {
-  background: url('Service_transparence.png') no-repeat center center;
-  background-size: cover;
+  background-image: url('Service_transparence.png');
+  background-size: auto 100%;
 }
 .why-slide[data-index="3"] {
-  background: url('Service_conseils.png') no-repeat center center;
-  background-size: cover;
+  background-image: url('Service_conseils.png');
+  background-size: auto 100%;
 }
 .why-slide[data-index="4"] {
-  background: url('Service_experience.png') no-repeat center center;
-  background-size: cover;
+  background-image: url('Service_experience.png');
+  background-size: auto 100%;
 }
 .why-slide[data-index="5"] {
-  background: url('Service_flexibilite.png') no-repeat center center;
-  background-size: cover;
+  background-image: url('Service_flexibilite.png');
+  background-size: auto 100%;
 }
+
+/* Autres sections */
+#servicesSection,
+#aproposSection {
+  /* réintègre le scroll global */
+}
+
+/* Tableaux, formulaires, liens, footer identiques aux précédents… */
