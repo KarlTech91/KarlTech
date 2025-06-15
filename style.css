@@ -1,8 +1,11 @@
-/* ============================= */
-/*  Fichier style.css complet    */
-/* ============================= */
+/* ================================================== */
+/*                  FICHIER style.css                  */
+/*            KarlTech – Styles Globaux               */
+/* ================================================== */
 
-/* Structure générale */
+/* ---------------------- */
+/*  Structure générale    */
+/* ---------------------- */
 html, body {
   height: 100%;
   margin: 0;
@@ -18,7 +21,9 @@ html, body {
   overflow-x: hidden;
 }
 
-/* En-tête */
+/* ---------------------- */
+/*        En-tête         */
+/* ---------------------- */
 header {
   display: flex;
   align-items: center;
@@ -39,7 +44,9 @@ header p {
   color: #ccc;
 }
 
-/* Navigation principale */
+/* ---------------------- */
+/*    Barre de navigation */
+/* ---------------------- */
 nav {
   text-align: center;
   padding: 10px 0;
@@ -50,23 +57,26 @@ nav a {
   margin: 0 15px;
   text-decoration: none;
 }
-nav a:hover {
+nav a:hover,
+nav a.active {
   text-decoration: underline;
 }
 
-/* Corps de page */
+/* ---------------------- */
+/*         Main           */
+/* ---------------------- */
 main {
   flex: 1;
   width: 100%;
 }
 
-/* ============================= */
-/* Section “Pourquoi choisir”    */
-/* ============================= */
+/* ================================================== */
+/*      Section “Pourquoi choisir KarlTech” (Slider)   */
+/* ================================================== */
 #why {
   position: relative;
   width: 100%;
-  height: calc(90vh - 160px);
+  height: calc(90vh - 160px); /* laisse la place au header */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -99,6 +109,7 @@ main {
   align-items: center;
   padding-left: 10%;
 }
+/* voile sombre interne */
 .why-slide::before {
   content: "";
   position: absolute;
@@ -108,6 +119,7 @@ main {
   background: rgba(0,0,0,0.4);
   z-index: 0;
 }
+/* contenu texte */
 .why-slide p {
   position: relative;
   z-index: 1;
@@ -121,11 +133,13 @@ main {
   font-size: 2.6rem;
   margin-bottom: 0.5em;
 }
+/* slide visible */
 .why-slide.active {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
+/* navigation des puces */
 .why-nav {
   position: absolute;
   top: calc(45vh + 80px);
@@ -150,8 +164,7 @@ main {
 .why-nav li.active {
   background: #66b2ff;
 }
-
-/* Backgrounds pour chaque slide */
+/* images par slide */
 .why-slide[data-index="0"] { background-image: url('Service_domicile_distance.png'); }
 .why-slide[data-index="1"] { background-image: url('Disponibilite_soir.png'); }
 .why-slide[data-index="2"] { background-image: url('Prix_fixe.png'); }
@@ -159,9 +172,9 @@ main {
 .why-slide[data-index="4"] { background-image: url('Experience_diplome.png'); }
 .why-slide[data-index="5"] { background-image: url('voyage_distance.png'); }
 
-/* ============================= */
-/* Sections suivantes            */
-/* ============================= */
+/* ================================================== */
+/*      Sections “Services”, “À propos” et tableau      */
+/* ================================================== */
 #servicesSection,
 #aproposSection {
   padding: 60px 30px;
@@ -171,8 +184,7 @@ h2 {
   color: #66b2ff;
   font-size: 1.9rem;
 }
-
-/* Tableaux */
+/* tableau tarifs */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -189,17 +201,18 @@ th {
   color: white;
 }
 
-/* ============================= */
-/* Section Contact               */
-/* ============================= */
+/* ================================================== */
+/*             Section Contact / “Nous joindre”        */
+/* ================================================== */
 #contact {
   padding: 60px 30px;
   background: none;
-  text-align: center;
+  text-align: center;         /* titre centré */
 }
 #contact h2 {
   margin-bottom: 1em;
 }
+/* conteneur deux colonnes */
 .contact-container {
   display: flex;
   justify-content: center;
@@ -210,14 +223,14 @@ th {
 .contact-container .formu {
   flex: 1 1 250px;
   max-width: 350px;
-  text-align: left;
+  text-align: left;           /* texte interne à gauche */
 }
+/* liste horaires */
 #contact .infos ul {
   padding-left: 20px;
-  margin-top: 0.5em;
-  margin-bottom: 1.5em;
+  margin: 0.5em 0 1.5em;
 }
-/* Formulaire */
+/* formulaire */
 #contact form {
   display: flex;
   flex-direction: column;
@@ -246,7 +259,9 @@ th {
   background-color: #1c1c2e;
 }
 
-/* Liens */
+/* ---------------------- */
+/*         Liens         */
+/* ---------------------- */
 a {
   color: #99c0ff;
 }
@@ -254,7 +269,9 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Pied de page */
+/* ---------------------- */
+/*       Pied de page     */
+/* ---------------------- */
 footer {
   text-align: center;
   padding: 20px;
@@ -271,9 +288,9 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ============================= */
-/* Responsive (mobiles/tablettes) */
-/* ============================= */
+/* ================================================== */
+/*        Responsive (mobiles / tablettes)            */
+/* ================================================== */
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
@@ -286,6 +303,8 @@ footer a:hover {
     font-size: 0.9rem;
     padding: 6px 0;
   }
+
+  /* slider height réduit un peu */
   #why {
     height: calc(80vh - 120px);
   }
@@ -311,6 +330,8 @@ footer a:hover {
   .why-nav li {
     margin: 0 6px;
   }
+
+  /* sections Services, À propos, Contact */
   #servicesSection,
   #aproposSection,
   #contact {
@@ -319,6 +340,8 @@ footer a:hover {
   h2 {
     font-size: 1.6rem;
   }
+
+  /* tableau et formulaires plus petits */
   table, th, td {
     font-size: 0.8rem;
   }
@@ -327,6 +350,8 @@ footer a:hover {
   #contact button {
     font-size: 0.85rem;
   }
+
+  /* footer plus petit */
   footer {
     font-size: 0.75rem;
   }
