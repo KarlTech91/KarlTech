@@ -413,14 +413,13 @@ footer a {
   margin-bottom: 20px;  /* Espacement en dessous du titre */
 }
 
-/* Centrer le contenu de la section */
+/* Centrer le contenu de la section sans fond */
 #aproposSection {
   padding: 40px 20px;
   text-align: center;  /* Centrer tout le contenu */
   width: 80%;  /* Limiter la largeur */
   margin: 0 auto;  /* Centrer la section dans la page */
-  background-color: rgba(0, 0, 0, 0.5); /* Optionnel : fond pour contraster avec l'image */
-  border-radius: 10px;  /* Bordure arrondie */
+  /* Suppression du fond */
 }
 
 #aproposSection p {
@@ -429,4 +428,3 @@ footer a {
   color: #ccc;
   margin-bottom: 20px;  /* Espacement entre les paragraphes */
 }
-
