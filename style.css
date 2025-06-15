@@ -175,23 +175,41 @@ th {
   color: white;
 }
 
-/* Section Contact */
+/* ============================= */
+/* Section Contact               */
+/* ============================= */
 #contact {
   padding: 60px 30px;
   background: none;
-}
-/* Centre et limite largeur du formulaire */
-#contact form {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  text-align: center; /* centre l’ensemble de la section */
 }
 
-/* Formulaires */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* Centrer titres et sous-titres */
+#contact h2,
+#contact h3 {
+  text-align: center;
+}
+
+/* Afficher les paragraphes, liste et formulaire en bloc centré */
+#contact p,
+#contact ul,
+#contact form {
+  display: inline-block;
+  text-align: left;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Indentation des puces */
+#contact ul {
+  padding-left: 20px;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+/* Formulaire */
+#contact form {
+  margin-bottom: 2em;
 }
 input, textarea {
   padding: 10px;
