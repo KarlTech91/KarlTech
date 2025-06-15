@@ -62,7 +62,7 @@ section {
   max-width: 900px;
   margin: 30px auto;
   padding: 30px;
-  background: none; /* plus de boîte noire */
+  background: none;
 }
 
 /* Titres */
@@ -162,8 +162,8 @@ footer a:hover {
 /* Wrapper pour aligner slider et puces côte à côte */
 .why-container {
   display: flex;
-  align-items: flex-start; /* aligne le haut du slider et des puces */
-  gap: 20px;               /* espace entre slider et nav */
+  align-items: flex-start;
+  gap: 20px;
 }
 
 /* Zone des slides */
@@ -177,10 +177,27 @@ footer a:hover {
   position: absolute;
   top: 0; left: 0;
   width: 100%;
+  padding: 30px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: none;
+  color: white;
+}
+
+/* Overlay sombre pour lire le texte */
+.why-slide::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+
+.why-slide p {
+  position: relative;
+  z-index: 1;
 }
 
 .why-slide.active {
@@ -196,7 +213,7 @@ footer a:hover {
   padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centre verticalement par rapport au slider */
+  justify-content: center;
 }
 
 .why-nav li {
@@ -212,4 +229,30 @@ footer a:hover {
 
 .why-nav li.active {
   background: #66b2ff;
+}
+
+/* === Backgrounds spécifiques pour chaque slide === */
+.why-slide[data-index="0"] {
+  background: url('Service_domicile_distance.png') no-repeat center center;
+  background-size: cover;
+}
+.why-slide[data-index="1"] {
+  background: url('Service_soiree.png') no-repeat center center;
+  background-size: cover;
+}
+.why-slide[data-index="2"] {
+  background: url('Service_transparence.png') no-repeat center center;
+  background-size: cover;
+}
+.why-slide[data-index="3"] {
+  background: url('Service_conseils.png') no-repeat center center;
+  background-size: cover;
+}
+.why-slide[data-index="4"] {
+  background: url('Service_experience.png') no-repeat center center;
+  background-size: cover;
+}
+.why-slide[data-index="5"] {
+  background: url('Service_flexibilite.png') no-repeat center center;
+  background-size: cover;
 }
