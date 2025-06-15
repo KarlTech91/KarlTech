@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - KarlTech</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KarlTech – Contact</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-  <img src="logo_karltech.png" alt="Logo KarlTech" />
-  <div>
-    <h1>KarlTech</h1>
-    <p>Soutien informatique personnalisé à Shawinigan et environs</p>
-  </div>
-</header>
-
+    <img src="logo_karltech.png" alt="Logo KarlTech">
+    <div>
+      <h1>KarlTech</h1>
+      <p>Soutien informatique personnalisé à Shawinigan et environs</p>
+    </div>
   </header>
 
   <nav>
     <a href="index.html">Accueil</a>
     <a href="services_tarifs.html">Services et Tarifs</a>
     <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
   </nav>
 
   <main>
-    <section>
+    <section id="contact">
       <h2>Nous joindre</h2>
-      <p><strong>Courriel :</strong> <a href="mailto:info@karltech.ca">info@karltech.ca</a></p>
-      <p><strong>Téléphone :</strong> <a href="tel:8738879620">873-887-9620</a></p>
-      <p><strong>Adresse :</strong> Shawinigan, QC</p>
 
-      <h3>Horaires d'ouverture</h3>
-      <ul>
-        <li>Lundi au vendredi : 17 h à 21 h</li>
-        <li>Samedi et dimanche : 8 h à 18 h</li>
-      </ul>
+      <div class="col">
+        <p><strong>Courriel :</strong> <a href="mailto:info@karltech.ca">info@karltech.ca</a></p>
+        <p><strong>Téléphone :</strong> <a href="tel:8738879620">873-887-9620</a></p>
+        <p><strong>Adresse :</strong> Shawinigan, QC</p>
 
-      <section id="contact">
-      <h3>Formulaire de contact</h3>
-      <form action="https://formspree.io/f/mnnvdepz" method="POST">
-        <input type="text" name="nom" placeholder="Votre nom" required />
-        <input type="email" name="email" placeholder="Votre adresse e-mail" required />
-        <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-        <button type="submit">Envoyer</button>
-      </form>
+        <h3>Horaires d’ouverture</h3>
+        <ul>
+          <li>Lundi au vendredi : 17h à 21h</li>
+          <li>Samedi et dimanche : 8h à 18h</li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>Formulaire de contact</h3>
+        <form action="https://formspree.io/f/mnnvdepz" method="POST">
+          <input type="text" name="nom" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+          <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p><a href="index.html">&larr; Retour à l'accueil</a></p>
-    <p>&copy; 2025 KarlTech. Tous droits réservés.</p>
+    &larr; <a href="index.html">Retour à l’accueil</a><br>
+    &copy; 2025 KarlTech. Tous droits réservés.
   </footer>
 </body>
 </html>
