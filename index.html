@@ -73,7 +73,7 @@
       </div>
     </section>
 
-    <!-- Ces sections sont placées sous #why, mais inaccessibles tant que body overflow:hidden -->
+    <!-- Ces sections sont en dessous, mais restent cachées tant que le scroll est bloqué -->
     <section id="servicesSection">
       <h2>Nos services populaires</h2>
       <h3>Formatage et réinstallation système</h3>
@@ -103,30 +103,31 @@
   </footer>
 
   <script>
-    const dots   = document.querySelectorAll('.why-nav li');
-    const slides = document.querySelectorAll('.why-slide');
-    const whySect= document.getElementById('why');
+    const dots    = document.querySelectorAll('.why-nav li');
+    const slides  = document.querySelectorAll('.why-slide');
+    const whySect = document.getElementById('why');
 
     function setActive(idx) {
-      slides.forEach(sl => sl.classList.toggle('active', sl.dataset.index === idx));
-      dots.forEach(d  => d.classList.toggle('active', d.dataset.index === idx));
+      slides.forEach(s => s.classList.toggle('active', s.dataset.index === idx));
+      dots.forEach(d   => d.classList.toggle('active', d.dataset.index === idx));
     }
 
     // Clic sur puce
-    dots.forEach(dot => dot.addEventListener('click', () => setActive(dot.dataset.index)));
+    dots.forEach(dot =>
+      dot.addEventListener('click', () => setActive(dot.dataset.index))
+    );
 
-    // Roulette de souris sur #why
+    // Roulette sur #why
     whySect.addEventListener('wheel', e => {
       e.preventDefault();
-      let current = Array.from(dots).findIndex(d => d.classList.contains('active'));
-      // Si on n'est pas encore à la dernière puce, on fait défiler le carousel
-      if (current < 5) {
-        let next = current + (e.deltaY > 0 ? 1 : -1);
-        if (next < 0) next = dots.length - 1;
-        if (next >= dots.length) next = 0;
+      let curr = Array.from(dots).findIndex(d => d.classList.contains('active'));
+      if (curr < 5) {
+        let next = curr + (e.deltaY > 0 ? 1 : -1);
+        if (next < 0) next = 5;
+        if (next > 5) next = 0;
         setActive(String(next));
       } else if (e.deltaY > 0) {
-        // Sur la dernière puce + scroll vers le bas => on libère le scroll global
+        // à la dernière puce + scroll vers le bas → on rétablit le scroll global
         document.documentElement.style.overflow = 'auto';
         document.body.style.overflow = 'auto';
       }
