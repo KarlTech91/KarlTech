@@ -70,14 +70,14 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;  /* Centrer le contenu horizontalement */
+  align-items: center;  /* Centrer tout le contenu horizontalement */
   padding: 40px 20px;
 }
 
 #contact h2 {
   color: #66b2ff;
-  margin-bottom: 10px;  /* Réduire l'espacement sous le titre */
-  text-align: left;
+  margin-bottom: 20px;
+  text-align: center; /* Centrer le titre */
   width: 100%;
 }
 
@@ -162,27 +162,4 @@ footer a {
 
 /* ====================================================
    Responsive (max-width: 768px)
-   ==================================================== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-  header img {
-    margin-bottom: 10px;
-  }
-  nav {
-    font-size: 0.9rem;
-  }
-  #contact .contact-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .col.infos, .col.formu {
-    max-width: 100%;
-    padding: 10px;
-  }
-  form {
-    margin-top: 20px;
-  }
-}
+   ==========================
