@@ -1,3 +1,7 @@
+/* ============================= */
+/*  Fichier style.css complet    */
+/* ============================= */
+
 /* Structure générale */
 html, body {
   height: 100%;
@@ -53,6 +57,7 @@ nav a:hover {
 /* Corps de page */
 main {
   flex: 1;
+  width: 100%;
 }
 
 /* ============================= */
@@ -146,16 +151,25 @@ main {
   background: #66b2ff;
 }
 
-/* Sections suivantes */
+/* Backgrounds pour chaque slide */
+.why-slide[data-index="0"] { background-image: url('Service_domicile_distance.png'); }
+.why-slide[data-index="1"] { background-image: url('Disponibilite_soir.png'); }
+.why-slide[data-index="2"] { background-image: url('Prix_fixe.png'); }
+.why-slide[data-index="3"] { background-image: url('Conseil_clair.png'); }
+.why-slide[data-index="4"] { background-image: url('Experience_diplome.png'); }
+.why-slide[data-index="5"] { background-image: url('voyage_distance.png'); }
+
+/* ============================= */
+/* Sections suivantes            */
+/* ============================= */
 #servicesSection,
 #aproposSection {
   padding: 60px 30px;
   background: none;
 }
-
-/* Titres */
 h2 {
   color: #66b2ff;
+  font-size: 1.9rem;
 }
 
 /* Tableaux */
@@ -181,37 +195,36 @@ th {
 #contact {
   padding: 60px 30px;
   background: none;
-  text-align: center; /* centre l’ensemble de la section */
-}
-
-/* Centrer titres et sous-titres */
-#contact h2,
-#contact h3 {
   text-align: center;
 }
-
-/* Afficher les paragraphes, liste et formulaire en bloc centré */
-#contact p,
-#contact ul,
-#contact form {
-  display: inline-block;
-  text-align: left;
-  max-width: 600px;
-  width: 100%;
-}
-
-/* Indentation des puces */
-#contact ul {
-  padding-left: 20px;
-  margin-top: 0.5em;
+#contact h2 {
   margin-bottom: 1em;
 }
-
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.contact-container .infos,
+.contact-container .formu {
+  flex: 1 1 250px;
+  max-width: 350px;
+  text-align: left;
+}
+#contact .infos ul {
+  padding-left: 20px;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+}
 /* Formulaire */
 #contact form {
-  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-input, textarea {
+#contact input,
+#contact textarea {
   padding: 10px;
   font-size: 1em;
   border: 1px solid #555;
@@ -221,7 +234,7 @@ input, textarea {
   width: 100%;
   box-sizing: border-box;
 }
-button {
+#contact button {
   padding: 10px;
   background-color: #2d2d44;
   color: white;
@@ -229,7 +242,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-button:hover {
+#contact button:hover {
   background-color: #1c1c2e;
 }
 
@@ -248,6 +261,7 @@ footer {
   background-color: #1e1e1e;
   margin-top: auto;
   color: #aaa;
+  font-size: 0.9rem;
 }
 footer a {
   color: #99c0ff;
@@ -257,15 +271,9 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Backgrounds pour chaque slide */
-.why-slide[data-index="0"] { background-image: url('Service_domicile_distance.png'); }
-.why-slide[data-index="1"] { background-image: url('Disponibilite_soir.png'); }
-.why-slide[data-index="2"] { background-image: url('Prix_fixe.png'); }
-.why-slide[data-index="3"] { background-image: url('Conseil_clair.png'); }
-.why-slide[data-index="4"] { background-image: url('Experience_diplome.png'); }
-.why-slide[data-index="5"] { background-image: url('voyage_distance.png'); }
-
-/* Responsive (mobiles / tablettes) */
+/* ============================= */
+/* Responsive (mobiles/tablettes) */
+/* ============================= */
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
@@ -309,12 +317,14 @@ footer a:hover {
     padding: 30px 15px;
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   table, th, td {
     font-size: 0.8rem;
   }
-  form input, form textarea, form button {
+  #contact input,
+  #contact textarea,
+  #contact button {
     font-size: 0.85rem;
   }
   footer {
