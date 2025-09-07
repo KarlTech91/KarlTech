@@ -187,6 +187,10 @@ nav.main-nav a.active {
    Responsive – Mobile seulement
 ==================================================== */
 @media (max-width: 768px) {
+  
+  body.index #why {
+    display: none;
+  }
   header {
     flex-direction: column;
     text-align: center;
