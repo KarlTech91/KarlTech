@@ -82,22 +82,24 @@ nav.main-nav a.active {
 #why {
   position: relative;
   width: 100%;
-  height: auto;          /* Hauteur automatique */
-  min-height: 400px;     /* Minimum desktop */
+  height: auto;          /* Hauteur auto pour mobile */
+  min-height: 400px;     /* Hauteur minimum desktop */
   overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;   /* Espace sous le slider */
-  z-index: 1;
+  margin-top: 20px;      /* espace au-dessus pour le menu */
+  margin-bottom: 40px;   /* espace sous le slider */
+  z-index: 10;           /* plus haut que le menu */
 }
 
 .why-slider {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 10;           /* garde le slider au-dessus */
 }
+
 
 .why-slide {
   position: absolute;
