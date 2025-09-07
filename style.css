@@ -5,10 +5,16 @@
   --text-color: #f0f0f0;
   --link-color: #66b2ff;
   --hover-link-color: #3399ff;
+  --slider-font-size: 2rem;
+  --slider-padding: 5%;
+  --slider-height: 60vh;
+  --slider-padding-vertical: 10%;
+  --slider-max-width: 75%;
+  --slider-border-radius: 20px;
 }
 
 /* ====================================================
-   Structure générale
+   Structure générale du corps
 ==================================================== */
 html, body {
   height: 100%;
@@ -16,8 +22,8 @@ html, body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
-  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-              url('https://raw.githubusercontent.com/karltech91/KarlTech/main/support-informatique.jpg') no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+    url('https://raw.githubusercontent.com/karltech91/KarlTech/main/support-informatique.jpg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -25,7 +31,7 @@ html, body {
 }
 
 /* ====================================================
-   Header
+   En-tête
 ==================================================== */
 header {
   display: flex;
@@ -72,12 +78,12 @@ nav.main-nav a.active {
 }
 
 /* ====================================================
-   Slider "Pourquoi choisir"
+   Section “Pourquoi choisir”
 ==================================================== */
 #why {
   position: relative;
   width: 100%;
-  height: calc(90vh - 160px); /* Desktop height */
+  height: calc(90vh - 160px);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -90,28 +96,30 @@ nav.main-nav a.active {
   height: 100%;
 }
 
+/* Slider – bulles ordinateur */
 .why-slide {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%; left: 50%;
+  width: 70%;
+  max-width: 900px;
+  transform: translate(-50%, -50%) translateY(20px);
+  padding: 30px 40px;
   box-sizing: border-box;
+  background: rgba(0,0,0,0.6);
+  border: 4px solid rgba(102, 178, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   pointer-events: none;
-  color: white;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 4px solid rgba(102, 178, 255, 0.7);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
   display: flex;
-  align-items: center;
-  padding-left: 10%;
+  flex-direction: column;
+}
+
+.why-slide.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0);
+  pointer-events: auto;
 }
 
 .why-slide::before {
@@ -127,10 +135,12 @@ nav.main-nav a.active {
 .why-slide p {
   position: relative;
   z-index: 1;
-  max-width: 50%;
   font-size: 1.4rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
 }
 
 .why-slide p strong {
@@ -139,13 +149,6 @@ nav.main-nav a.active {
   margin-bottom: 0.5em;
 }
 
-.why-slide.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-/* Bulles navigation */
 .why-nav {
   position: absolute;
   top: calc(45vh + 80px);
@@ -174,13 +177,210 @@ nav.main-nav a.active {
 }
 
 /* ====================================================
-   Sections Services / FAQ / Contact / À propos
+   Section Services & Tarifs
 ==================================================== */
-#servicesSection, #faq, #contact, #aproposSection {
+#servicesSection {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#servicesSection h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  font-size: 2rem;
+}
+
+#servicesSection table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+#servicesSection th,
+#servicesSection td {
+  border: 1px solid var(--primary-color);
+  padding: 8px;
+  text-align: left;
+}
+
+#servicesSection th {
+  background: rgba(102, 178, 255, 0.2);
+}
+
+#servicesSection td {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ====================================================
+   Section FAQ
+==================================================== */
+#faq {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#faq h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.faq-container {
+  max-width: 1000px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.faq-container h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.faq-container p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* ====================================================
+   Section Contact
+==================================================== */
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 40px 20px;
 }
 
-/* ... ton CSS desktop pour ces sections reste inchangé ... */
+#contact h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+#contact .contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+#contact .col.infos,
+#contact .col.formu {
+  flex: 1;
+  max-width: 450px;
+  padding: 20px;
+}
+
+#contact .col.infos p,
+#contact .col.infos ul {
+  text-align: left;
+  margin-left: 0;
+  margin-bottom: 15px;
+}
+
+#contact .col.infos ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#contact .col.infos ul li {
+  margin-bottom: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+form button:hover {
+  background-color: var(--secondary-color);
+}
+
+#contact .col.infos a {
+  color: white;
+  text-decoration: none;
+}
+
+#contact .col.infos a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+/* ====================================================
+   Pied de page
+==================================================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* ====================================================
+   Section À propos
+==================================================== */
+#aproposSection .section-title {
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#aproposSection {
+  padding: 40px 20px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#aproposSection p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
 
 /* ====================================================
    Responsive (max-width: 768px)
@@ -224,28 +424,20 @@ nav.main-nav a.active {
     margin-top: 20px;
   }
 
-  /* ===== Slider mobile ===== */
-  #why {
-    height: auto;      /* Hauteur automatique pour mobile */
-    margin: 15px 0;
-  }
-
+  /* Slider mobile – bulles lisibles et non superposées */
   .why-slide {
-    position: relative;   /* pas absolute */
-    width: 95%;
-    max-width: none;
-    padding: 15px 20px;
-    margin: 10px 0;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-
-  .why-slide.active {
-    opacity: 1;
-    pointer-events: auto;
+    position: relative;
+    width: 90%;
+    max-width: 100%;
+    height: auto;
+    transform: none;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 15px;
   }
 
   .why-slide p {
+    max-width: 100%;
     font-size: 1rem;
     line-height: 1.5;
   }
@@ -256,14 +448,13 @@ nav.main-nav a.active {
   }
 
   .why-nav {
-    position: relative;
+    bottom: 10px;
+    left: 50%;
+    top: auto;
+    right: auto;
+    transform: translateX(-50%);
     flex-direction: row;
     justify-content: center;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    transform: none;
-    margin-top: 10px;
   }
 
   .why-nav li {
