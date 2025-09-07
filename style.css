@@ -1,9 +1,7 @@
-
-
 :root {
   --primary-color: #66b2ff;
   --secondary-color: #3399ff;
-  --background-color: rgba(30, 30, 30, 0.75);  /* Changer la transparence à 75% */
+  --background-color: rgba(30, 30, 30, 0.75);
   --text-color: #f0f0f0;
   --link-color: #66b2ff;
   --hover-link-color: #3399ff;
@@ -15,9 +13,9 @@
   --slider-border-radius: 20px;
 }
 
-/* --------------------------------------------------------
-  Structure générale du corps
--------------------------------------------------------- */
+/* ====================================================
+   Structure générale du corps
+==================================================== */
 html, body {
   height: 100%;
   margin: 0;
@@ -32,10 +30,9 @@ html, body {
   overflow-x: hidden;
 }
 
-
 /* ====================================================
    En-tête
-   ==================================================== */
+==================================================== */
 header {
   display: flex;
   align-items: center;
@@ -59,7 +56,7 @@ header img {
 
 /* ====================================================
    Navigation
-   ==================================================== */
+==================================================== */
 nav.main-nav {
   display: flex;
   justify-content: center;
@@ -80,9 +77,9 @@ nav.main-nav a.active {
   color: var(--primary-color);
 }
 
-/* ============================= */
-/* Section “Pourquoi choisir”    */
-/* ============================= */
+/* ====================================================
+   Section “Pourquoi choisir”
+==================================================== */
 #why {
   position: relative;
   width: 100%;
@@ -92,33 +89,39 @@ nav.main-nav a.active {
   align-items: center;
   justify-content: center;
 }
+
 .why-slider {
   position: relative;
   width: 100%;
   height: 100%;
 }
+
+/* Slider – bulles ordinateur */
 .why-slide {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%; left: 50%;
+  width: 70%;
+  max-width: 900px;
+  transform: translate(-50%, -50%) translateY(20px);
+  padding: 30px 40px;
   box-sizing: border-box;
+  background: rgba(0,0,0,0.6);
+  border: 4px solid rgba(102, 178, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   pointer-events: none;
-  color: white;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 4px solid rgba(102, 178, 255, 0.7);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
   display: flex;
-  align-items: center;
-  padding-left: 10%;
+  flex-direction: column;
 }
+
+.why-slide.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0);
+  pointer-events: auto;
+}
+
 .why-slide::before {
   content: "";
   position: absolute;
@@ -128,24 +131,24 @@ nav.main-nav a.active {
   background: rgba(0,0,0,0.4);
   z-index: 0;
 }
+
 .why-slide p {
   position: relative;
   z-index: 1;
-  max-width: 50%;
   font-size: 1.4rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
 }
+
 .why-slide p strong {
   display: block;
   font-size: 2.6rem;
   margin-bottom: 0.5em;
 }
-.why-slide.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+
 .why-nav {
   position: absolute;
   top: calc(45vh + 80px);
@@ -157,6 +160,7 @@ nav.main-nav a.active {
   display: flex;
   flex-direction: column;
 }
+
 .why-nav li {
   width: 14px;
   height: 14px;
@@ -167,13 +171,14 @@ nav.main-nav a.active {
   background: transparent;
   transition: background 0.3s ease;
 }
+
 .why-nav li.active {
   background: #66b2ff;
 }
 
 /* ====================================================
    Section Services & Tarifs
-   ==================================================== */
+==================================================== */
 #servicesSection {
   padding: 40px 20px;
   display: flex;
@@ -191,28 +196,28 @@ nav.main-nav a.active {
 
 #servicesSection table {
   width: 80%;
-  margin: 20px auto;  /* Centrer le tableau horizontalement */
-  border-collapse: collapse;  /* Fusionner les bordures des cellules */
+  margin: 20px auto;
+  border-collapse: collapse;
 }
 
 #servicesSection th,
 #servicesSection td {
-  border: 1px solid var(--primary-color); /* Bordure des cellules */
+  border: 1px solid var(--primary-color);
   padding: 8px;
-  text-align: left;  /* Aligner le texte à gauche */
+  text-align: left;
 }
 
 #servicesSection th {
-  background: rgba(102, 178, 255, 0.2); /* Fond des entêtes */
+  background: rgba(102, 178, 255, 0.2);
 }
 
 #servicesSection td {
-  background-color: rgba(0, 0, 0, 0.5); /* Fond des cellules */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* ====================================================
-   Section FAQ – Questions Fréquentes
-   ==================================================== */
+   Section FAQ
+==================================================== */
 #faq {
   padding: 40px 20px;
   display: flex;
@@ -222,21 +227,21 @@ nav.main-nav a.active {
 
 #faq h2 {
   color: var(--primary-color);
-  text-align: center;  /* Centrer le titre de la page */
+  text-align: center;
   margin-bottom: 20px;
   font-size: 2rem;
 }
 
 .faq-container {
-  max-width: 1000px;  /* Limiter la largeur du contenu */
+  max-width: 1000px;
   width: 100%;
   margin-top: 20px;
 }
 
 .faq-container h3 {
   color: var(--primary-color);
-  font-size: 1.4rem;  /* Taille de police cohérente */
-  margin-bottom: 10px;  /* Espacement entre les questions */
+  font-size: 1.4rem;
+  margin-bottom: 10px;
 }
 
 .faq-container p {
@@ -247,35 +252,35 @@ nav.main-nav a.active {
 }
 
 /* ====================================================
-   Section Contact – Nous joindre
-   ==================================================== */
+   Section Contact
+==================================================== */
 #contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;  /* Centrer tout le contenu horizontalement */
+  align-items: center;
   padding: 40px 20px;
 }
 
 #contact h2 {
   color: var(--primary-color);
   margin-bottom: 20px;
-  text-align: center; /* Centrer le titre */
+  text-align: center;
   width: 100%;
 }
 
 #contact .contact-container {
   display: flex;
   justify-content: space-between;
-  gap: 20px;  /* Réduire l'écart entre les deux colonnes */
+  gap: 20px;
   width: 100%;
-  max-width: 1000px; /* Limiter la largeur des colonnes */
+  max-width: 1000px;
 }
 
 #contact .col.infos,
 #contact .col.formu {
   flex: 1;
-  max-width: 450px;  /* Limiter la largeur des colonnes pour réduire l'espace */
+  max-width: 450px;
   padding: 20px;
 }
 
@@ -283,7 +288,7 @@ nav.main-nav a.active {
 #contact .col.infos ul {
   text-align: left;
   margin-left: 0;
-  margin-bottom: 15px; /* Espacement uniforme */
+  margin-bottom: 15px;
 }
 
 #contact .col.infos ul {
@@ -299,7 +304,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 20px;  /* Ajouter un peu d'espacement */
+  margin-top: 20px;
 }
 
 form input,
@@ -328,22 +333,19 @@ form button:hover {
   background-color: var(--secondary-color);
 }
 
-/* ====================================================
-   Couleur des liens dans la page Contact
-   ==================================================== */
 #contact .col.infos a {
-  color: white;  /* Changer la couleur des liens en blanc */
-  text-decoration: none;  /* Enlever le soulignement */
+  color: white;
+  text-decoration: none;
 }
 
 #contact .col.infos a:hover {
-  text-decoration: underline;  /* Souligner le lien au survol */
-  color: var(--primary-color);  /* Ajouter une couleur de survol */
+  text-decoration: underline;
+  color: var(--primary-color);
 }
 
 /* ====================================================
    Pied de page
-   ==================================================== */
+==================================================== */
 footer {
   text-align: center;
   padding: 20px;
@@ -357,8 +359,32 @@ footer a {
 }
 
 /* ====================================================
-   Responsive (max-width: 768px) - pour les appareils mobiles
-   ==================================================== */
+   Section À propos
+==================================================== */
+#aproposSection .section-title {
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#aproposSection {
+  padding: 40px 20px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#aproposSection p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* ====================================================
+   Responsive (max-width: 768px)
+==================================================== */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -373,77 +399,65 @@ footer a {
   #faq {
     padding: 20px 10px;
   }
-
   #faq h2 {
     font-size: 1.5rem;
   }
-
   .faq-container h3 {
     font-size: 1.2rem;
   }
-
   .faq-container p {
     font-size: 1rem;
   }
-
   #servicesSection table {
     width: 100%;
-    margin: 0 auto;  /* Réduire l'écart */
+    margin: 0 auto;
   }
-
   #contact .contact-container {
     flex-direction: column;
     align-items: center;
   }
-
   .col.infos, .col.formu {
     max-width: 100%;
     padding: 10px;
   }
-
   form {
     margin-top: 20px;
   }
-}
 
-/* Titre de la section "À propos" */
-#aproposSection .section-title {
-  color: var(--primary-color);  /* Couleur bleu */
-  text-align: center;  /* Centrer le titre */
-  font-size: 2rem;  /* Taille du titre */
-  margin-bottom: 20px;  /* Espacement en dessous du titre */
-}
+  /* Slider mobile – bulles lisibles et non superposées */
+  .why-slide {
+    position: relative;
+    width: 90%;
+    max-width: 100%;
+    height: auto;
+    transform: none;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 15px;
+  }
 
-/* Centrer le contenu de la section sans fond */
-#aproposSection {
-  padding: 40px 20px;
-  text-align: center;  /* Centrer tout le contenu */
-  width: 80%;  /* Limiter la largeur */
-  margin: 0 auto;  /* Centrer la section dans la page */
-  /* Suppression du fond */
-}
+  .why-slide p {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 
-#aproposSection p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ccc;
-  margin-bottom: 20px;  /* Espacement entre les paragraphes */
-}
+  .why-slide p strong {
+    font-size: 1.4rem;
+    margin-bottom: 0.3em;
+  }
 
-/* ✅ Version mobile : bulles en bas et horizontales */
-@media (max-width: 768px) {
   .why-nav {
-    position: absolute;
-    bottom: 15px;
+    bottom: 10px;
     left: 50%;
-    top: auto;               /* annule le positionnement vertical */
-    right: auto;             /* annule le décalage à droite */
+    top: auto;
+    right: auto;
     transform: translateX(-50%);
-    flex-direction: row;     /* affiche en ligne */
+    flex-direction: row;
     justify-content: center;
   }
 
   .why-nav li {
-    margin: 0 6px;          /* espace horizontal */
+    margin: 0 6px;
   }
 }
