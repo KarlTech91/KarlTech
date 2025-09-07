@@ -429,3 +429,21 @@ footer a {
   color: #ccc;
   margin-bottom: 20px;  /* Espacement entre les paragraphes */
 }
+
+/* ✅ Version mobile : bulles en bas et horizontales */
+@media (max-width: 768px) {
+  .why-nav {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    top: auto;               /* annule le positionnement vertical */
+    right: auto;             /* annule le décalage à droite */
+    transform: translateX(-50%);
+    flex-direction: row;     /* affiche en ligne */
+    justify-content: center;
+  }
+
+  .why-nav li {
+    margin: 0 6px;          /* espace horizontal */
+  }
+}
