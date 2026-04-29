@@ -23,7 +23,7 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-    url('https://raw.githubusercontent.com/karltech91/KarlTech/main/support-informatique.jpg') no-repeat center center fixed;
+  url('https://raw.githubusercontent.com/KarlTech91/KarlTech/main/BackgroundSite.png') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
