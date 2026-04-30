@@ -346,3 +346,76 @@ footer a {
   #why { display: none; }
   #servicesSection table { width: 95%; }
 }
+
+/* ====================================================
+   Style spécifique à la FAQ (Accordéon)
+==================================================== */
+#faq-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.intro-text {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(102, 178, 255, 0.1);
+}
+
+/* Petit indicateur + / - */
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.faq-question.active::after {
+    content: '-';
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-answer p {
+    padding: 20px;
+    margin: 0;
+    line-height: 1.6;
+    color: #ddd;
+}
