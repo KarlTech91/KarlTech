@@ -394,3 +394,47 @@ footer a {
   #why { display: none; }
   #aproposSection, #servicesSection table { width: 95%; }
 }
+
+
+/* Style de la Lightbox (Image agrandie) */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  animation: zoom 0.3s;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+@keyframes zoom {
+  from {transform: scale(0.7)} 
+  to {transform: scale(1)}
+}
+
+/* Optionnel : changer le curseur sur les images pour montrer qu'elles sont cliquables */
+.lightbox-link img {
+  cursor: zoom-in;
+}
