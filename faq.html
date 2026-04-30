@@ -1,101 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KarlTech – FAQ</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - KarlTech3D</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ==================== -->
-  <!-- En-tête du site     -->
-  <!-- ==================== -->
-  <header>
-    <img src="Final.png" alt="Logo KarlTech">
-    <div class="header-text">
-      <h1>KarlTech</h1>
-      <p>Soutien informatique et impression 3D personnalisé à Shawinigan et environs</p>
-    </div>
-  </header>
 
-  <!-- ==================== -->
-  <!-- Barre de navigation  -->
-  <!-- ==================== -->
-   <nav class="main-nav">
+<header>
+  <img src="Final.png" alt="Logo KarlTech3D" class="site-logo">
+</header>
+
+<nav class="main-nav">
     <a href="index.html">Accueil</a>
-    <a href="impressions.html" class="active">Aperçu 3D</a>
+    <a href="impressions.html">Aperçu 3D</a>
     <a href="services_tarifs.html">Services et Tarifs</a>
-    <a href="faq.html">FAQ</a>
+    <a href="faq.html" class="active">FAQ</a>
     <a href="contact.html">Contact</a>
-  </nav>
+</nav>
 
-  <!-- ==================== -->
-  <!-- Contenu principal    -->
-  <!-- ==================== -->
-  <main>
-    <!-- ============================= -->
-    <!-- Section FAQ – Questions fréquentes -->
-    <!-- ============================= -->
-    <section id="faq">
-      <h2>FAQ – Questions Fréquentes</h2>
+<main>
+    <section id="faq-section">
+        <h2>Foire Aux Questions</h2>
+        <p class="intro-text">Trouvez rapidement des réponses à vos questions techniques et sur nos services d'impression.</p>
 
-      <!-- Conteneur des questions/réponses -->
-      <div class="faq-container">
-        <!-- Question 1 -->
-        <h3>Quels services proposez-vous ?</h3>
-        <p>
-          Nous offrons un large éventail d'interventions : formatage et réinstallation de Windows,  
-          suppression de virus, installation de pièces (RAM, SSD, carte graphique),  
-          custom builds, sauvegarde et récupération de données, assistance à distance,  
-          installation de logiciels (Office, antivirus), et bien plus encore.
-        </p>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Quels services informatiques proposez-vous ?</button>
+                <div class="faq-answer">
+                    <p>Nous offrons un large éventail d'interventions : formatage, réinstallation de Windows, suppression de virus, installation de pièces (RAM, SSD, carte graphique), custom builds, sauvegarde de données et assistance à distance.</p>
+                </div>
+            </div>
 
-        <!-- Question 2 -->
-        <h3>Est-ce que vous vous déplacez ?</h3>
-        <p>
-          Oui, nous nous déplaçons dans Shawinigan et ses environs pour un petit frais supplémentaire.  
-          Pour les distances un peu plus longues, nous convenons ensemble du tarif au préalable.
-        </p>
+            <div class="faq-item">
+                <button class="faq-question">Quels matériaux utilisez-vous pour l'impression 3D ?</button>
+                <div class="faq-answer">
+                    <p>Nous travaillons principalement avec le PLA (biodégradable et idéal pour la décoration) et le PETG (plus résistant pour les pièces techniques). D'autres matériaux sont disponibles sur demande selon votre projet.</p>
+                </div>
+            </div>
 
-        <!-- Question 3 -->
-        <h3>Comment fonctionne le support à distance ?</h3>
-        <p>
-          Nous utilisons AnyDesk pour prendre la main sur votre ordinateur en toute sécurité.  
-          Chaque session est chiffrée et facturée au même tarif qu’une intervention sur place.
-        </p>
+            <div class="faq-item">
+                <button class="faq-question">Puis-je commander une pièce personnalisée ?</button>
+                <div class="faq-answer">
+                    <p>Absolument ! Que vous ayez déjà un fichier 3D (STL) ou simplement une idée, nous pouvons vous aider à concevoir et imprimer votre projet sur mesure.</p>
+                </div>
+            </div>
 
-        <!-- Question 4 -->
-        <h3>Combien de temps prend un formatage complet ?</h3>
-        <p>
-          Cela dépend du matériel et de la quantité de données :  
-          comptez généralement entre 1 h et 2 h pour une machine standard,  
-          mises à jour et pilotes inclus.
-        </p>
+            <div class="faq-item">
+                <button class="faq-question">Est-ce que vous vous déplacez ?</button>
+                <div class="faq-answer">
+                    <p>Oui, nous nous déplaçons dans Shawinigan et ses environs pour un léger frais supplémentaire. Pour les distances plus longues, nous convenons du tarif au préalable.</p>
+                </div>
+            </div>
 
-        <!-- Question 5 -->
-        <h3>Proposez-vous des sauvegardes avant toute intervention ?</h3>
-        <p>
-          Absolument : avant toute opération risquant d’effacer des données,  
-          nous effectuons une sauvegarde complète pour garantir la protection de vos fichiers.
-        </p>
-
-        <!-- Question 6 -->
-        <h3>Comment sont calculés vos tarifs pour un custom build ?</h3>
-        <p>
-          Vous pouvez nous fournir vos propres pièces ou nous demander un devis complet.  
-          Dans ce cas, nous sélectionnons le matériel selon votre budget et vos besoins,  
-          puis nous facturons au prix coûtant + main-d’œuvre.
-        </p>
-      </div>
+            <div class="faq-item">
+                <button class="faq-question">Comment fonctionne le support à distance ?</button>
+                <div class="faq-answer">
+                    <p>Nous utilisons AnyDesk pour prendre la main sur votre ordinateur en toute sécurité. Chaque session est cryptée et facturée au même tarif qu'une intervention sur place.</p>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
+</main>
 
-  <!-- ==================== -->
-  <!-- Pied de page         -->
-  <!-- ==================== -->
-  <footer>
-    &larr; <a href="index.html">Retour à l’accueil</a><br>
-    &copy; 2025 KarlTech. Tous droits réservés.
-  </footer>
+<footer>
+    <p>© 2026 KarlTech3D. Tous droits réservés.</p>
+</footer>
+
+<script>
+    // Script pour faire fonctionner l'accordéon
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            question.classList.toggle('active');
+            const answer = question.nextElementSibling;
+            if (question.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                answer.style.maxHeight = 0;
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
