@@ -1,159 +1,432 @@
-:root {
-  --primary-color: #66b2ff;
-  --secondary-color: #3399ff;
-  --background-color: rgba(30, 30, 30, 0.75);
-  --text-color: #f0f0f0;
-  --link-color: #66b2ff;
-  --hover-link-color: #3399ff;
-  --slider-font-size: 2rem;
-  --slider-padding: 5%;
-  --slider-height: 60vh;
-  --slider-padding-vertical: 10%;
-  --slider-max-width: 75%;
-  --slider-border-radius: 20px;
 }
 
 /* ====================================================
-   Structure générale (Retour à la version stable)
+   Structure générale (Fix footer en bas)
+   Structure générale (Fix pour centrage horizontal)
 ==================================================== */
 html {
-  height: 100%;
+height: 100%;
+@@ -29,14 +29,23 @@ body {
+background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+url('https://raw.githubusercontent.com/KarlTech91/KarlTech/main/BackgroundSite.png') no-repeat center center fixed;
+background-size: cover;
+  
+  /* Centrage horizontal : Flex Row */
+display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  flex-direction: row; 
+  justify-content: center; /* Centre les enfants horizontalement */
+  gap: 30px; /* Espace entre le menu et le contenu */
+  padding: 40px; /* Marge globale pour que ça respire */
+  box-sizing: border-box;
 }
 
-body {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--text-color);
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-              url('https://raw.githubusercontent.com/KarlTech91/KarlTech/main/BackgroundSite.png') no-repeat center center fixed;
-  background-size: cover;
-  display: flex;
-  flex-direction: column; /* Menu en haut, contenu en dessous */
-}
-
+/* Force le contenu à pousser le footer vers le bas */
 main {
   flex: 1 0 auto;
+/* Conteneur pour le logo et le menu (côté gauche) */
+header-menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligne le menu à gauche */
+  flex-shrink: 0; /* Empêche le menu de rétrécir */
+  width: 250px; /* Largeur fixe pour le menu */
 }
 
 /* ====================================================
-   En-tête et Navigation
-==================================================== */
+@@ -45,7 +54,7 @@ main {
 header {
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
   padding: 20px;
+  margin-bottom: 30px; /* Espace avant le menu */
 }
 
 header img {
-  height: 80px;
-  margin-right: 20px;
-}
+@@ -55,278 +64,166 @@ header img {
 
 .header-text h1 {
-  margin: 0;
+margin: 0;
+  font-size: 2em;
+  font-size: 2.2em;
+  color: white;
 }
 
+.header-text p {
+  margin: 0;
+  margin: 5px 0 0;
+color: #ccc;
+  font-size: 1.1em;
+}
+
+/* ====================================================
+   Navigation
+   Navigation (Côté gauche)
+==================================================== */
 nav.main-nav {
-  display: flex;
+display: flex;
   justify-content: center;
   gap: 40px;
   padding: 15px 0;
-  font-weight: bold;
+  flex-direction: column;
+  gap: 15px; /* Espace vertical entre les liens */
+font-weight: bold;
+  font-size: 1.2rem;
 }
 
 nav.main-nav a {
-  color: white;
-  text-decoration: none;
+color: white;
+text-decoration: none;
+transition: color 0.3s ease;
+  padding: 5px 0;
 }
 
 nav.main-nav a:hover,
 nav.main-nav a.active {
-  color: var(--primary-color);
+  text-decoration: underline;
+color: var(--primary-color);
   text-decoration: underline;
 }
 
 /* ====================================================
-   Portfolio 3D (Ta Grille)
+   Section Accueil (Slider)
+==================================================== */
+#why {
+  position: relative;
+  width: 100%;
+  height: calc(90vh - 160px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.why-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+  color: white;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 4px solid rgba(102, 178, 255, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+}
+
+.why-slide::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+
+.why-slide p {
+  position: relative;
+  z-index: 1;
+  max-width: 50%;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.why-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.why-nav {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.why-nav li {
+  width: 14px; height: 14px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.why-nav li.active {
+  background: var(--primary-color);
+}
+
+/* ====================================================
+   Section Services & Tarifs
+   Contenu principal (Centre-Droit)
+==================================================== */
+#servicesSection {
+  padding: 40px 20px;
+main {
+  flex: 1; /* Prend tout l'espace restant */
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centre le contenu principal horizontalement */
+}
+
+#servicesSection table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#servicesSection th, td {
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+  text-align: left;
+/* Section Portfolio 3D & Galerie */
+#portfolio3D {
+  max-width: 900px; /* Limite la largeur pour un meilleur centrage */
+  text-align: center;
+}
+
+#servicesSection th {
+  background: rgba(102, 178, 255, 0.2);
+#portfolio3D h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* ====================================================
+   Section Portfolio 3D & Galerie
 ==================================================== */
 #portfolio3D {
   padding: 40px 20px;
   max-width: 1100px;
   margin: 0 auto;
   text-align: center;
+.intro-3d {
+  color: #ccc;
+  margin-bottom: 40px;
 }
 
 .grid-3d {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 25px;
   margin: 30px 0;
 }
 
 .card-3d {
-  background: rgba(0, 0, 0, 0.85);
-  border: 1px solid var(--primary-color);
-  border-radius: 12px;
-  overflow: hidden;
+background: rgba(0, 0, 0, 0.85); /* Plus sombre pour la lisibilité */
+border: 1px solid var(--primary-color);
+border-radius: 12px;
+overflow: hidden;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-3d:hover {
+transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(102, 178, 255, 0.3);
 }
 
 .card-3d img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+width: 100%;
+height: 200px;
+  object-fit: cover; /* Garde la grille alignée */
   cursor: zoom-in;
+  object-fit: cover; /* Recadre l'image pour la grille */
+  cursor: zoom-in; /* Change le curseur en loupe */
 }
 
 .card-info {
-  padding: 15px;
-  text-align: left;
+padding: 15px;
+text-align: left;
+}
+
+.card-info h3 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.card-info p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #ccc;
 }
 
 /* ====================================================
-   LA LIGHTBOX (Celle qui centre l'image !)
+   Lightbox (Image centrée & Bouton X)
+   Lightbox blindée (Image centrée & Bouton X)
 ==================================================== */
 .lightbox {
-  display: none; /* Changé en 'flex' par le script JS */
-  position: fixed;
+  display: none; /* Changé en 'flex' par JS */
+  display: none; /* Changé en 'flex' par JS pour le centrage */
+position: fixed;
+  z-index: 9999;
   z-index: 999999;
-  left: 0;
-  top: 0;
+left: 0;
+top: 0;
+  width: 100%;
+  height: 100%;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.95);
+background-color: rgba(0, 0, 0, 0.95);
   
-  /* Centrage magique ici */
-  justify-content: center;
-  align-items: center;
+  /* Centrage absolu avec Flexbox */
+justify-content: center;
+align-items: center;
   
-  cursor: pointer;
+cursor: pointer;
+  box-sizing: border-box;
 }
 
 .lightbox-content {
-  max-width: 90%;
-  max-height: 85vh;
-  border: 2px solid var(--primary-color);
-  border-radius: 8px;
+max-width: 90%;
+max-height: 85vh;
+border: 2px solid var(--primary-color);
+border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 30px rgba(0, 0, 0, 1);
   cursor: default;
 }
 
 .close {
-  position: absolute;
+position: absolute;
   top: 20px;
   right: 30px;
-  color: var(--primary-color);
-  font-size: 50px;
+  top: 15px;
+  right: 25px;
+color: var(--primary-color);
+font-size: 50px;
+font-weight: bold;
+transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover {
+color: white;
+transform: scale(1.2);
+}
+
+/* ====================================================
+   Section Contact
+==================================================== */
+#contact {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-container {
+  display: flex;
+  gap: 50px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.col.infos, .col.formu { flex: 1; }
+
+form { display: flex; flex-direction: column; gap: 15px; }
+
+form input, form textarea {
+  padding: 12px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+form button {
+  padding: 12px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
   font-weight: bold;
 }
 
 /* ====================================================
-   Footer
+  Pied de page (Footer)
 ==================================================== */
 footer {
-  text-align: center;
+  flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+text-align: center;
   padding: 25px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px;
   background: rgba(0, 0, 0, 0.8);
-  border-top: 1px solid rgba(102, 178, 255, 0.3);
+font-size: 0.9rem;
+border-top: 1px solid rgba(102, 178, 255, 0.3);
+}
+@@ -339,10 +236,39 @@ footer a {
+/* ====================================================
+  Responsive
+==================================================== */
+@media (max-width: 768px) {
+  header { flex-direction: column; text-align: center; }
+  nav.main-nav { flex-wrap: wrap; gap: 15px; font-size: 0.9rem; }
+  .contact-container { flex-direction: column; align-items: center; }
+  #why { display: none; }
+  #servicesSection table { width: 95%; }
+@media (max-width: 900px) {
+  body {
+    flex-direction: column; /* Repasse en vertical sur mobile */
+    align-items: center;
+    padding: 20px;
+  }
+  
+  header-menu-container {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  nav.main-nav {
+    flex-direction: row; /* Liens horizontaux sur mobile */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1rem;
+  }
+  
+  main {
+    width: 100%;
+  }
+  
+  footer {
+    position: relative; /* Repousse le footer vers le bas sur mobile */
+    margin-top: 40px;
+  }
 }
