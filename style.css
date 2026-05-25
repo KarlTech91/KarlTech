@@ -473,3 +473,16 @@ footer a {
     line-height: 1.6;
     color: #ddd;
 }
+
+
+/* Force les liens de la colonne infos à rester blancs, même visités */
+.col.infos a {
+  color: white !important;
+  text-decoration: none; /* Enlève la ligne sous le texte si tu n'en veux pas */
+}
+
+/* Optionnel : si tu veux qu'ils changent de couleur (ex: ton bleu ciel) UNIQUEMENT quand on passe la souris dessus */
+.col.infos a:hover {
+  color: var(--primary-color) !important;
+  text-decoration: underline;
+}
