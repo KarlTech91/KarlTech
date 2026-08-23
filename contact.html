@@ -35,37 +35,49 @@
 
   <!-- Contenu principal -->
   <main>
-    <section id="contact">
-      <h2 data-i18n="contact_title">Nous joindre</h2>
+    <h2 class="section-title" data-i18n="contact_title">Nous joindre</h2>
 
-      <div class="contact-container">
-        <!-- Colonne infos -->
-        <div class="col infos"> 
-          <p><strong>Facebook :</strong> <a href="https://www.facebook.com/profile.php?id=61577595262812" target="_blank" data-i18n="fb_link">Cliquer ici</a></p>
-          <p><strong data-i18n="lbl_email">Courriel :</strong> <a href="mailto:info@karltech.ca">info@karltech.ca</a></p>
-          <p><strong data-i18n="lbl_phone">Téléphone :</strong> <a href="tel:4502801744">450-280-1744</a></p>
-          
-          <p><strong data-i18n="lbl_address">Adresse :</strong> Shawinigan, QC</p>
+    <div class="contact-container">
+      <!-- Colonne Infos -->
+      <div class="col info-col">
+        <h3 data-i18n="info_heading">Coordonnées</h3>
+        <ul class="contact-info-list">
+          <li><strong>Facebook :</strong> <a href="https://facebook.com" target="_blank" class="contact-link">Cliquer ici</a></li>
+          <li><strong>Courriel :</strong> <a href="mailto:info@karltech.ca" class="contact-link">info@karltech.ca</a></li>
+          <li><strong>Téléphone :</strong> <a href="tel:4502801744" class="contact-link">450-280-1744</a></li>
+          <li><strong>Adresse :</strong> Shawinigan, QC</li>
+        </ul>
 
-          <h3 data-i18n="hours_title">Horaires d’ouverture</h3>
-          <ul>
-            <li data-i18n="hours_week">Lundi au vendredi : 17h à 21h</li>
-            <li data-i18n="hours_weekend">Samedi et dimanche : 8h à 18h</li>
-          </ul>
-        </div>
-
-        <!-- Colonne formulaire -->
-        <div class="col formu">
-          <h3 data-i18n="form_title">Formulaire de contact</h3>
-          <form action="https://formspree.io/f/mnnvdepz" method="POST">
-            <input type="text" name="nom" id="form-name" placeholder="Votre nom" required data-i18n-ph="ph_name">
-            <input type="email" name="email" id="form-email" placeholder="Votre adresse e-mail" required data-i18n-ph="ph_email">
-            <textarea name="message" id="form-msg" rows="5" placeholder="Votre message" required data-i18n-ph="ph_message"></textarea>
-            <button type="submit" data-i18n="btn_send">Envoyer</button>
-          </form>
-        </div>
+        <h3 style="margin-top: 30px;" data-i18n="hours_heading">Horaires d’ouverture</h3>
+        <ul class="hours-list">
+          <li><span data-i18n="hours_week">Lundi au vendredi :</span> 17h à 21h</li>
+          <li><span data-i18n="hours_weekend">Samedi et dimanche :</span> 8h à 18h</li>
+        </ul>
       </div>
-    </section>
+
+      <!-- Colonne Formulaire -->
+      <div class="col form-col">
+        <h3 data-i18n="form_heading">Formulaire de contact</h3>
+        <form action="https://formspree.io/f/xbjnqkyv" method="POST" class="custom-form">
+          <div class="form-group">
+            <label for="name" data-i18n="lbl_name">Votre nom</label>
+            <input type="text" id="name" name="name" placeholder="Ex: Jean Tremblay" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email" data-i18n="lbl_email">Votre adresse e-mail</label>
+            <input type="email" id="email" name="email" placeholder="Ex: nom@exemple.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message" data-i18n="lbl_message">Votre message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet 3D ou votre besoin informatique..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" data-i18n="btn_send">Envoyer le message</button>
+        </form>
+      </div>
+    </div>
   </main>
 
   <!-- Pied de page -->
@@ -84,18 +96,15 @@
         nav_faq: "FAQ",
         nav_contact: "Contact",
         contact_title: "Nous joindre",
-        fb_link: "Cliquer ici",
-        lbl_email: "Courriel :",
-        lbl_phone: "Téléphone :",
-        lbl_address: "Adresse :",
-        hours_title: "Horaires d’ouverture",
-        hours_week: "Lundi au vendredi : 17h à 21h",
-        hours_weekend: "Samedi et dimanche : 8h à 18h",
-        form_title: "Formulaire de contact",
-        ph_name: "Votre nom",
-        ph_email: "Votre adresse e-mail",
-        ph_message: "Votre message",
-        btn_send: "Envoyer",
+        info_heading: "Coordonnées",
+        hours_heading: "Horaires d’ouverture",
+        hours_week: "Lundi au vendredi :",
+        hours_weekend: "Samedi et dimanche :",
+        form_heading: "Formulaire de contact",
+        lbl_name: "Votre nom",
+        lbl_email: "Votre adresse e-mail",
+        lbl_message: "Votre message",
+        btn_send: "Envoyer le message",
         back_home: "Retour à l’accueil",
         footer_copy: "© 2026 KarlTech3D. Tous droits réservés."
       },
@@ -107,18 +116,15 @@
         nav_faq: "FAQ",
         nav_contact: "Contact",
         contact_title: "Contact Us",
-        fb_link: "Click here",
-        lbl_email: "Email:",
-        lbl_phone: "Phone:",
-        lbl_address: "Address:",
-        hours_title: "Opening Hours",
-        hours_week: "Monday to Friday: 5 PM to 9 PM",
-        hours_weekend: "Saturday & Sunday: 8 AM to 6 PM",
-        form_title: "Contact Form",
-        ph_name: "Your name",
-        ph_email: "Your email address",
-        ph_message: "Your message",
-        btn_send: "Send",
+        info_heading: "Contact Details",
+        hours_heading: "Opening Hours",
+        hours_week: "Monday to Friday:",
+        hours_weekend: "Saturday and Sunday:",
+        form_heading: "Contact Form",
+        lbl_name: "Your Name",
+        lbl_email: "Your E-mail Address",
+        lbl_message: "Your Message",
+        btn_send: "Send Message",
         back_home: "Back to Home",
         footer_copy: "© 2026 KarlTech3D. All rights reserved."
       }
@@ -141,13 +147,6 @@
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
           element.textContent = translations[lang][key];
-        }
-      });
-
-      document.querySelectorAll('[data-i18n-ph]').forEach(element => {
-        const key = element.getAttribute('data-i18n-ph');
-        if (translations[lang] && translations[lang][key]) {
-          element.placeholder = translations[lang][key];
         }
       });
     }
