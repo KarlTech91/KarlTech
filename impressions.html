@@ -9,21 +9,33 @@
 <body>
 
 <header>
-  <img src="Final.png" alt="Logo KarlTech3D" class="site-logo">
+  <div class="header-brand">
+    <img src="Final.png" alt="Logo KarlTech3D" class="site-logo">
+    <div class="header-text">
+      <h1>KarlTech3D</h1>
+      <p data-i18n="subtitle">Soutien informatique et impression 3D personnalisé à Shawinigan et environs</p>
+    </div>
+  </div>
+  <div class="lang-switch">
+    <button class="lang-btn" id="lang-toggle" onclick="toggleLanguage()">
+      <span class="lang-flag" id="lang-flag">🇨🇦</span>
+      <span id="lang-text">FR</span>
+    </button>
+  </div>
 </header>
 
 <nav class="main-nav">
-    <a href="index.html">Accueil</a>
-    <a href="impressions.html" class="active">Aperçu 3D</a>
-    <a href="services_tarifs.html">Services et Tarifs</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav_home">Accueil</a>
+    <a href="impressions.html" class="active" data-i18n="nav_3d">Aperçu 3D</a>
+    <a href="services_tarifs.html" data-i18n="nav_services">Services et Tarifs</a>
+    <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
 </nav>
 
 <main>
     <section id="portfolio3D">
-        <h2>Aperçu de mes impressions 3D</h2>
-        <p class="intro-text">Cliquez sur une image pour l'admirer en grand format.</p>
+        <h2 data-i18n="portfolio_title">Aperçu de mes impressions 3D</h2>
+        <p class="intro-text" data-i18n="portfolio_intro">Cliquez sur une image pour l'admirer en grand format.</p>
         
         <div class="grid-3d">
             <div class="card-3d">
@@ -31,8 +43,8 @@
                     <img src="images/impressions/CadreMTL.jpg" alt="Cadre Montreal Canadiens">
                 </a>
                 <div class="card-info">
-                    <h3>Cadre de Hockey</h3>
-                    <p>Un design personnalisé pour les amateurs de sport.</p>
+                    <h3 data-i18n="item1_title">Cadre de Hockey</h3>
+                    <p data-i18n="item1_desc">Un design personnalisé pour les amateurs de sport.</p>
                 </div>
             </div>
 
@@ -42,7 +54,7 @@
                 </a>
                 <div class="card-info">
                     <h3>Master Sword</h3>
-                    <p>Une réplique détaillée pour les collectionneurs.</p>
+                    <p data-i18n="item2_desc">Une réplique détaillée pour les collectionneurs.</p>
                 </div>
             </div>
 
@@ -52,7 +64,7 @@
                 </a>
                 <div class="card-info">
                     <h3>Mario Tanooki 3D</h3>
-                    <p>Une figurine adorable et détaillée imprimée en 3D.</p>
+                    <p data-i18n="item3_desc">Une figurine adorable et détaillée imprimée en 3D.</p>
                 </div>
             </div>
 
@@ -61,8 +73,8 @@
                     <img src="images/impressions/Fleur3D.jpeg" alt="Bouquet de fleurs imprimé en 3D">
                 </a>
                 <div class="card-info">
-                    <h3>Bouquet de Fleurs 3D</h3>
-                    <p>Une création florale éternelle et colorée pour décorer votre intérieur.</p>
+                    <h3 data-i18n="item4_title">Bouquet de Fleurs 3D</h3>
+                    <p data-i18n="item4_desc">Une création florale éternelle et colorée pour décorer votre intérieur.</p>
                 </div>
             </div>
 
@@ -71,8 +83,8 @@
                     <img src="images/impressions/PorteCrayon.png" alt="Porte-crayon personnalisé">
                 </a>
                 <div class="card-info">
-                    <h3>Porte-crayon</h3>
-                    <p>Pratique et stylé pour organiser votre bureau.</p>
+                    <h3 data-i18n="item5_title">Porte-crayon</h3>
+                    <p data-i18n="item5_desc">Pratique et stylé pour organiser votre bureau.</p>
                 </div>
             </div>
 
@@ -81,15 +93,15 @@
                     <img src="images/impressions/SupportTéléphone.png" alt="Support de téléphone">
                 </a>
                 <div class="card-info">
-                    <h3>Support Téléphone</h3>
-                    <p>Un accessoire robuste pour votre quotidien technique.</p>
+                    <h3 data-i18n="item6_title">Support Téléphone</h3>
+                    <p data-i18n="item6_desc">Un accessoire robuste pour votre quotidien technique.</p>
                 </div>
             </div>
         </div>
 
         <div class="cta-3d">
-            <p>Un projet en tête ?</p>
-            <a href="contact.html" class="btn-contact">Demander un devis gratuit</a>
+            <p data-i18n="cta_title">Un projet en tête ?</p>
+            <a href="contact.html" class="btn-contact" data-i18n="cta_button">Demander un devis gratuit</a>
         </div>
     </section>
 </main>
@@ -100,32 +112,107 @@
 </div>
 
 <footer>
-    <p>© 2026 KarlTech3D. Tous droits réservés.</p>
+    <p data-i18n="footer_copy">&copy; 2026 KarlTech3D. Tous droits réservés.</p>
 </footer>
 
 <script>
-    // Script blindé pour la Lightbox centrée
+    // Dictionnaire des traductions
+    const translations = {
+      fr: {
+        subtitle: "Soutien informatique et impression 3D personnalisé à Shawinigan et environs",
+        nav_home: "Accueil",
+        nav_3d: "Aperçu 3D",
+        nav_services: "Services et Tarifs",
+        nav_faq: "FAQ",
+        nav_contact: "Contact",
+        portfolio_title: "Aperçu de mes impressions 3D",
+        portfolio_intro: "Cliquez sur une image pour l'admirer en grand format.",
+        item1_title: "Cadre de Hockey",
+        item1_desc: "Un design personnalisé pour les amateurs de sport.",
+        item2_desc: "Une réplique détaillée pour les collectionneurs.",
+        item3_desc: "Une figurine adorable et détaillée imprimée en 3D.",
+        item4_title: "Bouquet de Fleurs 3D",
+        item4_desc: "Une création florale éternelle et colorée pour décorer votre intérieur.",
+        item5_title: "Porte-crayon",
+        item5_desc: "Pratique et stylé pour organiser votre bureau.",
+        item6_title: "Support Téléphone",
+        item6_desc: "Un accessoire robuste pour votre quotidien technique.",
+        cta_title: "Un projet en tête ?",
+        cta_button: "Demander un devis gratuit",
+        footer_copy: "© 2026 KarlTech3D. Tous droits réservés."
+      },
+      en: {
+        subtitle: "IT support and custom 3D printing in Shawinigan and surrounding areas",
+        nav_home: "Home",
+        nav_3d: "3D Showcase",
+        nav_services: "Services & Rates",
+        nav_faq: "FAQ",
+        nav_contact: "Contact",
+        portfolio_title: "3D Printing Showcase",
+        portfolio_intro: "Click on an image to view it in high resolution.",
+        item1_title: "Hockey Frame",
+        item1_desc: "A custom design for sports enthusiasts.",
+        item2_desc: "A detailed replica for collectors.",
+        item3_desc: "An adorable and detailed 3D printed figurine.",
+        item4_title: "3D Flower Bouquet",
+        item4_desc: "An everlasting and colorful floral creation to decorate your home.",
+        item5_title: "Pencil Holder",
+        item5_desc: "Practical and stylish to organize your desk.",
+        item6_title: "Phone Stand",
+        item6_desc: "A sturdy accessory for your everyday tech setup.",
+        cta_title: "Have a project in mind?",
+        cta_button: "Request a free quote",
+        footer_copy: "© 2026 KarlTech3D. All rights reserved."
+      }
+    };
+
+    let currentLang = localStorage.getItem('site_lang') || 'fr';
+
+    function updateLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('site_lang', lang);
+      document.documentElement.lang = lang;
+
+      // Bouton UI
+      document.getElementById('lang-flag').textContent = lang === 'fr' ? '🇨🇦' : '🇺🇸';
+      document.getElementById('lang-text').textContent = lang.toUpperCase();
+
+      // Remplacement des textes
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    function toggleLanguage() {
+      const newLang = currentLang === 'fr' ? 'en' : 'fr';
+      updateLanguage(newLang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateLanguage(currentLang);
+    });
+
+    // Script pour la Lightbox
     const links = document.querySelectorAll('.lightbox-link');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('img-agrandie');
     const closeBtn = document.querySelector('.close');
 
-    // Ouvre la lightbox
     links.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             lightboxImg.src = this.href;
-            // On utilise 'flex' pour activer le centrage CSS
             lightbox.style.display = 'flex'; 
         });
     });
 
-    // Ferme la lightbox si on clique sur le X
     closeBtn.addEventListener('click', function() {
         lightbox.style.display = 'none';
     });
 
-    // Ferme la lightbox si on clique n'importe où sur le fond noir
     lightbox.addEventListener('click', function(e) {
         if (e.target !== lightboxImg) {
             lightbox.style.display = 'none';
