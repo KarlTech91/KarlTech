@@ -9,55 +9,67 @@
 <body>
 
 <header>
-  <img src="Final.png" alt="Logo KarlTech3D" class="site-logo">
+  <div class="header-brand">
+    <img src="Final.png" alt="Logo KarlTech3D" class="site-logo">
+    <div class="header-text">
+      <h1>KarlTech3D</h1>
+      <p data-i18n="subtitle">Soutien informatique et impression 3D personnalisé à Shawinigan et environs</p>
+    </div>
+  </div>
+  <div class="lang-switch">
+    <button class="lang-btn" id="lang-toggle" onclick="toggleLanguage()">
+      <span class="lang-flag" id="lang-flag">🇨🇦</span>
+      <span id="lang-text">FR</span>
+    </button>
+  </div>
 </header>
 
 <nav class="main-nav">
-    <a href="index.html">Accueil</a>
-    <a href="impressions.html">Aperçu 3D</a>
-    <a href="services_tarifs.html">Services et Tarifs</a>
-    <a href="faq.html" class="active">FAQ</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav_home">Accueil</a>
+    <a href="impressions.html" data-i18n="nav_3d">Aperçu 3D</a>
+    <a href="services_tarifs.html" data-i18n="nav_services">Services et Tarifs</a>
+    <a href="faq.html" class="active" data-i18n="nav_faq">FAQ</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
 </nav>
 
 <main>
     <section id="faq-section">
-        <h2>Foire Aux Questions</h2>
-        <p class="intro-text">Trouvez rapidement des réponses à vos questions techniques et sur nos services d'impression.</p>
+        <h2 data-i18n="faq_title">Foire Aux Questions</h2>
+        <p class="intro-text" data-i18n="faq_intro">Trouvez rapidement des réponses à vos questions techniques et sur nos services d'impression.</p>
 
         <div class="faq-container">
             <div class="faq-item">
-                <button class="faq-question">Quels services informatiques proposez-vous ?</button>
+                <button class="faq-question" data-i18n="q1_title">Quels services informatiques proposez-vous ?</button>
                 <div class="faq-answer">
-                    <p>Nous offrons un large éventail d'interventions : formatage, réinstallation de Windows, suppression de virus, installation de pièces (RAM, SSD, carte graphique), custom builds, sauvegarde de données et assistance à distance.</p>
+                    <p data-i18n="q1_ans">Nous offrons un large éventail d'interventions : formatage, réinstallation de Windows, suppression de virus, installation de pièces (RAM, SSD, carte graphique), custom builds, sauvegarde de données et assistance à distance.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Quels matériaux utilisez-vous pour l'impression 3D ?</button>
+                <button class="faq-question" data-i18n="q2_title">Quels matériaux utilisez-vous pour l'impression 3D ?</button>
                 <div class="faq-answer">
-                    <p>Nous travaillons principalement avec le PLA (biodégradable et idéal pour la décoration) et le PETG (plus résistant pour les pièces techniques). D'autres matériaux sont disponibles sur demande selon votre projet.</p>
+                    <p data-i18n="q2_ans">Nous travaillons principalement avec le PLA (biodégradable et idéal pour la décoration) et le PETG (plus résistant pour les pièces techniques). D'autres matériaux sont disponibles sur demande selon votre projet.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Puis-je commander une pièce personnalisée ?</button>
+                <button class="faq-question" data-i18n="q3_title">Puis-je commander une pièce personnalisée ?</button>
                 <div class="faq-answer">
-                    <p>Absolument ! Que vous ayez déjà un fichier 3D (STL) ou simplement une idée, nous pouvons vous aider à concevoir et imprimer votre projet sur mesure.</p>
+                    <p data-i18n="q3_ans">Absolument ! Que vous ayez déjà un fichier 3D (STL) ou simplement une idée, nous pouvons vous aider à concevoir et imprimer votre projet sur mesure.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Est-ce que vous vous déplacez ?</button>
+                <button class="faq-question" data-i18n="q4_title">Est-ce que vous vous déplacez ?</button>
                 <div class="faq-answer">
-                    <p>Oui, nous nous déplaçons dans Shawinigan et ses environs pour un léger frais supplémentaire. Pour les distances plus longues, nous convenons du tarif au préalable.</p>
+                    <p data-i18n="q4_ans">Oui, nous nous déplaçons dans Shawinigan et ses environs pour un léger frais supplémentaire. Pour les distances plus longues, nous convenons du tarif au préalable.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Comment fonctionne le support à distance ?</button>
+                <button class="faq-question" data-i18n="q5_title">Comment fonctionne le support à distance ?</button>
                 <div class="faq-answer">
-                    <p>Nous utilisons RustDesk pour prendre la main sur votre ordinateur en toute sécurité. Chaque session est cryptée et facturée au même tarif qu'une intervention sur place.</p>
+                    <p data-i18n="q5_ans">Nous utilisons RustDesk pour prendre la main sur votre ordinateur en toute sécurité. Chaque session est cryptée et facturée au même tarif qu'une intervention sur place.</p>
                 </div>
             </div>
         </div>
@@ -65,11 +77,86 @@
 </main>
 
 <footer>
-    <p>© 2026 KarlTech3D. Tous droits réservés.</p>
+    <p data-i18n="footer_copy">&copy; 2026 KarlTech3D. Tous droits réservés.</p>
 </footer>
 
 <script>
-    // Script pour faire fonctionner l'accordéon
+    // Dictionnaire des traductions
+    const translations = {
+      fr: {
+        subtitle: "Soutien informatique et impression 3D personnalisé à Shawinigan et environs",
+        nav_home: "Accueil",
+        nav_3d: "Aperçu 3D",
+        nav_services: "Services et Tarifs",
+        nav_faq: "FAQ",
+        nav_contact: "Contact",
+        faq_title: "Foire Aux Questions",
+        faq_intro: "Trouvez rapidement des réponses à vos questions techniques et sur nos services d'impression.",
+        q1_title: "Quels services informatiques proposez-vous ?",
+        q1_ans: "Nous offrons un large éventail d'interventions : formatage, réinstallation de Windows, suppression de virus, installation de pièces (RAM, SSD, carte graphique), custom builds, sauvegarde de données et assistance à distance.",
+        q2_title: "Quels matériaux utilisez-vous pour l'impression 3D ?",
+        q2_ans: "Nous travaillons principalement avec le PLA (biodégradable et idéal pour la décoration) et le PETG (plus résistant pour les pièces techniques). D'autres matériaux sont disponibles sur demande selon votre projet.",
+        q3_title: "Puis-je commander une pièce personnalisée ?",
+        q3_ans: "Absolument ! Que vous ayez déjà un fichier 3D (STL) ou simplement une idée, nous pouvons vous aider à concevoir et imprimer votre projet sur mesure.",
+        q4_title: "Est-ce que vous vous déplacez ?",
+        q4_ans: "Oui, nous nous déplaçons dans Shawinigan et ses environs pour un léger frais supplémentaire. Pour les distances plus longues, nous convenons du tarif au préalable.",
+        q5_title: "Comment fonctionne le support à distance ?",
+        q5_ans: "Nous utilisons RustDesk pour prendre la main sur votre ordinateur en toute sécurité. Chaque session est cryptée et facturée au même tarif qu'une intervention sur place.",
+        footer_copy: "© 2026 KarlTech3D. Tous droits réservés."
+      },
+      en: {
+        subtitle: "IT support and custom 3D printing in Shawinigan and surrounding areas",
+        nav_home: "Home",
+        nav_3d: "3D Showcase",
+        nav_services: "Services & Rates",
+        nav_faq: "FAQ",
+        nav_contact: "Contact",
+        faq_title: "Frequently Asked Questions",
+        faq_intro: "Quickly find answers to common questions about IT services and 3D printing.",
+        q1_title: "What IT services do you offer?",
+        q1_ans: "We offer a wide range of services: system formatting, Windows reinstallation, malware removal, hardware installation (RAM, SSD, graphics card), custom PC builds, data backup, and remote support.",
+        q2_title: "What materials do you use for 3D printing?",
+        q2_ans: "We mainly work with PLA (biodegradable and ideal for decor) and PETG (more durable for mechanical parts). Other materials are available upon request depending on your project.",
+        q3_title: "Can I order a custom 3D part?",
+        q3_ans: "Absolutely! Whether you already have a 3D file (STL) or just an idea, we can help design and print your custom project.",
+        q4_title: "Do you offer on-site / home services?",
+        q4_ans: "Yes, we travel within Shawinigan and nearby areas for a small extra fee. For longer distances, rates are agreed upon in advance.",
+        q5_title: "How does remote support work?",
+        q5_ans: "We use RustDesk to securely access your computer remotely. Every session is encrypted and billed at the same rate as on-site support.",
+        footer_copy: "© 2026 KarlTech3D. All rights reserved."
+      }
+    };
+
+    let currentLang = localStorage.getItem('site_lang') || 'fr';
+
+    function updateLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('site_lang', lang);
+      document.documentElement.lang = lang;
+
+      // Bouton UI
+      document.getElementById('lang-flag').textContent = lang === 'fr' ? '🇨🇦' : '🇺🇸';
+      document.getElementById('lang-text').textContent = lang.toUpperCase();
+
+      // Remplacement des textes
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    function toggleLanguage() {
+      const newLang = currentLang === 'fr' ? 'en' : 'fr';
+      updateLanguage(newLang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateLanguage(currentLang);
+    });
+
+    // Script Accordéon pour la FAQ
     const faqQuestions = document.querySelectorAll('.faq-question');
 
     faqQuestions.forEach(question => {
