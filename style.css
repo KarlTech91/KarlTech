@@ -1,450 +1,159 @@
-/* ==========================================
-   1. REGLES GENERALES & REINITIALISATION
-   ========================================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0b0f19;
-  color: #e0e0e0;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-a {
-  color: #00aaff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: #66ccff;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
+/* Hero Banner */
+.hero-banner {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color: #ffffff;
+  padding: 60px 20px;
   text-align: center;
+  border-bottom: 3px solid #3b82f6;
 }
 
-.intro-text {
-  text-align: center;
-  color: #aaaaaa;
-  margin-bottom: 30px;
-}
-
-/* ==========================================
-   2. EN-TÊTE (HEADER) & CHANGER DE LANGUE
-   ========================================== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: #111625;
-  border-bottom: 1px solid #1e293b;
-}
-
-.header-brand {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.site-logo {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-}
-
-.header-text h1 {
-  font-size: 1.8rem;
-  color: #ffffff;
-  line-height: 1.2;
-}
-
-.header-text p {
-  font-size: 0.85rem;
-  color: #aaaaaa;
-}
-
-/* Bouton de langue */
-.lang-switch {
-  display: flex;
-  align-items: center;
-}
-
-.lang-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #00aaff;
-  color: #ffffff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.lang-btn:hover {
-  background: rgba(0, 170, 255, 0.2);
-  border-color: #33bbff;
-}
-
-.lang-btn img {
-  width: 20px;
-  height: auto;
-  border-radius: 2px;
-  display: block;
-}
-
-/* ==========================================
-   3. NAVIGATION PRINCIPALE
-   ========================================== */
-.main-nav {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  background-color: #161c2e;
-  padding: 12px;
-  border-bottom: 1px solid #1e293b;
-  flex-wrap: wrap;
-}
-
-.main-nav a {
-  color: #ffffff;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-  color: #00aaff;
-  background-color: rgba(0, 170, 255, 0.1);
-}
-
-/* ==========================================
-   4. GALERIE 3D & LIGHTBOX
-   ========================================== */
-.grid-3d {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 20px;
-}
-
-.card-3d {
-  background-color: #161c2e;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid #1e293b;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card-3d:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 170, 255, 0.15);
-}
-
-.card-3d img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-.card-info {
-  padding: 15px;
-}
-
-.card-info h3 {
-  color: #ffffff;
-  margin-bottom: 8px;
-}
-
-.card-info p {
-  color: #aaaaaa;
-  font-size: 0.9rem;
-}
-
-.cta-3d {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.cta-3d p {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-}
-
-.btn-contact {
-  display: inline-block;
-  background-color: #00aaff;
-  color: #ffffff;
-  padding: 12px 25px;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.2s ease;
-}
-
-.btn-contact:hover {
-  background-color: #0088cc;
-  color: #ffffff;
-}
-
-/* Lightbox Modal */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox-content {
-  max-width: 90%;
-  max-height: 85%;
-  border-radius: 8px;
-  box-shadow: 0 0 25px rgba(0, 170, 255, 0.3);
-}
-
-.lightbox .close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #ffffff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.lightbox .close:hover {
-  color: #00aaff;
-}
-
-/* ==========================================
-   5. TABLEAU SERVICES & TARIFS
-   ========================================== */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background-color: #161c2e;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-th, td {
-  padding: 15px 20px;
-  text-align: left;
-  border-bottom: 1px solid #1e293b;
-}
-
-th {
-  background-color: #1e283d;
-  color: #00aaff;
-  font-size: 1.05rem;
-}
-
-tr:hover {
-  background-color: #1b2338;
-}
-
-/* ==========================================
-   6. FAQ (ACCORDEON)
-   ========================================== */
-.faq-container {
+.hero-content {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.faq-item {
+.hero-banner h2 {
+  font-size: 2.2rem;
   margin-bottom: 15px;
-  background-color: #161c2e;
+}
+
+.hero-banner p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-bottom: 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 24px;
   border-radius: 6px;
-  border: 1px solid #1e293b;
-  overflow: hidden;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
 }
 
-.faq-question {
-  width: 100%;
-  background: none;
-  border: none;
-  outline: none;
-  text-align: left;
-  padding: 18px 20px;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #ffffff;
-  cursor: pointer;
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #3b82f6;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #3b82f6;
+}
+
+/* Bandeau Réassurance */
+.reassurance-bar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.faq-question:hover,
-.faq-question.active {
-  color: #00aaff;
-  background-color: #1b2338;
-}
-
-.faq-question::after {
-  content: '+';
-  font-size: 1.4rem;
-  color: #00aaff;
-  transition: transform 0.3s ease;
-}
-
-.faq-question.active::after {
-  content: '-';
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  background-color: #121726;
-}
-
-.faq-answer p {
-  padding: 18px 20px;
-  color: #cccccc;
-  line-height: 1.6;
-}
-
-/* ==========================================
-   7. PAGE CONTACT & FORMULAIRE
-   ========================================== */
-.contact-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.col {
-  background-color: #161c2e;
-  padding: 25px;
-  border-radius: 8px;
-  border: 1px solid #1e293b;
-}
-
-.col h3 {
-  color: #00aaff;
-  margin-bottom: 15px;
-}
-
-.col.infos p {
-  margin-bottom: 12px;
-}
-
-.col.infos ul {
-  list-style: none;
-  margin-top: 10px;
-}
-
-.col.infos li {
-  color: #cccccc;
-  margin-bottom: 6px;
-}
-
-.col.formu form {
-  display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 15px 10px;
+  flex-wrap: wrap;
   gap: 15px;
 }
 
-.col.formu input,
-.col.formu textarea {
-  width: 100%;
-  padding: 12px;
-  background-color: #0b0f19;
-  border: 1px solid #1e293b;
-  border-radius: 5px;
-  color: #ffffff;
-  font-family: inherit;
-  font-size: 0.95rem;
+.reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #334155;
 }
 
-.col.formu input:focus,
-.col.formu textarea:focus {
-  outline: none;
-  border-color: #00aaff;
-}
-
-.col.formu button {
-  background-color: #00aaff;
-  color: #ffffff;
-  border: none;
-  padding: 12px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.col.formu button:hover {
-  background-color: #0088cc;
-}
-
-/* ==========================================
-   8. PIED DE PAGE (FOOTER)
-   ========================================== */
-footer {
+/* Titres de Section */
+.section-title {
   text-align: center;
-  padding: 20px;
-  background-color: #111625;
-  border-top: 1px solid #1e293b;
-  color: #888888;
-  font-size: 0.9rem;
+  margin: 40px 0 20px 0;
+  font-size: 1.8rem;
 }
 
-footer p {
-  margin: 4px 0;
+/* Section How It Works */
+.how-it-works {
+  margin: 50px 0;
 }
 
-/* RESPONSIVE DESIGN (MOBILES ET TABLETTES) */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
+.steps-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
-  .header-brand {
-    flex-direction: column;
-  }
+.step-card {
+  flex: 1;
+  min-width: 250px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
 
-  .main-nav {
-    gap: 10px;
-  }
+.step-number {
+  width: 40px;
+  height: 40px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0 auto 15px auto;
+}
+
+/* Section Etsy Banner */
+.etsy-banner {
+  background-color: #fff7ed;
+  border: 1px solid #ffedd5;
+  border-radius: 8px;
+  padding: 30px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.etsy-content h3 {
+  color: #c2410c;
+  margin-bottom: 10px;
+}
+
+.etsy-content p {
+  color: #9a3412;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+}
+
+.btn-etsy {
+  background-color: #f97316;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.btn-etsy:hover {
+  background-color: #ea580c;
 }
