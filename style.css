@@ -1,380 +1,84 @@
-/* --- RESET & BASICS --- */
-* {
-  box-sizing: border-box;
-  margin: 0;
+/* --- PAGE CONTACT & FORMULAIRE --- */
+.contact-info-list, .hours-list {
+  list-style: none;
   padding: 0;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0f172a;
-  color: #f8fafc;
-  line-height: 1.6;
-}
-
-/* --- HEADER & BRANDING --- */
-header {
-  background-color: #1e293b;
-  padding: 20px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #38bdf8;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.header-brand {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Redimensionnement strict du logo */
-.site-logo {
-  max-width: 120px;
-  height: auto;
-  border-radius: 8px;
-}
-
-.header-text h1 {
-  font-size: 2rem;
-  color: #38bdf8;
-  letter-spacing: 1px;
-}
-
-.header-text p {
-  font-size: 0.9rem;
-  color: #94a3b8;
-}
-
-.lang-btn {
-  background: #334155;
-  color: #fff;
-  border: 1px solid #475569;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
-}
-
-.lang-btn:hover {
-  background: #475569;
-}
-
-/* --- NAVIGATION --- */
-.main-nav {
-  background-color: #0f172a;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 15px 10px;
-  border-bottom: 1px solid #1e293b;
-  flex-wrap: wrap;
-}
-
-.main-nav a {
-  color: #cbd5e1;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-  background-color: #38bdf8;
-  color: #0f172a;
-}
-
-/* --- HERO BANNER --- */
-.hero-banner {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  padding: 50px 20px;
-  text-align: center;
-  border-bottom: 1px solid #1e293b;
-}
-
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.hero-banner h2 {
-  font-size: 2.2rem;
-  color: #ffffff;
-  margin-bottom: 15px;
-}
-
-.hero-banner p {
-  color: #94a3b8;
-  margin-bottom: 25px;
-  font-size: 1.1rem;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  background-color: #38bdf8;
-  color: #0f172a;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.btn-secondary {
-  border: 2px solid #38bdf8;
-  color: #38bdf8;
-  padding: 10px 22px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* --- BANDEAU REASSURANCE --- */
-.reassurance-bar {
-  display: flex;
-  justify-content: space-around;
-  background-color: #1e293b;
-  padding: 15px;
-  border-bottom: 1px solid #334155;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.reassurance-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  color: #e2e8f0;
-}
-
-/* --- MAIN & CARDS --- */
-main {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 1.8rem;
-  color: #38bdf8;
-}
-
-.contact-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.col {
-  flex: 1;
-  min-width: 280px;
-  background-color: #1e293b;
-  padding: 25px;
-  border-radius: 8px;
-  border: 1px solid #334155;
-}
-
-.col h3 {
-  color: #38bdf8;
-  margin-bottom: 15px;
-}
-
-.btn-contact {
-  display: inline-block;
-  background-color: #38bdf8;
-  color: #0f172a;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* --- GALERIE 3D --- */
-.grid-3d {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-.card-3d {
-  background-color: #1e293b;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid #334155;
-}
-
-.card-3d img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.card-info {
-  padding: 15px;
-}
-
-/* --- STEPS (COMMENT CA MARCHE) --- */
-.steps-grid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.step-card {
-  flex: 1;
-  min-width: 250px;
-  background: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 8px;
-  padding: 25px;
-  text-align: center;
-}
-
-.step-number {
-  width: 40px;
-  height: 40px;
-  background-color: #38bdf8;
-  color: #0f172a;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  margin: 0 auto 15px auto;
-}
-
-/* --- SECTION ETSY --- */
-.etsy-banner {
-  background-color: #1e293b;
-  border: 1px solid #f97316;
-  border-radius: 8px;
-  padding: 30px;
-  margin-top: 40px;
-  text-align: center;
-}
-
-.etsy-content h3 {
-  color: #f97316;
-  margin-bottom: 10px;
-}
-
-.btn-etsy {
-  background-color: #f97316;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 15px;
-}
-
-/* --- TABLES & FAQ --- */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #1e293b;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-th, td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 1px solid #334155;
-}
-
-th {
-  background-color: #0f172a;
-  color: #38bdf8;
-}
-
-.faq-question {
-  width: 100%;
-  background: #1e293b;
-  color: #fff;
-  border: 1px solid #334155;
-  padding: 15px;
-  text-align: left;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 6px;
   margin-top: 10px;
 }
 
-.faq-answer {
-  background: #0f172a;
-  padding: 0 15px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  border-left: 2px solid #38bdf8;
+.contact-info-list li, .hours-list li {
+  margin-bottom: 12px;
+  font-size: 1rem;
 }
 
-/* --- FOOTER --- */
-footer {
-  text-align: center;
-  padding: 30px 20px;
-  background-color: #1e293b;
-  border-top: 1px solid #334155;
-  margin-top: 50px;
-  color: #94a3b8;
-}
-
-footer a {
+.contact-link {
   color: #38bdf8;
   text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
-/* --- LIGHTBOX (MODAL) --- */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
+.contact-link:hover {
+  color: #0284c7;
+  text-decoration: underline;
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  color: #f8fafc;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  justify-content: center;
-  align-items: center;
+  padding: 12px;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.lightbox-content {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 8px;
-  border: 2px solid #38bdf8;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
 }
 
-.lightbox .close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
+.btn-submit {
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
   font-weight: bold;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 10px;
 }
 
-.lightbox .close:hover {
-  color: #38bdf8;
+.btn-submit:hover {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+.btn-submit:active {
+  transform: scale(0.98);
 }
