@@ -527,3 +527,46 @@ footer a:hover {
   line-height: 1.5;
   background: transparent;
 }
+
+/* --- PAGE SERVICES & TABLEAU --- */
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  background-color: #0f172a;
+}
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.services-table th {
+  background-color: #1e293b;
+  color: #38bdf8;
+  padding: 16px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border-bottom: 2px solid #334155;
+}
+
+.services-table td {
+  padding: 16px;
+  color: #cbd5e1;
+  border-bottom: 1px solid #1e293b;
+  font-size: 0.95rem;
+}
+
+.services-table tr:last-child td {
+  border-bottom: none;
+}
+
+.services-table tbody tr:hover {
+  background-color: rgba(56, 189, 248, 0.04);
+}
+
+.services-table td strong {
+  color: #f8fafc;
+}
