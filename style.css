@@ -492,3 +492,38 @@ footer a:hover {
     font-size: 1.6rem;
   }
 }
+/* --- PAGE FAQ --- */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 850px;
+  margin: 30px auto 0 auto;
+}
+
+.faq-card {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 22px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.faq-card:hover {
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+.faq-card h3 {
+  color: #38bdf8;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  background: transparent;
+}
+
+.faq-card p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background: transparent;
+}
