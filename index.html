@@ -33,17 +33,43 @@
     <a href="contact.html" data-i18n="nav_contact">Contact</a>
   </nav>
 
-  <!-- Contenu principal -->
-  <main>
-    <section>
-      <h2 data-i18n="welcome_title">Bienvenue chez KarlTech3D</h2>
-      <p class="intro-text" data-i18n="welcome_desc">Votre partenaire de confiance pour le soutien informatique et l’impression 3D sur mesure à Shawinigan et dans les environs.</p>
+  <!-- Bannière Hero -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h2 data-i18n="hero_title">Vos projets informatiques & impressions 3D prennent vie</h2>
+      <p data-i18n="hero_desc">Service rapide, précis et personnalisé directement à Shawinigan. Du dépannage PC à la création de pièces sur mesure en PLA.</p>
+      <div class="hero-buttons">
+        <a href="contact.html" class="btn-primary" data-i18n="hero_btn_quote">Obtenir un devis gratuit</a>
+        <a href="impressions.html" class="btn-secondary" data-i18n="hero_btn_gallery">Explorer nos réalisations</a>
+      </div>
+    </div>
+  </section>
 
+  <!-- Bandeau de Réassurance -->
+  <div class="reassurance-bar">
+    <div class="reassurance-item">
+      <span>📍</span>
+      <p data-i18n="reassure_local">Service local à Shawinigan</p>
+    </div>
+    <div class="reassurance-item">
+      <span>⚡</span>
+      <p data-i18n="reassure_fast">Réponse rapide sous 24h</p>
+    </div>
+    <div class="reassurance-item">
+      <span>🛠️</span>
+      <p data-i18n="reassure_custom">Projets 100% sur mesure</p>
+    </div>
+  </div>
+
+  <main>
+    <!-- Section Nos Pôles d'Expertise -->
+    <section class="services-overview">
+      <h2 class="section-title" data-i18n="services_title">Nos Domaines d'Expertise</h2>
       <div class="contact-container">
-        <!-- Carte Services Informatiques -->
+        <!-- Carte Informatique -->
         <div class="col">
           <h3 data-i18n="card_it_title">💻 Soutien Informatique</h3>
-          <p data-i18n="card_it_desc">Dépannage, optimisation de PC, installation de composants, configuration de réseaux et nettoyage de virus. Un service rapide et personnalisé à domicile ou à distance.</p>
+          <p data-i18n="card_it_desc">Dépannage, optimisation de PC, installation de composants, configuration de réseaux et nettoyage de virus. Un service rapide à domicile ou à distance.</p>
           <br>
           <a href="services_tarifs.html" class="btn-contact" data-i18n="btn_learn_more">En savoir plus</a>
         </div>
@@ -51,10 +77,41 @@
         <!-- Carte Impression 3D -->
         <div class="col">
           <h3 data-i18n="card_3d_title">🖨️ Impression 3D Sur Mesure</h3>
-          <p data-i18n="card_3d_desc">Prototypage, pièces de rechange, décorations personnalisées ou objets utilitaires. Nous donnons vie à vos idées avec une grande précision.</p>
+          <p data-i18n="card_3d_desc">Prototypage, pièces de rechange, objets utilitaires ou décorations personnalisées (logos, figurines Gengar, cadres). Conçus avec précision.</p>
           <br>
           <a href="impressions.html" class="btn-contact" data-i18n="btn_see_gallery">Voir la galerie</a>
         </div>
+      </div>
+    </section>
+
+    <!-- Section Comment ça marche -->
+    <section class="how-it-works">
+      <h2 class="section-title" data-i18n="how_title">Comment ça fonctionne ?</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 data-i18n="step1_title">Demande & Devis</h3>
+          <p data-i18n="step1_desc">Envoyez-nous vos fichiers 3D (.STL, .3MF) ou décrivez-nous votre problème informatique.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 data-i18n="step2_title">Analyse & Validation</h3>
+          <p data-i18n="step2_desc">Nous vous proposons la meilleure solution technique et un tarif clair et transparent.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 data-i18n="step3_title">Réalisation & Livraison</h3>
+          <p data-i18n="step3_desc">Impression de vos pièces ou réparation de votre équipement dans les plus brefs délais.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Boutique Etsy -->
+    <section class="etsy-banner">
+      <div class="etsy-content">
+        <h3 data-i18n="etsy_title">🛒 Visitez notre boutique Etsy</h3>
+        <p data-i18n="etsy_desc">Retrouvez directement nos créations 3D prêtes à l'expédition (organiseurs, cadres personnalisés, accessoires de bureau) sur notre boutique officielle Etsy.</p>
+        <a href="https://www.etsy.com" target="_blank" class="btn-etsy" data-i18n="etsy_btn">Découvrir nos produits sur Etsy</a>
       </div>
     </section>
   </main>
@@ -73,14 +130,30 @@
         nav_services: "Services et Tarifs",
         nav_faq: "FAQ",
         nav_contact: "Contact",
-        welcome_title: "Bienvenue chez KarlTech3D",
-        welcome_desc: "Votre partenaire de confiance pour le soutien informatique et l’impression 3D sur mesure à Shawinigan et dans les environs.",
+        hero_title: "Vos projets informatiques & impressions 3D prennent vie",
+        hero_desc: "Service rapide, précis et personnalisé directement à Shawinigan. Du dépannage PC à la création de pièces sur mesure en PLA.",
+        hero_btn_quote: "Obtenir un devis gratuit",
+        hero_btn_gallery: "Explorer nos réalisations",
+        reassure_local: "Service local à Shawinigan",
+        reassure_fast: "Réponse rapide sous 24h",
+        reassure_custom: "Projets 100% sur mesure",
+        services_title: "Nos Domaines d'Expertise",
         card_it_title: "💻 Soutien Informatique",
-        card_it_desc: "Dépannage, optimisation de PC, installation de composants, configuration de réseaux et nettoyage de virus. Un service rapide et personnalisé à domicile ou à distance.",
+        card_it_desc: "Dépannage, optimisation de PC, installation de composants, configuration de réseaux et nettoyage de virus. Un service rapide à domicile ou à distance.",
         btn_learn_more: "En savoir plus",
         card_3d_title: "🖨️ Impression 3D Sur Mesure",
-        card_3d_desc: "Prototypage, pièces de rechange, décorations personnalisées ou objets utilitaires. Nous donnons vie à vos idées avec une grande précision.",
+        card_3d_desc: "Prototypage, pièces de rechange, objets utilitaires ou décorations personnalisées (logos, figurines Gengar, cadres). Conçus avec précision.",
         btn_see_gallery: "Voir la galerie",
+        how_title: "Comment ça fonctionne ?",
+        step1_title: "Demande & Devis",
+        step1_desc: "Envoyez-nous vos fichiers 3D (.STL, .3MF) ou décrivez-nous votre problème informatique.",
+        step2_title: "Analyse & Validation",
+        step2_desc: "Nous vous proposons la meilleure solution technique et un tarif clair et transparent.",
+        step3_title: "Réalisation & Livraison",
+        step3_desc: "Impression de vos pièces ou réparation de votre équipement dans les plus brefs délais.",
+        etsy_title: "🛒 Visitez notre boutique Etsy",
+        etsy_desc: "Retrouvez directement nos créations 3D prêtes à l'expédition (organiseurs, cadres personnalisés, accessoires de bureau) sur notre boutique officielle Etsy.",
+        etsy_btn: "Découvrir nos produits sur Etsy",
         footer_copy: "© 2026 KarlTech3D. Tous droits réservés."
       },
       en: {
@@ -90,14 +163,30 @@
         nav_services: "Services & Rates",
         nav_faq: "FAQ",
         nav_contact: "Contact",
-        welcome_title: "Welcome to KarlTech3D",
-        welcome_desc: "Your trusted partner for IT support and custom 3D printing in Shawinigan and surrounding areas.",
+        hero_title: "Your IT projects & 3D prints brought to life",
+        hero_desc: "Fast, precise, and personalized service in Shawinigan. From PC troubleshooting to custom PLA printed parts.",
+        hero_btn_quote: "Get a free quote",
+        hero_btn_gallery: "Explore our creations",
+        reassure_local: "Local service in Shawinigan",
+        reassure_fast: "Quick response within 24h",
+        reassure_custom: "100% custom projects",
+        services_title: "Our Areas of Expertise",
         card_it_title: "💻 IT Support",
-        card_it_desc: "Troubleshooting, PC optimization, component installation, network setup, and virus removal. Fast and personalized service at home or remotely.",
+        card_it_desc: "Troubleshooting, PC optimization, component installation, network setup, and virus removal. Fast service at home or remotely.",
         btn_learn_more: "Learn more",
         card_3d_title: "🖨️ Custom 3D Printing",
-        card_3d_desc: "Prototyping, replacement parts, custom decorations, or utility items. We bring your ideas to life with high precision.",
+        card_3d_desc: "Prototyping, replacement parts, utility items, or custom decorations (logos, Gengar figurines, frames). High-precision prints.",
         btn_see_gallery: "View gallery",
+        how_title: "How does it work?",
+        step1_title: "Request & Quote",
+        step1_desc: "Send us your 3D files (.STL, .3MF) or describe your IT issue.",
+        step2_title: "Analysis & Approval",
+        step2_desc: "We recommend the best technical approach alongside a clear and transparent rate.",
+        step3_title: "Production & Delivery",
+        step3_desc: "Printing your parts or repairing your hardware in a short timeframe.",
+        etsy_title: "🛒 Visit our Etsy Shop",
+        etsy_desc: "Browse our ready-to-ship 3D creations (desk organizers, custom frames, desk accessories) on our official Etsy store.",
+        etsy_btn: "Discover our products on Etsy",
         footer_copy: "© 2026 KarlTech3D. All rights reserved."
       }
     };
