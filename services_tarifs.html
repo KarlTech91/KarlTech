@@ -36,49 +36,62 @@
   <!-- Contenu principal -->
   <main>
     <section>
-      <h2 data-i18n="page_title">Nos Services et Tarifs</h2>
-      <p class="intro-text" data-i18n="page_desc">Découvrez nos tarifs transparents pour le soutien informatique et l’impression 3D. Pour toute demande spécifique, n’hésitez pas à nous contacter pour un devis personnalisé.</p>
+      <h2 class="section-title" data-i18n="services_title">Nos Services et Tarifs</h2>
+      <p class="intro-text" data-i18n="services_desc">Découvrez nos services informatiques spécialisés et nos prestations d'impression 3D. Tarification claire et transparente.</p>
 
-      <table>
-        <thead>
-          <tr>
-            <th data-i18n="th_service">Service</th>
-            <th data-i18n="th_description">Description</th>
-            <th data-i18n="th_rate">Tarif</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-i18n="s1_title">Soutien Informatique Général</td>
-            <td data-i18n="s1_desc">Dépannage, optimisation de système, suppression de virus, configuration d'imprimantes et logiciels.</td>
-            <td data-i18n="s1_rate">35$ / heure</td>
-          </tr>
-          <tr>
-            <td data-i18n="s2_title">Assemblage & Nettoyage de PC</td>
-            <td data-i18n="s2_desc">Montage complet d'un PC sur mesure à partir de vos composants ou dépoussiérage / changement de pâte thermique.</td>
-            <td data-i18n="s2_rate">Sur devis (à partir de 50$)</td>
-          </tr>
-          <tr>
-            <td data-i18n="s3_title">Impression 3D sur Mesure (FDM)</td>
-            <td data-i18n="s3_desc">Impression d'objets en PLA/PETG d'après votre fichier 3D (.STL, .3MF) ou création personnalisée.</td>
-            <td data-i18n="s3_rate">Selon le temps et la matière</td>
-          </tr>
-          <tr>
-            <td data-i18n="s4_title">Modélisation & Prototypage 3D</td>
-            <td data-i18n="s4_desc">Conception de pièces sur mesure, pièces de rechange cassées ou ajustement de fichiers existants.</td>
-            <td data-i18n="s4_rate">Sur devis</td>
-          </tr>
-          <tr>
-            <td data-i18n="s5_title">Déplacement à domicile</td>
-            <td data-i18n="s5_desc">Service à domicile disponible dans la région de Shawinigan et environs.</td>
-            <td data-i18n="s5_rate">Frais variables selon la distance</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-container">
+        <table class="services-table">
+          <thead>
+            <tr>
+              <th data-i18n="th_service">Service</th>
+              <th data-i18n="th_desc">Description</th>
+              <th data-i18n="th_price">Tarif</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- IT 1 -->
+            <tr>
+              <td><strong>💻 Support à distance (RustDesk)</strong></td>
+              <td data-i18n="s1_desc">Dépannage rapide à distance via l'application RustDesk : résolution de bugs, suppression de logiciels malveillants, nettoyage système et assistance logicielle.</td>
+              <td><strong>35$ / heure</strong></td>
+            </tr>
+            <!-- IT 2 -->
+            <tr>
+              <td><strong>🛠️ Support Informatique (Niveau 1 & 2)</strong></td>
+              <td data-i18n="s2_desc">Diagnostic de pannes matérielles et logicielles, réinstallation Windows/Linux, configuration de réseaux/Wi-Fi et imprimantes, optimisation générale.</td>
+              <td><strong>35$ / heure</strong></td>
+            </tr>
+            <!-- IT 3 -->
+            <tr>
+              <td><strong>🖥️ Montage & Nettoyage de PC</strong></td>
+              <td data-i18n="s3_desc">Assemblage sur mesure de votre ordinateur (composants personnalisés), dépoussiérage complet et remplacement de la pâte thermique pour un meilleur refroidissement.</td>
+              <td data-i18n="s3_price">Sur devis (à partir de 50$)</td>
+            </tr>
+            <!-- IT 4 -->
+            <tr>
+              <td><strong>🚗 Service informatique à domicile</strong></td>
+              <td data-i18n="s4_desc">Intervention directement à votre domicile ou bureau pour résoudre vos soucis informatiques sur place.</td>
+              <td data-i18n="s4_price">35$ / hr + frais selon distance</td>
+            </tr>
+            <!-- 3D 1 -->
+            <tr>
+              <td><strong>🖨️ Impression 3D Sur Mesure (PLA)</strong></td>
+              <td data-i18n="s5_desc">Impression d'objets, figurines ou organisateurs à partir de vos fichiers 3D (.STL / .3MF) ou modèles existants.</td>
+              <td data-i18n="s5_price">Selon le poids (g) et la durée</td>
+            </tr>
+            <!-- 3D 2 -->
+            <tr>
+              <td><strong>🧩 Modélisation & Pièces de rechange 3D</strong></td>
+              <td data-i18n="s6_desc">Conception 3D sur mesure pour remplacer une pièce brisée ou créer un projet personnalisé de zéro.</td>
+              <td data-i18n="s6_price">Sur devis</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-      <div class="cta-3d">
-        <p data-i18n="cta_text">Vous avez un projet en tête ou un problème informatique ?</p>
-        <a href="contact.html" class="btn-contact" data-i18n="cta_btn">Demander un devis gratuit</a>
+      <div class="cta-3d" style="text-align: center; margin-top: 40px;">
+        <p data-i18n="cta_text" style="margin-bottom: 15px;">Vous avez un problème informatique ou un projet d'impression 3D ?</p>
+        <a href="contact.html" class="btn-contact" data-i18n="cta_btn">Demander une estimation gratuite</a>
       </div>
     </section>
   </main>
@@ -98,28 +111,23 @@
         nav_services: "Services et Tarifs",
         nav_faq: "FAQ",
         nav_contact: "Contact",
-        page_title: "Nos Services et Tarifs",
-        page_desc: "Découvrez nos tarifs transparents pour le soutien informatique et l’impression 3D. Pour toute demande spécifique, n’hésitez pas à nous contacter pour un devis personnalisé.",
+        services_title: "Nos Services et Tarifs",
+        services_desc: "Découvrez nos services informatiques spécialisés et nos prestations d'impression 3D. Tarification claire et transparente.",
         th_service: "Service",
-        th_description: "Description",
-        th_rate: "Tarif",
-        s1_title: "Soutien Informatique Général",
-        s1_desc: "Dépannage, optimisation de système, suppression de virus, configuration d'imprimantes et logiciels.",
-        s1_rate: "35$ / heure",
-        s2_title: "Assemblage & Nettoyage de PC",
-        s2_desc: "Montage complet d'un PC sur mesure à partir de vos composants ou dépoussiérage / changement de pâte thermique.",
-        s2_rate: "Sur devis (à partir de 50$)",
-        s3_title: "Impression 3D sur Mesure (FDM)",
-        s3_desc: "Impression d'objets en PLA/PETG d'après votre fichier 3D (.STL, .3MF) ou création personnalisée.",
-        s3_rate: "Selon le temps et la matière",
-        s4_title: "Modélisation & Prototypage 3D",
-        s4_desc: "Conception de pièces sur mesure, pièces de rechange cassées ou ajustement de fichiers existants.",
-        s4_rate: "Sur devis",
-        s5_title: "Déplacement à domicile",
-        s5_desc: "Service à domicile disponible dans la région de Shawinigan et environs.",
-        s5_rate: "Frais variables selon la distance",
-        cta_text: "Vous avez un projet en tête ou un problème informatique ?",
-        cta_btn: "Demander un devis gratuit",
+        th_desc: "Description",
+        th_price: "Tarif",
+        s1_desc: "Dépannage rapide à distance via l'application RustDesk : résolution de bugs, suppression de logiciels malveillants, nettoyage système et assistance logicielle.",
+        s2_desc: "Diagnostic de pannes matérielles et logicielles, réinstallation Windows/Linux, configuration de réseaux/Wi-Fi et imprimantes, optimisation générale.",
+        s3_desc: "Assemblage sur mesure de votre ordinateur (composants personnalisés), dépoussiérage complet et remplacement de la pâte thermique pour un meilleur refroidissement.",
+        s3_price: "Sur devis (à partir de 50$)",
+        s4_desc: "Intervention directement à votre domicile ou bureau pour résoudre vos soucis informatiques sur place.",
+        s4_price: "35$ / hr + frais selon distance",
+        s5_desc: "Impression d'objets, figurines ou organisateurs à partir de vos fichiers 3D (.STL / .3MF) ou modèles existants.",
+        s5_price: "Selon le poids (g) et la durée",
+        s6_desc: "Conception 3D sur mesure pour remplacer une pièce brisée ou créer un projet personnalisé de zéro.",
+        s6_price: "Sur devis",
+        cta_text: "Vous avez un problème informatique ou un projet d'impression 3D ?",
+        cta_btn: "Demander une estimation gratuite",
         back_home: "Retour à l’accueil",
         footer_copy: "© 2026 KarlTech3D. Tous droits réservés."
       },
@@ -130,28 +138,23 @@
         nav_services: "Services & Rates",
         nav_faq: "FAQ",
         nav_contact: "Contact",
-        page_title: "Services & Rates",
-        page_desc: "Check out our transparent rates for IT support and 3D printing. For specific requests, feel free to contact us for a custom quote.",
+        services_title: "Our Services & Rates",
+        services_desc: "Explore our specialized IT services and custom 3D printing offerings. Clear and transparent pricing.",
         th_service: "Service",
-        th_description: "Description",
-        th_rate: "Rate",
-        s1_title: "General IT Support",
-        s1_desc: "Troubleshooting, system optimization, virus removal, printer and software configuration.",
-        s1_rate: "$35 / hour",
-        s2_title: "PC Assembly & Cleaning",
-        s2_desc: "Custom PC building from your components or deep cleaning / thermal paste replacement.",
-        s2_rate: "Quote based (starting at $50)",
-        s3_title: "Custom 3D Printing (FDM)",
-        s3_desc: "Printing PLA/PETG objects from your 3D files (.STL, .3MF) or custom creations.",
-        s3_rate: "Based on print time and material",
-        s4_title: "3D Modeling & Prototyping",
-        s4_desc: "Custom part design, broken replacement parts, or adjusting existing 3D models.",
-        s4_rate: "Quote based",
-        s5_title: "On-site / Home Service",
-        s5_desc: "At-home service available in Shawinigan and surrounding areas.",
-        s5_rate: "Variable fees based on distance",
-        cta_text: "Have a project in mind or an IT issue?",
-        cta_btn: "Request a free quote",
+        th_desc: "Description",
+        th_price: "Rate",
+        s1_desc: "Fast remote support using RustDesk: bug fixes, malware removal, system cleanup, and software assistance.",
+        s2_desc: "Hardware & software troubleshooting, Windows/Linux reinstallation, Wi-Fi/network and printer setup, general system tuning.",
+        s3_desc: "Custom PC building with your chosen components, thorough dust cleanup, and thermal paste replacement for improved cooling.",
+        s3_price: "Quote-based (Starting at $50)",
+        s4_desc: "On-site visits directly to your home or office to resolve technical issues on the spot.",
+        s4_price: "$35 / hr + travel fee",
+        s5_desc: "3D printing of objects, figurines, or organizers from your .STL/.3MF files or existing models.",
+        s5_price: "Based on weight (g) and print time",
+        s6_desc: "Custom 3D CAD modeling to duplicate broken parts or design a brand-new custom item.",
+        s6_price: "Quote-based",
+        cta_text: "Have an IT issue or a 3D printing project?",
+        cta_btn: "Request a Free Quote",
         back_home: "Back to Home",
         footer_copy: "© 2026 KarlTech3D. All rights reserved."
       }
