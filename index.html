@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KarlTech3D – Services et Tarifs</title>
+  <title>KarlTech3D – Accueil</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,9 +26,9 @@
 
   <!-- Navigation -->
   <nav class="main-nav">
-    <a href="index.html" data-i18n="nav_home">Accueil</a>
+    <a href="index.html" class="active" data-i18n="nav_home">Accueil</a>
     <a href="impressions.html" data-i18n="nav_3d">Aperçu 3D</a>
-    <a href="services_tarifs.html" class="active" data-i18n="nav_services">Services et Tarifs</a>
+    <a href="services_tarifs.html" data-i18n="nav_services">Services et Tarifs</a>
     <a href="faq.html" data-i18n="nav_faq">FAQ</a>
     <a href="contact.html" data-i18n="nav_contact">Contact</a>
   </nav>
@@ -36,56 +36,31 @@
   <!-- Contenu principal -->
   <main>
     <section>
-      <h2 data-i18n="page_title">Nos Services et Tarifs</h2>
-      <p class="intro-text" data-i18n="page_desc">Découvrez nos tarifs transparents pour le soutien informatique et l’impression 3D. Pour toute demande spécifique, n’hésitez pas à nous contacter pour un devis personnalisé.</p>
+      <h2 data-i18n="welcome_title">Bienvenue chez KarlTech3D</h2>
+      <p class="intro-text" data-i18n="welcome_desc">Votre partenaire de confiance pour le soutien informatique et l’impression 3D sur mesure à Shawinigan et dans les environs.</p>
 
-      <table>
-        <thead>
-          <tr>
-            <th data-i18n="th_service">Service</th>
-            <th data-i18n="th_description">Description</th>
-            <th data-i18n="th_rate">Tarif</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-i18n="s1_title">Soutien Informatique Général</td>
-            <td data-i18n="s1_desc">Dépannage, optimisation de système, suppression de virus, configuration d'imprimantes et logiciels.</td>
-            <td data-i18n="s1_rate">35$ / heure</td>
-          </tr>
-          <tr>
-            <td data-i18n="s2_title">Assemblage & Nettoyage de PC</td>
-            <td data-i18n="s2_desc">Montage complet d'un PC sur mesure à partir de vos composants ou dépoussiérage / changement de pâte thermique.</td>
-            <td data-i18n="s2_rate">Sur devis (à partir de 50$)</td>
-          </tr>
-          <tr>
-            <td data-i18n="s3_title">Impression 3D sur Mesure (FDM)</td>
-            <td data-i18n="s3_desc">Impression d'objets en PLA/PETG d'après votre fichier 3D (.STL, .3MF) ou création personnalisée.</td>
-            <td data-i18n="s3_rate">Selon le temps et la matière</td>
-          </tr>
-          <tr>
-            <td data-i18n="s4_title">Modélisation & Prototypage 3D</td>
-            <td data-i18n="s4_desc">Conception de pièces sur mesure, pièces de rechange cassées ou ajustement de fichiers existants.</td>
-            <td data-i18n="s4_rate">Sur devis</td>
-          </tr>
-          <tr>
-            <td data-i18n="s5_title">Déplacement à domicile</td>
-            <td data-i18n="s5_desc">Service à domicile disponible dans la région de Shawinigan et environs.</td>
-            <td data-i18n="s5_rate">Frais variables selon la distance</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="contact-container">
+        <!-- Carte Services Informatiques -->
+        <div class="col">
+          <h3 data-i18n="card_it_title">💻 Soutien Informatique</h3>
+          <p data-i18n="card_it_desc">Dépannage, optimisation de PC, installation de composants, configuration de réseaux et nettoyage de virus. Un service rapide et personnalisé à domicile ou à distance.</p>
+          <br>
+          <a href="services_tarifs.html" class="btn-contact" data-i18n="btn_learn_more">En savoir plus</a>
+        </div>
 
-      <div class="cta-3d">
-        <p data-i18n="cta_text">Vous avez un projet en tête ou un problème informatique ?</p>
-        <a href="contact.html" class="btn-contact" data-i18n="cta_btn">Demander un devis gratuit</a>
+        <!-- Carte Impression 3D -->
+        <div class="col">
+          <h3 data-i18n="card_3d_title">🖨️ Impression 3D Sur Mesure</h3>
+          <p data-i18n="card_3d_desc">Prototypage, pièces de rechange, décorations personnalisées ou objets utilitaires. Nous donnons vie à vos idées avec une grande précision.</p>
+          <br>
+          <a href="impressions.html" class="btn-contact" data-i18n="btn_see_gallery">Voir la galerie</a>
+        </div>
       </div>
     </section>
   </main>
 
   <!-- Pied de page -->
   <footer>
-    <p>&larr; <a href="index.html" data-i18n="back_home">Retour à l’accueil</a></p>
     <p data-i18n="footer_copy">&copy; 2026 KarlTech3D. Tous droits réservés.</p>
   </footer>
 
@@ -98,29 +73,14 @@
         nav_services: "Services et Tarifs",
         nav_faq: "FAQ",
         nav_contact: "Contact",
-        page_title: "Nos Services et Tarifs",
-        page_desc: "Découvrez nos tarifs transparents pour le soutien informatique et l’impression 3D. Pour toute demande spécifique, n’hésitez pas à nous contacter pour un devis personnalisé.",
-        th_service: "Service",
-        th_description: "Description",
-        th_rate: "Tarif",
-        s1_title: "Soutien Informatique Général",
-        s1_desc: "Dépannage, optimisation de système, suppression de virus, configuration d'imprimantes et logiciels.",
-        s1_rate: "35$ / heure",
-        s2_title: "Assemblage & Nettoyage de PC",
-        s2_desc: "Montage complet d'un PC sur mesure à partir de vos composants ou dépoussiérage / changement de pâte thermique.",
-        s2_rate: "Sur devis (à partir de 50$)",
-        s3_title: "Impression 3D sur Mesure (FDM)",
-        s3_desc: "Impression d'objets en PLA/PETG d'après votre fichier 3D (.STL, .3MF) ou création personnalisée.",
-        s3_rate: "Selon le temps et la matière",
-        s4_title: "Modélisation & Prototypage 3D",
-        s4_desc: "Conception de pièces sur mesure, pièces de rechange cassées ou ajustement de fichiers existants.",
-        s4_rate: "Sur devis",
-        s5_title: "Déplacement à domicile",
-        s5_desc: "Service à domicile disponible dans la région de Shawinigan et environs.",
-        s5_rate: "Frais variables selon la distance",
-        cta_text: "Vous avez un projet en tête ou un problème informatique ?",
-        cta_btn: "Demander un devis gratuit",
-        back_home: "Retour à l’accueil",
+        welcome_title: "Bienvenue chez KarlTech3D",
+        welcome_desc: "Votre partenaire de confiance pour le soutien informatique et l’impression 3D sur mesure à Shawinigan et dans les environs.",
+        card_it_title: "💻 Soutien Informatique",
+        card_it_desc: "Dépannage, optimisation de PC, installation de composants, configuration de réseaux et nettoyage de virus. Un service rapide et personnalisé à domicile ou à distance.",
+        btn_learn_more: "En savoir plus",
+        card_3d_title: "🖨️ Impression 3D Sur Mesure",
+        card_3d_desc: "Prototypage, pièces de rechange, décorations personnalisées ou objets utilitaires. Nous donnons vie à vos idées avec une grande précision.",
+        btn_see_gallery: "Voir la galerie",
         footer_copy: "© 2026 KarlTech3D. Tous droits réservés."
       },
       en: {
@@ -130,29 +90,14 @@
         nav_services: "Services & Rates",
         nav_faq: "FAQ",
         nav_contact: "Contact",
-        page_title: "Services & Rates",
-        page_desc: "Check out our transparent rates for IT support and 3D printing. For specific requests, feel free to contact us for a custom quote.",
-        th_service: "Service",
-        th_description: "Description",
-        th_rate: "Rate",
-        s1_title: "General IT Support",
-        s1_desc: "Troubleshooting, system optimization, virus removal, printer and software configuration.",
-        s1_rate: "$35 / hour",
-        s2_title: "PC Assembly & Cleaning",
-        s2_desc: "Custom PC building from your components or deep cleaning / thermal paste replacement.",
-        s2_rate: "Quote based (starting at $50)",
-        s3_title: "Custom 3D Printing (FDM)",
-        s3_desc: "Printing PLA/PETG objects from your 3D files (.STL, .3MF) or custom creations.",
-        s3_rate: "Based on print time and material",
-        s4_title: "3D Modeling & Prototyping",
-        s4_desc: "Custom part design, broken replacement parts, or adjusting existing 3D models.",
-        s4_rate: "Quote based",
-        s5_title: "On-site / Home Service",
-        s5_desc: "At-home service available in Shawinigan and surrounding areas.",
-        s5_rate: "Variable fees based on distance",
-        cta_text: "Have a project in mind or an IT issue?",
-        cta_btn: "Request a free quote",
-        back_home: "Back to Home",
+        welcome_title: "Welcome to KarlTech3D",
+        welcome_desc: "Your trusted partner for IT support and custom 3D printing in Shawinigan and surrounding areas.",
+        card_it_title: "💻 IT Support",
+        card_it_desc: "Troubleshooting, PC optimization, component installation, network setup, and virus removal. Fast and personalized service at home or remotely.",
+        btn_learn_more: "Learn more",
+        card_3d_title: "🖨️ Custom 3D Printing",
+        card_3d_desc: "Prototyping, replacement parts, custom decorations, or utility items. We bring your ideas to life with high precision.",
+        btn_see_gallery: "View gallery",
         footer_copy: "© 2026 KarlTech3D. All rights reserved."
       }
     };
@@ -164,7 +109,7 @@
       localStorage.setItem('site_lang', lang);
       document.documentElement.lang = lang;
 
-      // Mise à jour du drapeau et du texte
+      // Mise à jour de l'image du drapeau et du texte
       const flagImg = document.getElementById('lang-flag');
       flagImg.src = lang === 'fr' ? 'https://flagcdn.com/w20/ca.png' : 'https://flagcdn.com/w20/us.png';
       flagImg.alt = lang === 'fr' ? 'Drapeau Canada' : 'Drapeau USA';
