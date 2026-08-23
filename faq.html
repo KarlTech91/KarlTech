@@ -36,45 +36,55 @@
   <!-- Contenu principal -->
   <main>
     <section>
-      <h2 data-i18n="page_title">Foire Aux Questions (FAQ)</h2>
-      <p class="intro-text" data-i18n="page_desc">Trouvez rapidement les réponses aux questions les plus fréquentes concernant nos services informatiques et l'impression 3D.</p>
+      <h2 class="section-title" data-i18n="faq_title">Foire Aux Questions (FAQ)</h2>
+      <p class="intro-text" data-i18n="faq_desc">Trouvez rapidement les réponses aux questions les plus fréquentes concernant nos services informatiques et l'impression 3D.</p>
 
       <div class="faq-container">
-        <!-- Question 1 -->
-        <div class="faq-item">
-          <button class="faq-question" data-i18n="q1_title">Quels sont les délais pour une impression 3D ?</button>
-          <div class="faq-answer">
-            <p data-i18n="q1_ans">Les délais dépendent de la taille, de la complexité de la pièce et de la quantité demandée. En général, la plupart des projets sont réalisés en 24 à 48 heures.</p>
-          </div>
+        <!-- Q1 -->
+        <div class="faq-card">
+          <h3 data-i18n="q1_title">Quels sont les délais pour une impression 3D ?</h3>
+          <p data-i18n="q1_ans">Les délais dépendent de la taille, de la complexité de la pièce et de la quantité demandée. En général, la plupart des projets sont réalisés en 24 à 48 heures.</p>
         </div>
 
-        <!-- Question 2 -->
-        <div class="faq-item">
-          <button class="faq-question" data-i18n="q2_title">Proposez-vous le service à domicile pour l'informatique ?</button>
-          <div class="faq-answer">
-            <p data-i18n="q2_ans">Oui, nous nous déplaçons à Shawinigan et dans les environs. Selon le problème, certaines interventions peuvent aussi se faire à distance.</p>
-          </div>
+        <!-- Q2 -->
+        <div class="faq-card">
+          <h3 data-i18n="q2_title">Proposez-vous le service à domicile pour l'informatique ?</h3>
+          <p data-i18n="q2_ans">Oui, nous nous déplaçons à Shawinigan et dans les environs. Selon le problème, certaines interventions peuvent aussi se faire à distance.</p>
         </div>
 
-        <!-- Question 3 -->
-        <div class="faq-item">
-          <button class="faq-question" data-i18n="q3_title">Quels types de fichiers acceptez-vous pour l'impression 3D ?</button>
-          <div class="faq-answer">
-            <p data-i18n="q3_ans">Nous acceptons principalement les fichiers au format .STL et .3MF. Si vous n'avez pas de fichier 3D, nous pouvons également concevoir la pièce pour vous.</p>
-          </div>
+        <!-- Q3 -->
+        <div class="faq-card">
+          <h3 data-i18n="q3_title">Quels types de fichiers acceptez-vous pour l'impression 3D ?</h3>
+          <p data-i18n="q3_ans">Nous acceptons principalement les fichiers au format .STL et .3MF. Si vous n'avez pas de fichier 3D, nous pouvons également concevoir la pièce pour vous.</p>
         </div>
 
-        <!-- Question 4 -->
-        <div class="faq-item">
-          <button class="faq-question" data-i18n="q4_title">Quels matériaux utilisez-vous pour vos impressions ?</button>
-          <div class="faq-answer">
-            <p data-i18n="q4_ans">Nous utilisons principalement le PLA (un plastique écologique, résistant et idéal pour la plupart des projets) ainsi que le PETG pour des pièces nécessitant une meilleure résistance mécanique ou thermique.</p>
-          </div>
+        <!-- Q4 -->
+        <div class="faq-card">
+          <h3 data-i18n="q4_title">Quels matériaux utilisez-vous pour vos impressions ?</h3>
+          <p data-i18n="q4_ans">Nous utilisons principalement le PLA (résistant et idéal pour la plupart des projets) ainsi que d'autres plastiques selon vos besoins spécifiques en résistance mécanique ou thermique.</p>
+        </div>
+
+        <!-- Q5 (Nouveau) -->
+        <div class="faq-card">
+          <h3 data-i18n="q5_title">Comment est calculé le prix d'une impression 3D ?</h3>
+          <p data-i18n="q5_ans">Le tarif est basé sur la quantité de matière utilisée (en grammes), le temps d'impression requis et la complexité de préparation ou de modélisation du fichier.</p>
+        </div>
+
+        <!-- Q6 (Nouveau) -->
+        <div class="faq-card">
+          <h3 data-i18n="q6_title">Que faites-vous si ma pièce brisée n'a plus de modèle 3D disponible ?</h3>
+          <p data-i18n="q6_ans">Nous pouvons modéliser la pièce sur mesure à partir de vos mesures précises ou de la pièce originale cassée afin d'en imprimer un double fonctionnel.</p>
+        </div>
+
+        <!-- Q7 (Nouveau) -->
+        <div class="faq-card">
+          <h3 data-i18n="q7_title">Quels sont les modes de paiement acceptés ?</h3>
+          <p data-i18n="q7_ans">Nous acceptons les virements Interac, l'argent comptant, ainsi que les paiements sécurisés directement via notre boutique en ligne Etsy.</p>
         </div>
       </div>
 
-      <div class="cta-3d">
-        <p data-i18n="cta_text">Vous ne trouvez pas la réponse à votre question ?</p>
+      <div class="cta-3d" style="text-align: center; margin-top: 40px;">
+        <p data-i18n="cta_text" style="margin-bottom: 15px;">Vous ne trouvez pas la réponse à votre question ?</p>
         <a href="contact.html" class="btn-contact" data-i18n="cta_btn">Contactez-nous directement</a>
       </div>
     </section>
@@ -95,8 +105,8 @@
         nav_services: "Services et Tarifs",
         nav_faq: "FAQ",
         nav_contact: "Contact",
-        page_title: "Foire Aux Questions (FAQ)",
-        page_desc: "Trouvez rapidement les réponses aux questions les plus fréquentes concernant nos services informatiques et l'impression 3D.",
+        faq_title: "Foire Aux Questions (FAQ)",
+        faq_desc: "Trouvez rapidement les réponses aux questions les plus fréquentes concernant nos services informatiques et l'impression 3D.",
         q1_title: "Quels sont les délais pour une impression 3D ?",
         q1_ans: "Les délais dépendent de la taille, de la complexité de la pièce et de la quantité demandée. En général, la plupart des projets sont réalisés en 24 à 48 heures.",
         q2_title: "Proposez-vous le service à domicile pour l'informatique ?",
@@ -104,7 +114,13 @@
         q3_title: "Quels types de fichiers acceptez-vous pour l'impression 3D ?",
         q3_ans: "Nous acceptons principalement les fichiers au format .STL et .3MF. Si vous n'avez pas de fichier 3D, nous pouvons également concevoir la pièce pour vous.",
         q4_title: "Quels matériaux utilisez-vous pour vos impressions ?",
-        q4_ans: "Nous utilisons principalement le PLA (un plastique écologique, résistant et idéal pour la plupart des projets) ainsi que le PETG pour des pièces nécessitant une meilleure résistance mécanique ou thermique.",
+        q4_ans: "Nous utilisons principalement le PLA (résistant et idéal pour la plupart des projets) ainsi que d'autres plastiques selon vos besoins spécifiques en résistance mécanique ou thermique.",
+        q5_title: "Comment est calculé le prix d'une impression 3D ?",
+        q5_ans: "Le tarif est basé sur la quantité de matière utilisée (en grammes), le temps d'impression requis et la complexité de préparation ou de modélisation du fichier.",
+        q6_title: "Que faites-vous si ma pièce brisée n'a plus de modèle 3D disponible ?",
+        q6_ans: "Nous pouvons modéliser la pièce sur mesure à partir de vos mesures précises ou de la pièce originale cassée afin d'en imprimer un double fonctionnel.",
+        q7_title: "Quels sont les modes de paiement acceptés ?",
+        q7_ans: "Nous acceptons les virements Interac, l'argent comptant, ainsi que les paiements sécurisés directement via notre boutique en ligne Etsy.",
         cta_text: "Vous ne trouvez pas la réponse à votre question ?",
         cta_btn: "Contactez-nous directement",
         back_home: "Retour à l’accueil",
@@ -117,16 +133,22 @@
         nav_services: "Services & Rates",
         nav_faq: "FAQ",
         nav_contact: "Contact",
-        page_title: "Frequently Asked Questions (FAQ)",
-        page_desc: "Quickly find answers to common questions about our IT support and 3D printing services.",
-        q1_title: "What is the turnaround time for 3D printing?",
-        q1_ans: "Turnaround time depends on the size, complexity, and quantity requested. Generally, most projects are completed within 24 to 48 hours.",
-        q2_title: "Do you offer on-site / at-home IT support?",
-        q2_ans: "Yes, we travel within Shawinigan and surrounding areas. Depending on the issue, some tasks can also be handled remotely.",
-        q3_title: "What file types do you accept for 3D printing?",
-        q3_ans: "We primarily accept .STL and .3MF files. If you don't have a 3D model file, we can also design the part for you.",
-        q4_title: "What materials do you use for printing?",
-        q4_ans: "We mostly use PLA (an eco-friendly, strong material ideal for most projects) as well as PETG for parts requiring higher mechanical or heat resistance.",
+        faq_title: "Frequently Asked Questions (FAQ)",
+        faq_desc: "Quickly find answers to the most common questions about our IT services and 3D printing.",
+        q1_title: "What is the turnaround time for a 3D print?",
+        q1_ans: "Turnaround time depends on the size, complexity, and quantity requested. Most projects are completed within 24 to 48 hours.",
+        q2_title: "Do you offer on-site IT support?",
+        q2_ans: "Yes, we travel within Shawinigan and surrounding areas. Depending on the issue, remote support is also available.",
+        q3_title: "What file formats do you accept for 3D printing?",
+        q3_ans: "We mainly accept .STL and .3MF files. If you don't have a 3D model, we can design the part for you.",
+        q4_title: "What materials do you use for 3D printing?",
+        q4_ans: "We mainly use PLA (durable and ideal for most projects) as well as other plastics tailored to specific mechanical or thermal needs.",
+        q5_title: "How is the price of a 3D print calculated?",
+        q5_ans: "Pricing is based on material consumption (in grams), print duration, and any required file preparation or 3D modeling work.",
+        q6_title: "What if my broken part doesn't have a 3D model available online?",
+        q6_ans: "We can custom 3D-model the part using exact measurements or the original damaged physical part to print a functional duplicate.",
+        q7_title: "What payment methods do you accept?",
+        q7_ans: "We accept Interac e-Transfers, cash, and secure online payments directly through our Etsy shop.",
         cta_text: "Can't find the answer to your question?",
         cta_btn: "Contact us directly",
         back_home: "Back to Home",
@@ -162,19 +184,6 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       updateLanguage(currentLang);
-
-      const accordionButtons = document.querySelectorAll('.faq-question');
-      accordionButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          button.classList.toggle('active');
-          const answer = button.nextElementSibling;
-          if (button.classList.contains('active')) {
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-          } else {
-            answer.style.maxHeight = null;
-          }
-        });
-      });
     });
   </script>
 </body>
