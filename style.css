@@ -1,442 +1,326 @@
-:root {
-  --primary-color: #66b2ff;
-  --secondary-color: #3399ff;
-  --background-color: rgba(30, 30, 30, 0.75);
-  --text-color: #f0f0f0;
-  --link-color: #66b2ff;
-  --hover-link-color: #3399ff;
-  --slider-font-size: 2rem;
-  --slider-padding: 5%;
-  --slider-height: 60vh;
-  --slider-padding-vertical: 10%;
-  --slider-max-width: 75%;
-  --slider-border-radius: 20px;
-}
-
-/* ====================================================
-   Structure générale (Fix footer en bas)
-==================================================== */
-html {
-  height: 100%;
+/* ==========================================
+   1. REGLES GENERALES & REINITIALISATION
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--text-color);
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-              url('https://raw.githubusercontent.com/KarlTech91/KarlTech/main/BackgroundSite.png') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #0b0f19;
+  color: #e0e0e0;
+  line-height: 1.6;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-/* Force le contenu à pousser le footer vers le bas */
 main {
-  flex: 1 0 auto;
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-/* ====================================================
-   En-tête (Header) & Bouton de langue
-==================================================== */
+a {
+  color: #00aaff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #66ccff;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.intro-text {
+  text-align: center;
+  color: #aaaaaa;
+  margin-bottom: 30px;
+}
+
+/* ==========================================
+   2. EN-TÊTE (HEADER) & CHANGER DE LANGUE
+   ========================================== */
 header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between; /* Positionne le bouton à droite */
-  padding: 20px;
+  padding: 15px 30px;
+  background-color: #111625;
+  border-bottom: 1px solid #1e293b;
 }
 
 .header-brand {
   display: flex;
   align-items: center;
+  gap: 15px;
 }
 
-header img {
-  height: 80px;
-  margin-right: 20px;
+.site-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
 }
 
 .header-text h1 {
-  margin: 0;
-  font-size: 2em;
+  font-size: 1.8rem;
+  color: #ffffff;
+  line-height: 1.2;
 }
 
 .header-text p {
-  margin: 0;
-  color: #ccc;
+  font-size: 0.85rem;
+  color: #aaaaaa;
 }
 
-/* Bouton Sélecteur de Langue */
+/* Bouton de langue */
 .lang-switch {
-  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 
 .lang-btn {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: 1px solid var(--primary-color);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00aaff;
+  color: #ffffff;
+  padding: 6px 14px;
   border-radius: 20px;
-  padding: 8px 16px;
-  font-size: 0.95rem;
-  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .lang-btn:hover {
-  background: var(--primary-color);
-  color: #121212;
-  transform: translateY(-2px);
+  background: rgba(0, 170, 255, 0.2);
+  border-color: #33bbff;
 }
 
-.lang-flag {
-  font-size: 1.2rem;
-  line-height: 1;
+.lang-btn img {
+  width: 20px;
+  height: auto;
+  border-radius: 2px;
+  display: block;
 }
 
-/* ====================================================
-   Navigation
-==================================================== */
-nav.main-nav {
+/* ==========================================
+   3. NAVIGATION PRINCIPALE
+   ========================================== */
+.main-nav {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  padding: 15px 0;
-  font-weight: bold;
+  gap: 25px;
+  background-color: #161c2e;
+  padding: 12px;
+  border-bottom: 1px solid #1e293b;
+  flex-wrap: wrap;
 }
 
-nav.main-nav a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.main-nav a {
+  color: #ffffff;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-nav.main-nav a:hover,
-nav.main-nav a.active {
-  text-decoration: underline;
-  color: var(--primary-color);
+.main-nav a:hover,
+.main-nav a.active {
+  color: #00aaff;
+  background-color: rgba(0, 170, 255, 0.1);
 }
 
-/* ====================================================
-   Section Accueil (Slider)
-==================================================== */
-#why {
-  position: relative;
-  width: 100%;
-  height: calc(90vh - 160px);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.why-slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.why-slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  pointer-events: none;
-  color: white;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 4px solid rgba(102, 178, 255, 0.7);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  padding-left: 10%;
-}
-
-.why-slide::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  z-index: 0;
-}
-
-.why-slide p {
-  position: relative;
-  z-index: 1;
-  max-width: 50%;
-  font-size: 1.4rem;
-  line-height: 1.5;
-}
-
-.why-slide.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.why-nav {
-  position: absolute;
-  top: 50%;
-  right: 2%;
-  transform: translateY(-50%);
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-}
-
-.why-nav li {
-  width: 14px; height: 14px;
-  border: 2px solid var(--primary-color);
-  border-radius: 50%;
-  margin: 10px 0;
-  cursor: pointer;
-}
-
-.why-nav li.active {
-  background: var(--primary-color);
-}
-
-/* ====================================================
-   Section Services & Tarifs
-==================================================== */
-#servicesSection {
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#servicesSection table {
-  width: 80%;
-  margin: 20px auto;
-  border-collapse: collapse;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-#servicesSection th, td {
-  border: 1px solid var(--primary-color);
-  padding: 10px;
-  text-align: left;
-}
-
-#servicesSection th {
-  background: rgba(102, 178, 255, 0.2);
-}
-
-/* ====================================================
-   Section Portfolio 3D & Galerie
-==================================================== */
-#portfolio3D {
-  padding: 40px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
-
+/* ==========================================
+   4. GALERIE 3D & LIGHTBOX
+   ========================================== */
 .grid-3d {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
-  margin: 30px 0;
+  margin-top: 20px;
 }
 
 .card-3d {
-  background: rgba(0, 0, 0, 0.85);
-  border: 1px solid var(--primary-color);
-  border-radius: 12px;
+  background-color: #161c2e;
+  border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  border: 1px solid #1e293b;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card-3d:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 170, 255, 0.15);
 }
 
 .card-3d img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
-  cursor: zoom-in;
+  display: block;
 }
 
 .card-info {
   padding: 15px;
-  text-align: left;
 }
 
-/* ====================================================
-   Lightbox (Image centrée & Bouton X)
-==================================================== */
+.card-info h3 {
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.card-info p {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+}
+
+.cta-3d {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-3d p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.btn-contact {
+  display: inline-block;
+  background-color: #00aaff;
+  color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.btn-contact:hover {
+  background-color: #0088cc;
+  color: #ffffff;
+}
+
+/* Lightbox Modal */
 .lightbox {
   display: none;
   position: fixed;
-  z-index: 9999;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 .lightbox-content {
   max-width: 90%;
-  max-height: 85vh;
-  border: 2px solid var(--primary-color);
+  max-height: 85%;
   border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 25px rgba(0, 170, 255, 0.3);
 }
 
-.close {
+.lightbox .close {
   position: absolute;
   top: 20px;
-  right: 30px;
-  color: var(--primary-color);
-  font-size: 50px;
+  right: 35px;
+  color: #ffffff;
+  font-size: 40px;
   font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover {
-  color: white;
-  transform: scale(1.2);
-}
-
-/* ====================================================
-   Section Contact
-==================================================== */
-#contact {
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contact-container {
-  display: flex;
-  gap: 50px;
-  width: 100%;
-  max-width: 1000px;
-}
-
-.col.infos, .col.formu { flex: 1; }
-
-form { display: flex; flex-direction: column; gap: 15px; }
-
-form input, form textarea {
-  padding: 12px;
-  border: 1px solid var(--primary-color);
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-}
-
-form button {
-  padding: 12px;
-  background: var(--primary-color);
-  color: white;
-  border: none;
   cursor: pointer;
-  font-weight: bold;
+  transition: color 0.2s ease;
 }
 
-/* Force les liens de la colonne infos à rester blancs */
-.col.infos a {
-  color: white !important;
-  text-decoration: none;
+.lightbox .close:hover {
+  color: #00aaff;
 }
 
-.col.infos a:hover {
-  color: var(--primary-color) !important;
-  text-decoration: underline;
+/* ==========================================
+   5. TABLEAU SERVICES & TARIFS
+   ========================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #161c2e;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* ====================================================
-   Pied de page (Footer)
-==================================================== */
-footer {
-  flex-shrink: 0;
-  text-align: center;
-  padding: 25px;
-  background: rgba(0, 0, 0, 0.85);
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(102, 178, 255, 0.3);
+th, td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #1e293b;
 }
 
-footer a {
-  color: var(--primary-color);
-  text-decoration: none;
+th {
+  background-color: #1e283d;
+  color: #00aaff;
+  font-size: 1.05rem;
 }
 
-/* ====================================================
-   Style spécifique à la FAQ (Accordéon)
-==================================================== */
-#faq-section {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
+tr:hover {
+  background-color: #1b2338;
 }
 
-.intro-text {
-  text-align: center;
-  color: #ccc;
-  margin-bottom: 30px;
-}
-
+/* ==========================================
+   6. FAQ (ACCORDEON)
+   ========================================== */
 .faq-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .faq-item {
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid var(--primary-color);
-  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: #161c2e;
+  border-radius: 6px;
+  border: 1px solid #1e293b;
   overflow: hidden;
 }
 
 .faq-question {
   width: 100%;
-  padding: 20px;
   background: none;
   border: none;
-  color: white;
+  outline: none;
   text-align: left;
-  font-size: 1.1rem;
-  font-weight: bold;
+  padding: 18px 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background 0.3s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.faq-question:hover {
-  background: rgba(102, 178, 255, 0.1);
+.faq-question:hover,
+.faq-question.active {
+  color: #00aaff;
+  background-color: #1b2338;
 }
 
 .faq-question::after {
   content: '+';
-  font-size: 1.5rem;
-  color: var(--primary-color);
+  font-size: 1.4rem;
+  color: #00aaff;
+  transition: transform 0.3s ease;
 }
 
 .faq-question.active::after {
@@ -447,78 +331,120 @@ footer a {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  background: rgba(255, 255, 255, 0.05);
+  background-color: #121726;
 }
 
 .faq-answer p {
-  padding: 20px;
-  margin: 0;
+  padding: 18px 20px;
+  color: #cccccc;
   line-height: 1.6;
-  color: #ddd;
 }
 
-/* ====================================================
-   Section À Propos
-==================================================== */
-#about {
-  padding: 60px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.about-intro {
-  font-size: 1.2rem;
-  color: #ccc;
-  margin-bottom: 40px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.about-grid {
+/* ==========================================
+   7. PAGE CONTACT & FORMULAIRE
+   ========================================== */
+.contact-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+  margin-top: 20px;
 }
 
-.about-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--primary-color);
-  padding: 30px;
-  border-radius: 15px;
-  transition: transform 0.3s ease, background 0.3s ease;
+.col {
+  background-color: #161c2e;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
 }
 
-.about-card:hover {
-  transform: translateY(-10px);
-  background: rgba(102, 178, 255, 0.1);
-}
-
-.about-card .icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.about-card h3 {
-  color: var(--primary-color);
+.col h3 {
+  color: #00aaff;
   margin-bottom: 15px;
-  font-size: 1.5rem;
 }
 
-.about-card p {
-  line-height: 1.6;
-  color: #ddd;
+.col.infos p {
+  margin-bottom: 12px;
 }
 
-/* ====================================================
-   Responsive
-==================================================== */
+.col.infos ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.col.infos li {
+  color: #cccccc;
+  margin-bottom: 6px;
+}
+
+.col.formu form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.col.formu input,
+.col.formu textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: #0b0f19;
+  border: 1px solid #1e293b;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.col.formu input:focus,
+.col.formu textarea:focus {
+  outline: none;
+  border-color: #00aaff;
+}
+
+.col.formu button {
+  background-color: #00aaff;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.col.formu button:hover {
+  background-color: #0088cc;
+}
+
+/* ==========================================
+   8. PIED DE PAGE (FOOTER)
+   ========================================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #111625;
+  border-top: 1px solid #1e293b;
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 4px 0;
+}
+
+/* RESPONSIVE DESIGN (MOBILES ET TABLETTES) */
 @media (max-width: 768px) {
-  header { flex-direction: column; text-align: center; gap: 15px; }
-  .lang-switch { margin-left: 0; }
-  nav.main-nav { flex-wrap: wrap; gap: 15px; font-size: 0.9rem; }
-  .contact-container { flex-direction: column; align-items: center; }
-  #why { display: none; }
-  #servicesSection table { width: 95%; }
+  header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .header-brand {
+    flex-direction: column;
+  }
+
+  .main-nav {
+    gap: 10px;
+  }
 }
