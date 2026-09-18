@@ -6,14 +6,13 @@
   <title>KarlTech3D – Aperçu 3D</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Format carré uniforme avec affichage complet de l'image */
+    /* Correction de l'image et suppression du fond blanc */
     .card-3d img {
       width: 100%;
-      aspect-ratio: 1 / 1; /* Force un format carré parfait */
-      object-fit: contain; /* Conserve l'image entière sans la rognée */
-      background-color: #f8f9fa; /* Fond neutre pour combler les espaces */
-      padding: 8px; /* Petit espace interne esthétique */
-      box-sizing: border-box;
+      height: 250px; /* Ou aspect-ratio: 1 / 1; selon ta préférence */
+      object-fit: cover; /* Remplit tout l'espace sans déformer l'image */
+      background-color: transparent; /* Fond transparent au lieu de blanc */
+      display: block;
       cursor: pointer;
     }
   </style>
