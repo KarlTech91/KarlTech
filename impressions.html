@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KarlTech3D – Aperçu 3D</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Format carré uniforme avec affichage complet de l'image */
+    .card-3d img {
+      width: 100%;
+      aspect-ratio: 1 / 1; /* Force un format carré parfait */
+      object-fit: contain; /* Conserve l'image entière sans la rognée */
+      background-color: #f8f9fa; /* Fond neutre pour combler les espaces */
+      padding: 8px; /* Petit espace interne esthétique */
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <!-- En-tête -->
