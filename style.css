@@ -570,3 +570,10 @@ footer a:hover {
 .services-table td strong {
   color: #f8fafc;
 }
+
+.category-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #007bff;
+}
