@@ -6,12 +6,18 @@
   <title>KarlTech3D – Aperçu 3D</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Correction de l'image et suppression du fond blanc */
+    /* Force une taille maximale uniforme pour toutes les cartes */
+    .grid-3d {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 280px)); /* Limite la largeur max de chaque carte */
+      gap: 20px;
+    }
+
     .card-3d img {
       width: 100%;
-      height: 250px; /* Ou aspect-ratio: 1 / 1; selon ta préférence */
-      object-fit: cover; /* Remplit tout l'espace sans déformer l'image */
-      background-color: transparent; /* Fond transparent au lieu de blanc */
+      height: 220px; /* Hauteur fixe pour que toutes les cartes aient la même taille */
+      object-fit: cover; /* Remplit bien la carte sans deformation */
+      background-color: transparent;
       display: block;
       cursor: pointer;
     }
